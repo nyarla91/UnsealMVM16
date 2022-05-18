@@ -9,7 +9,7 @@ namespace Model.Combat.Cards.Spells
         public override async void OnPlay()
         {
             List<Character> characters =
-                await GameBoard.TargetChooser.StartTargetsChoose<Character>(3, true);
+                await GameBoard.TargetChooser.StartTargetsChoose<Character>(1, true);
 
             foreach (var character in characters)
             {

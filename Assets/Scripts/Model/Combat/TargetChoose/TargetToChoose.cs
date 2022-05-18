@@ -46,14 +46,14 @@ namespace Model.Combat.TargetChoose
             if (button != PointerType.Left || !_chooseAvailable)
                 return;
 
-            OnChooseSwitch?.Invoke();
             if (_board.TargetChooser.TargetChosen(this))
             {
                 _board.TargetChooser.RemoveChosenTarget(this);
+                OnChooseSwitch?.Invoke();
             }
-            else
+            else if (_board.TargetChooser.TryAddChosenTarget(this))
             {
-                _board.TargetChooser.AddChosenTarget(this);
+                OnChooseSwitch?.Invoke();
             }
         }
 

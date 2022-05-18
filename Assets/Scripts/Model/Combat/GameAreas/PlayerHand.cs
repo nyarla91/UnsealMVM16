@@ -18,10 +18,10 @@ namespace Model.Combat.GameAreas
                 return;
 
             float leftMostIndex = (1 - Size) * 0.5f;
-            const float unitsPerIndex = 1;
+            const float UnitsPerIndex = 1;
             for (int i = 0; i < Size; i++)
             {
-                Vector3 localPosition = new Vector3((leftMostIndex + i) * unitsPerIndex, i * 0.02f, 0);
+                Vector3 localPosition = new Vector3((leftMostIndex + i) * UnitsPerIndex, i * 0.02f, 0);
                 Cards[i].TargetPosition = CardStandart.TransformPoint(localPosition);
                 Cards[i].TargetRotation = CardStandart.rotation;
             }

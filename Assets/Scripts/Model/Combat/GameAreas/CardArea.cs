@@ -11,7 +11,7 @@ namespace Model.Combat.GameAreas
         [SerializeField] private Transform _cardStandart;
         
         public Transform CardStandart => _cardStandart;
-        protected List<T> Cards { get; } = new List<T>();
+        protected List<T> Cards { get; set; } = new List<T>();
         public int Size => Cards.Count;
         public bool IsFull => Size == MaxSize;
         public abstract int MaxSize { get; }

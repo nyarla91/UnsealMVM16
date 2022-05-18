@@ -123,6 +123,45 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &20161103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 1274758239}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &20161104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20161103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &20161105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20161103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
 --- !u!1 &26353082
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardStandart: {fileID: 1482976391}
+  _gameBoard: {fileID: 922070040}
 --- !u!4 &171469957
 Transform:
   m_ObjectHideFlags: 0
@@ -847,6 +887,45 @@ Transform:
   m_Father: {fileID: 26734530}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &232078861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 584057120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &232078862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232078861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &232078863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232078861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
 --- !u!1 &248622997
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,6 +1004,51 @@ MonoBehaviour:
   _parentNewObjectsUnderSceneContext: 0
   _contractNames: []
   _parentContractNames: []
+--- !u!1 &315786398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 315786399}
+  - component: {fileID: 315786400}
+  m_Layer: 0
+  m_Name: Turn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &315786399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315786398}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 922070041}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &315786400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315786398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53f0d1cd7004427a2ed849cb2c8b33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameBoard: {fileID: 922070040}
 --- !u!1 &363376169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,6 +1267,159 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &387775717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 1057691242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &387775718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387775717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &387775719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387775717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
+--- !u!1001 &399272213
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+--- !u!1001 &404295199
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
 --- !u!1 &421673675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,7 +1674,7 @@ MonoBehaviour:
     _eng: 
     _rus: 
   _type: 0
---- !u!114 &427534069
+--- !u!114 &427534064
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1406,7 +1683,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 427534062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc47e4499ca6410baf61fa5b3fc8e325, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &468443521
@@ -1913,6 +2190,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dragPeriod: 0
+--- !u!1001 &584057120
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+--- !u!1 &586744901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 1724098309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &586744902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586744901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &586744903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586744901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
 --- !u!1 &587869073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,6 +2330,63 @@ Transform:
   m_Father: {fileID: 922070041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &591844601
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
 --- !u!1 &616871886
 GameObject:
   m_ObjectHideFlags: 0
@@ -2249,6 +2679,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &651872184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 399272213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &651872185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651872184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &651872186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651872184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
 --- !u!1001 &726086122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2306,6 +2775,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+--- !u!1 &794775906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 1106086811}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &794775907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794775906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &794775908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794775906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
 --- !u!1 &829932006
 GameObject:
   m_ObjectHideFlags: 0
@@ -2603,6 +3111,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+--- !u!1 &870424459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 1364031443}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &870424460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870424459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &870424461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870424459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f370880ee3461dbf22ffa541c0c9ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: 82edd914ef6cb174f8f0d733543426e1, type: 2}
+  _name:
+    _eng: Eclipse
+    _rus: 
+  _description:
+    _eng: 
+    _rus: 
+  _type: 0
 --- !u!1 &885486142
 GameObject:
   m_ObjectHideFlags: 0
@@ -2921,9 +3466,106 @@ Transform:
   - {fileID: 1113066992}
   - {fileID: 171469957}
   - {fileID: 1340575390}
+  - {fileID: 315786399}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &930745535
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+--- !u!1 &947740569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 1063133582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &947740570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947740569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &947740571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947740569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
 --- !u!1001 &950284710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3210,6 +3852,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &989365588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 1506828784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &989365589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989365588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &989365590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989365588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
 --- !u!1 &1015058501
 GameObject:
   m_ObjectHideFlags: 0
@@ -3492,7 +4173,7 @@ MonoBehaviour:
       2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
       \u0443\u0440\u043E\u043D\u0430."
   _type: 3
---- !u!114 &1035461508
+--- !u!114 &1035461503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3501,7 +4182,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1035461501}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc47e4499ca6410baf61fa5b3fc8e325, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1051483701
@@ -3537,6 +4218,120 @@ Transform:
   m_Father: {fileID: 482264234}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1057691242
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+--- !u!1001 &1063133582
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
 --- !u!1 &1073512065
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,6 +4415,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073512065}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1106086811
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
 --- !u!1 &1113066990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3665,7 +4517,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d561ab1cb6004d7797a871ddd09bea18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardStandart: {fileID: 0}
+  _cardStandart: {fileID: 1415888029}
+  _gameBoard: {fileID: 922070040}
 --- !u!1 &1115416330
 GameObject:
   m_ObjectHideFlags: 0
@@ -3797,7 +4650,7 @@ MonoBehaviour:
       2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
       \u0443\u0440\u043E\u043D\u0430."
   _type: 3
---- !u!114 &1137953944
+--- !u!114 &1137953939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3806,9 +4659,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 1137953937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc47e4499ca6410baf61fa5b3fc8e325, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1172590487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 1410952771}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1172590488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172590487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1172590489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172590487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f370880ee3461dbf22ffa541c0c9ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: 82edd914ef6cb174f8f0d733543426e1, type: 2}
+  _name:
+    _eng: Eclipse
+    _rus: 
+  _description:
+    _eng: 
+    _rus: 
+  _type: 0
 --- !u!1 &1195216195
 GameObject:
   m_ObjectHideFlags: 0
@@ -3892,6 +4782,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195216195}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1207301125
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
 --- !u!1 &1221904208 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
@@ -3919,7 +4866,7 @@ MonoBehaviour:
       2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
       \u0443\u0440\u043E\u043D\u0430."
   _type: 3
---- !u!114 &1221904215
+--- !u!114 &1221904210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3928,7 +4875,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1221904208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc47e4499ca6410baf61fa5b3fc8e325, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1243922345
@@ -4186,6 +5133,141 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.54}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1263009921 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 1207301125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1263009922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263009921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1263009923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263009921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
+--- !u!1001 &1274758239
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+--- !u!1 &1276429401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 1695425754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1276429402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276429401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1276429403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276429401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
 --- !u!1 &1308321100
 GameObject:
   m_ObjectHideFlags: 0
@@ -4300,7 +5382,7 @@ MonoBehaviour:
       2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
       \u0443\u0440\u043E\u043D\u0430."
   _type: 3
---- !u!114 &1339744602
+--- !u!114 &1339744597
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4309,7 +5391,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1339744595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc47e4499ca6410baf61fa5b3fc8e325, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1340575388
@@ -4356,6 +5438,120 @@ Transform:
   m_Father: {fileID: 922070041}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1344664700
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+--- !u!1001 &1364031443
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: EclipseSpell (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
 --- !u!1 &1369948393
 GameObject:
   m_ObjectHideFlags: 0
@@ -4453,6 +5649,102 @@ PrefabInstance:
     - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+--- !u!1 &1392200485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 1344664700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1392200486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392200485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1392200487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392200485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
+--- !u!1001 &1410952771
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: EclipseSpell (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4847,6 +6139,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70258c6258bb13b459800c2064cbcfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1504999850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 930745535}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1504999851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504999850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1504999852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504999850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
+--- !u!1001 &1506828784
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
 --- !u!1 &1621239437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
@@ -4874,7 +6262,7 @@ MonoBehaviour:
       2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
       \u0443\u0440\u043E\u043D\u0430."
   _type: 3
---- !u!114 &1621239444
+--- !u!114 &1621239439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4883,9 +6271,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621239437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc47e4499ca6410baf61fa5b3fc8e325, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1627600726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 404295199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1627600727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627600726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1627600728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627600726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
 --- !u!1 &1636550585
 GameObject:
   m_ObjectHideFlags: 0
@@ -5224,6 +6651,120 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &1695425754
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+--- !u!1001 &1724098309
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_Name
+      value: RoughWound (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232965689751482109, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
 --- !u!1 &1789999934
 GameObject:
   m_ObjectHideFlags: 0
@@ -5657,6 +7198,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850875700}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1891688812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
+  m_PrefabInstance: {fileID: 591844601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1891688813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891688812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1891688814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891688812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91df21f32fe4f669219dc26478fd733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2100000, guid: f75cc2b52a835dc40ad8b4dea44f784f, type: 2}
+  _name:
+    _eng: Rough wound
+    _rus: "\u0420\u0432\u0430\u043D\u0430\u044F \u0440\u0430\u043D\u0430"
+  _description:
+    _eng: Deal 2 damage to an enemy and 4 pereodical damage.
+    _rus: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443
+      2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0443\u0440\u043E\u043D\u0430."
+  _type: 3
 --- !u!1 &1898261550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7232965689751482055, guid: 118c268daccbda741970c57e41fde1c0, type: 3}
@@ -5684,7 +7264,7 @@ MonoBehaviour:
       2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
       \u0443\u0440\u043E\u043D\u0430."
   _type: 3
---- !u!114 &1898261557
+--- !u!114 &1898261552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5693,7 +7273,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1898261550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc47e4499ca6410baf61fa5b3fc8e325, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1909510425
@@ -5978,7 +7558,7 @@ MonoBehaviour:
       2 \u0435\u0434. \u0443\u0440\u043E\u043D\u0430 \u0438 4 \u0435\u0434. \u043F\u0435\u0440\u0435\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
       \u0443\u0440\u043E\u043D\u0430."
   _type: 3
---- !u!114 &1976836468
+--- !u!114 &1976836463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5987,7 +7567,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1976836461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc47e4499ca6410baf61fa5b3fc8e325, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dbf7244fe1c400daed3f037debe215c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1978576530

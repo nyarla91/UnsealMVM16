@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Model.Combat.Actions;
 using Model.Combat.Cards;
 using UnityEngine;
@@ -17,7 +16,7 @@ namespace Model.Combat.GameAreas
             {
                 _gameBoard.EffectQueue.AddEffect(new PurgeCardEffect(0.1f, card), false);
             }
-            int cardsToDraw = _gameBoard.PlayerHand.MaxSize - _gameBoard.PlayerHand.Size;
+            int cardsToDraw = Mathf.Max(5 - _gameBoard.PlayerHand.Size, 0);
             _gameBoard.PlayerDeck.DrawCards(cardsToDraw);
         }
 

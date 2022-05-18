@@ -2,18 +2,18 @@
 
 namespace Model.Combat.Actions
 {
-    public class DrawTopCardEffect : Effect
+    public class ShuffleDeck : Effect
     {
         private readonly PlayerDeck _deck;
 
-        public DrawTopCardEffect(PlayerDeck deck, float dealyAfter) : base(dealyAfter)
+        public ShuffleDeck(PlayerDeck deck, float dealyAfter) : base(dealyAfter)
         {
             _deck = deck;
         }
 
         public override void Execute()
         {
-            _deck.DrawACard();
+            _deck.Shuffle();
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Model.Combat.TargetChoose
         private readonly List<TargetToChoose> _targets = new List<TargetToChoose>();
         private List<TargetToChoose> _chosenTargets = new List<TargetToChoose>();
         private Type _currentlyChosenType;
+        private int _targetsReuired;
         public bool ChooseActive { get; private set; }
 
         public async Task<List<T>> StartTargetsChoose<T>(int ammount, bool exactNumber)
@@ -21,11 +22,11 @@ namespace Model.Combat.TargetChoose
         public async Task<List<T>> StartTargetsChoose<T>(int ammount, bool exactNumber, TargetToChoose ignoredTarget)
         {
             ChooseActive = true;
+            _targetsReuired = ammount;
             _chosenTargets = new List<TargetToChoose>();
-            await Task.Delay(500);
             _currentlyChosenType = typeof(T);
-            List<TargetToChoose> properTargets =
-                _targets.Where(target => target.GetComponent<T>() != null && !ignoredTarget.Equals(target)).ToList();
+            List<TargetToChoose> properTargets = _targets.Where(target => 
+                    target.GetComponent<T>() != null && (ignoredTarget == null || !ignoredTarget.Equals(target))).ToList();
             if (properTargets.Count <= ammount)
             {
                 ChooseActive = false;
@@ -41,7 +42,7 @@ namespace Model.Combat.TargetChoose
                 await Task.Delay(100);
             }
             ChooseActive = false;
-            await Task.Delay(250);
+            await Task.Delay(150);
             foreach (var target in properTargets)
             {
                 target.EndChoose();
@@ -49,11 +50,12 @@ namespace Model.Combat.TargetChoose
             return TargetsToComponents<T>(_chosenTargets);
         }
 
-        public void AddChosenTarget(TargetToChoose targetToAdd)
+        public bool TryAddChosenTarget(TargetToChoose targetToAdd)
         {
-            if (!ChooseActive || targetToAdd.GetComponent(_currentlyChosenType) == null)
-                return;
+            if (!ChooseActive || targetToAdd.GetComponent(_currentlyChosenType) == null || _chosenTargets.Count >= _targetsReuired)
+                return false;
             _chosenTargets.Add(targetToAdd);
+            return true;
         }
 
         public void RemoveChosenTarget(TargetToChoose targetToAdd)
