@@ -1,5 +1,5 @@
-﻿using Model.Combat.Actions;
-using Model.Combat.Cards;
+﻿using Model.Cards;
+using Model.Combat.Effects;
 using UnityEngine;
 
 namespace Model.Combat.GameAreas
@@ -10,10 +10,9 @@ namespace Model.Combat.GameAreas
         
         public void ShuffleIntoDeck()
         {
-            
             foreach (var card in Cards)
             {
-                _gameBoard.EffectQueue.AddEffect(new AddCardFromDiscardPileToDeck(card, 0.05f), true);
+                _gameBoard.EffectQueue.InsertEffect(new AddCardFromDiscardPileToDeck(0.025f, card), 0);
             }
         }
     }

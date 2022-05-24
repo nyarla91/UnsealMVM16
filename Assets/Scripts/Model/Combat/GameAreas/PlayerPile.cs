@@ -1,5 +1,5 @@
 ﻿using System;
-using Model.Combat.Cards;
+using Model.Cards;
 using UnityEngine;
 
 namespace Model.Combat.GameAreas

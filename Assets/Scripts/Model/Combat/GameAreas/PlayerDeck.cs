@@ -1,7 +1,8 @@
 ﻿using System.Linq;
-using Model.Combat.Actions;
-using Model.Combat.Cards;
-using NyarlaEssentials;
+using Essentials;
+using Model.Cards;
+using Model.Combat.Effects;
+using Model.Combat.Effects.Inner;
 using UnityEngine;
 
 namespace Model.Combat.GameAreas
@@ -14,7 +15,7 @@ namespace Model.Combat.GameAreas
         {
             for (int i = 0; i < ammount; i++)
             {
-                _gameBoard.EffectQueue.AddEffect(new DrawTopCardEffect(this, 0.1f), false);
+                _gameBoard.EffectQueue.AddEffect(new DrawTopCardEffect(0.1f, this));
             }
         }
         
@@ -23,8 +24,9 @@ namespace Model.Combat.GameAreas
         {
             if (Cards.Count == 0)
             {
+                _gameBoard.EffectQueue.InsertEffect(new DrawTopCardEffect(0.1f, this), 0);
+                _gameBoard.EffectQueue.InsertEffect(new ShuffleDeckEffect(0.1f, this), 0);
                 _gameBoard.PlayerDiscardPile.ShuffleIntoDeck();
-                _gameBoard.EffectQueue.AddEffect(new DrawTopCardEffect(this, 0.1f), false);
             }
             else
             {
@@ -36,6 +38,11 @@ namespace Model.Combat.GameAreas
         {
             Cards = Cards.Shuffle().ToList();
             RearrangeCards();
+        }
+
+        private void Start()
+        {
+            Shuffle();
         }
     }
 }

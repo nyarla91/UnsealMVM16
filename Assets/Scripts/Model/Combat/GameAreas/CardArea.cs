@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Model.Combat.Cards;
-using NyarlaEssentials;
+using Essentials;
+using Model.Cards;
 using UnityEngine;
 
 namespace Model.Combat.GameAreas
