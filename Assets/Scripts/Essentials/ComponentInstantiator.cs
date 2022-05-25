@@ -5,26 +5,24 @@ namespace Essentials
 {
     public class ComponentInstantiator : Transformer
     {
-        protected T InstantiateForComponent<T>(GameObject prefab)
-            where T : MonoBehaviour => InstantiateForComponent<T>(prefab, Vector3.zero);
+        protected void InstantiateForComponent<T>(out T component, T prefab)
+            where T : MonoBehaviour => InstantiateForComponent(out component, prefab, Vector3.zero);
         
-        protected T InstantiateForComponent<T>(GameObject prefab, Vector3 position)
-            where T : MonoBehaviour => InstantiateForComponent<T>(prefab, position, null);
+        protected void InstantiateForComponent<T>(out T component,T prefab, Vector3 position)
+            where T : MonoBehaviour => InstantiateForComponent(out component, prefab, position, null);
         
-        protected T InstantiateForComponent<T>(GameObject prefab, Vector3 position, Transform parent)
-            where T : MonoBehaviour => InstantiateForComponent<T>(prefab, position, Quaternion.identity, parent);
-        protected T InstantiateForComponent<T>(GameObject prefab, Transform parent)
-            where T : MonoBehaviour => InstantiateForComponent<T>(prefab, parent.position, Quaternion.identity, parent);
+        protected void InstantiateForComponent<T>(out T component,T prefab, Vector3 position, Transform parent)
+            where T : MonoBehaviour => InstantiateForComponent(out component, prefab, position, Quaternion.identity, parent);
+        protected void InstantiateForComponent<T>(out T component,T prefab, Transform parent)
+            where T : MonoBehaviour => InstantiateForComponent(out component, prefab, parent.position, Quaternion.identity, parent);
         
-        protected T InstantiateForComponent<T>(GameObject prefab, Vector3 position, Quaternion rotation)
-            where T : MonoBehaviour => InstantiateForComponent<T>(prefab, position, rotation, null);
+        protected void InstantiateForComponent<T>(out T component,T prefab, Vector3 position, Quaternion rotation)
+            where T : MonoBehaviour => InstantiateForComponent(out component, prefab, position, rotation, null);
         
-        protected T InstantiateForComponent<T>(GameObject prefab, Vector3 position, Quaternion rotation,
-            Transform parent) where T : MonoBehaviour
+        protected void InstantiateForComponent<T>(out T component,T prefab, Vector3 position, Quaternion rotation, Transform parent)
+            where T : MonoBehaviour
         {
-            if (prefab.GetComponent<T>() == null)
-                throw new NullReferenceException($"{prefab.name} has no component of {typeof(T)} type");
-            return Instantiate(prefab, position, rotation, parent).GetComponent<T>();
+            component = Instantiate(prefab.gameObject, position, rotation, parent).GetComponent<T>();
         }
     }
 }

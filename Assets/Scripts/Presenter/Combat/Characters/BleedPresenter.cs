@@ -11,7 +11,7 @@ namespace Presenter.Combat.Characters
 {
     public class BleedPresenter : ComponentInstantiator
     {
-        [SerializeField] private GameObject _tokenPrefab;
+        [SerializeField] private Token _tokenPrefab;
         [SerializeField] private Character _character;
 
         private List<Token> _bleedTokens = new List<Token>();
@@ -25,7 +25,7 @@ namespace Presenter.Combat.Characters
 
         private void CreateBleedToken(int value)
         {
-            Token token = InstantiateForComponent<Token>(_tokenPrefab, transform.position);
+            InstantiateForComponent(out Token token, _tokenPrefab, transform.position);
             _bleedTokens.Add(token);
             token.Value = value;
             token.Descend();

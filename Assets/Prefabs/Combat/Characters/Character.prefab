@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34743cb6653e4afda19fc92d6970898e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tokenPrefab: {fileID: 4231696702429101833, guid: cf1debe1593b6af4eb8d277ccec13b7c, type: 3}
+  _tokenPrefab: {fileID: 1722905090634607511, guid: cf1debe1593b6af4eb8d277ccec13b7c, type: 3}
   _character: {fileID: 3111593691511272240}
 --- !u!114 &40389916281486800
 MonoBehaviour:
