@@ -116,6 +116,15 @@ public partial class @PointerActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Delta"",
+                    ""type"": ""Value"",
+                    ""id"": ""498bb424-99bb-423a-a765-57649208ae3b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -228,6 +237,17 @@ public partial class @PointerActions : IInputActionCollection2, IDisposable
                     ""action"": ""Position"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b97398f-616e-412e-a254-0df245968e93"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Delta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -326,6 +346,7 @@ public partial class @PointerActions : IInputActionCollection2, IDisposable
         m_Mouse_RightDouble = m_Mouse.FindAction("RightDouble", throwIfNotFound: true);
         m_Mouse_MiddleDouble = m_Mouse.FindAction("MiddleDouble", throwIfNotFound: true);
         m_Mouse_Position = m_Mouse.FindAction("Position", throwIfNotFound: true);
+        m_Mouse_Delta = m_Mouse.FindAction("Delta", throwIfNotFound: true);
         // Touch
         m_Touch = asset.FindActionMap("Touch", throwIfNotFound: true);
         m_Touch_TapPosition = m_Touch.FindAction("TapPosition", throwIfNotFound: true);
@@ -400,6 +421,7 @@ public partial class @PointerActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Mouse_RightDouble;
     private readonly InputAction m_Mouse_MiddleDouble;
     private readonly InputAction m_Mouse_Position;
+    private readonly InputAction m_Mouse_Delta;
     public struct MouseActions
     {
         private @PointerActions m_Wrapper;
@@ -414,6 +436,7 @@ public partial class @PointerActions : IInputActionCollection2, IDisposable
         public InputAction @RightDouble => m_Wrapper.m_Mouse_RightDouble;
         public InputAction @MiddleDouble => m_Wrapper.m_Mouse_MiddleDouble;
         public InputAction @Position => m_Wrapper.m_Mouse_Position;
+        public InputAction @Delta => m_Wrapper.m_Mouse_Delta;
         public InputActionMap Get() { return m_Wrapper.m_Mouse; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -453,6 +476,9 @@ public partial class @PointerActions : IInputActionCollection2, IDisposable
                 @Position.started -= m_Wrapper.m_MouseActionsCallbackInterface.OnPosition;
                 @Position.performed -= m_Wrapper.m_MouseActionsCallbackInterface.OnPosition;
                 @Position.canceled -= m_Wrapper.m_MouseActionsCallbackInterface.OnPosition;
+                @Delta.started -= m_Wrapper.m_MouseActionsCallbackInterface.OnDelta;
+                @Delta.performed -= m_Wrapper.m_MouseActionsCallbackInterface.OnDelta;
+                @Delta.canceled -= m_Wrapper.m_MouseActionsCallbackInterface.OnDelta;
             }
             m_Wrapper.m_MouseActionsCallbackInterface = instance;
             if (instance != null)
@@ -487,6 +513,9 @@ public partial class @PointerActions : IInputActionCollection2, IDisposable
                 @Position.started += instance.OnPosition;
                 @Position.performed += instance.OnPosition;
                 @Position.canceled += instance.OnPosition;
+                @Delta.started += instance.OnDelta;
+                @Delta.performed += instance.OnDelta;
+                @Delta.canceled += instance.OnDelta;
             }
         }
     }
@@ -561,6 +590,7 @@ public partial class @PointerActions : IInputActionCollection2, IDisposable
         void OnRightDouble(InputAction.CallbackContext context);
         void OnMiddleDouble(InputAction.CallbackContext context);
         void OnPosition(InputAction.CallbackContext context);
+        void OnDelta(InputAction.CallbackContext context);
     }
     public interface ITouchActions
     {

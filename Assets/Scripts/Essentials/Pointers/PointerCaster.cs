@@ -104,7 +104,7 @@ namespace Essentials.Pointers
         private void UpdateMouseOverExit(PointerTarget previous, PointerTarget current)
         {
             previous?.OnExit?.Invoke();
-            current?.OnOver?.Invoke();
+            current?.OnEnter?.Invoke();
         }
 
         #region CallbacksMethods

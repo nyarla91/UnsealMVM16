@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Model.Cards
 {
-    public sealed class CardInDiscardPile : Card
+    public sealed class CardInDiscardPile : CardInCombat
     {
         
         [DontCallFromSpells]
         public void AddToDeck()
         {
-            MoveToDeck();
+            TransformIntoCardInAnotherArea<CardInDeck>();
         }
         
         protected override void DetachFromPlayArea()
@@ -17,7 +17,7 @@ namespace Model.Cards
             GameBoard.PlayerDiscardPile.RemoveCard(this);
         }
 
-        private void Start()
+        public override void Init()
         {
             GameBoard.PlayerDiscardPile.AddCard(this);
         }

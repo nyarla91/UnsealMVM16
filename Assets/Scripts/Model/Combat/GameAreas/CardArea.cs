@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Essentials;
 using Model.Cards;
 using UnityEngine;
@@ -14,20 +15,23 @@ namespace Model.Combat.GameAreas
         protected List<T> Cards { get; set; } = new List<T>();
         public int Size => Cards.Count;
         public bool IsFull => Size == MaxSize;
-        public abstract int MaxSize { get; }
+        protected virtual bool RearrangeAutomatically => true;
+        protected virtual int MaxSize => Int32.MaxValue;
         
         public void AddCard(T cardToAdd)
         {
             Cards.Add(cardToAdd);
             cardToAdd.transform.parent = transform;
-            RearrangeCards();
+            if (RearrangeAutomatically)
+                RearrangeCards();
         }
 
         public void RemoveCard(T cardToRemove)
         {
             Cards.Remove(cardToRemove);
             cardToRemove.transform.parent = null;
-            RearrangeCards();
+            if (RearrangeAutomatically) 
+                RearrangeCards();
         }
 
         protected abstract void RearrangeCards();

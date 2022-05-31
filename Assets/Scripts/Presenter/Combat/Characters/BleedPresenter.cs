@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Essentials;
 using Model.Combat.Characters;
-using TMPro;
 using UnityEngine;
-using View;
 using View.Combat.Characters;
 
 namespace Presenter.Combat.Characters

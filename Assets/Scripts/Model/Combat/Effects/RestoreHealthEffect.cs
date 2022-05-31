@@ -18,6 +18,9 @@ namespace Model.Combat.Effects
 
         public override void Execute()
         {
+            if (_target == null)
+                return;
+
             _target.RestoreHealth(_growth ? 1 : 0 + _health);
         }
     }

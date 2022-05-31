@@ -7,7 +7,7 @@ namespace Model.Combat.GameAreas
 {
     public sealed class PlayerHand : CardArea<CardInHand>
     {
-        public override int MaxSize => 10;
+        protected override int MaxSize => 10;
 
         public Action<Spell> OnSpellPlayed;
         public SpellType ForbiddenType { get; set; }

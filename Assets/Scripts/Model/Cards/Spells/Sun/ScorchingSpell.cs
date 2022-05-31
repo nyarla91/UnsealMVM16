@@ -1,9 +1,8 @@
 ﻿using Model.Combat.Characters;
 using Model.Combat.Effects;
 using Model.Localization;
-using UnityEngine;
 
-namespace Model.Cards.Spells
+namespace Model.Cards.Spells.Sun
 {
     public class ScorchingSpell : Spell
     {

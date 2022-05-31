@@ -1,33 +1,35 @@
 ﻿using Model.Combat.Effects;
 using UnityEngine;
 using PointerType = Essentials.Pointers.PointerType;
+using Vector3 = UnityEngine.Vector3;
 
 namespace Model.Cards
 {
-    public sealed class CardInDeck : Card
+    public sealed class CardOnBoard : CardInCombat
     {
         
         [DontCallFromSpells]
-        public void Draw()
+        public void Purge()
         {
-            Spell.OnDraw();
-            MoveToHand();
+            Spell.OnPurge();
+            GameBoard.PlayerBoard.OnCardPurged?.Invoke(Spell);
+            TransformIntoCardInAnotherArea<CardInDiscardPile>();
         }
-
+        
         protected override void DetachFromPlayArea()
         {
-            GameBoard.PlayerDeck.RemoveCard(this);
+            GameBoard.PlayerBoard.RemoveCard(this);
         }
 
-        private void Start()
+        public override void Init()
         {
-            GameBoard.PlayerDeck.AddCard(this);
+            GameBoard.PlayerBoard.AddCard(this);
             PointerTarget.OnClick += OnClick;
         }
 
         private void OnClick(PointerType button, Vector3 contactpoint)
         {
-            MoveToHand();
+            
         }
 
         private void OnDestroy()

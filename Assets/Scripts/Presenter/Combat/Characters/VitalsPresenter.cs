@@ -2,7 +2,7 @@
 using Model.Combat.Characters;
 using UnityEngine;
 using View.Combat.Characters;
-using View.PopUpNumber;
+using View.Combat.PopUpNumber;
 using Zenject;
 
 namespace Presenter.Combat.Characters
@@ -51,7 +51,6 @@ namespace Presenter.Combat.Characters
 
         private void CreateDamagePopUp(int value)
         {
-            print("damage");
             InstantiatePopUp(_damagePopUpPrefab, value);
         }
 

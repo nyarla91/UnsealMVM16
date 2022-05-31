@@ -13,6 +13,9 @@ namespace Model.Combat.Effects
 
         public override void Execute()
         {
+            if (_target == null)
+                return;
+
             _target.TriggerPereodicDamage();
         }
     }

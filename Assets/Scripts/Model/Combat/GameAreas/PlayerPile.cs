@@ -6,8 +6,6 @@ namespace Model.Combat.GameAreas
 {
     public class PlayerPile<T2> : CardArea<T2> where T2 : Card
     {
-        public override int MaxSize => Int32.MaxValue;
-        
         protected override void RearrangeCards()
         {
             const float UnitsPerIndex = 0.01f;

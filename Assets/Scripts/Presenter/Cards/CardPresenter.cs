@@ -1,5 +1,4 @@
-﻿using System;
-using Essentials;
+﻿using Essentials;
 using Essentials.Pointers;
 using Model.Cards;
 using Model.Cards.Spells;
@@ -46,7 +45,7 @@ namespace Presenter.Cards
         private void Awake()
         {
             _pointerTarget = GetComponent<PointerTarget>();
-            _pointerTarget.OnOver += _view.Maximize;
+            _pointerTarget.OnEnter += _view.Maximize;
             _pointerTarget.OnExit += _view.Minimize;
         }
 

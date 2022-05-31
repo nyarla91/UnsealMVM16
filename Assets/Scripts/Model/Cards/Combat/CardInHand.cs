@@ -5,7 +5,7 @@ using PointerType = Essentials.Pointers.PointerType;
 
 namespace Model.Cards
 {
-    public sealed class CardInHand : Card
+    public sealed class CardInHand : CardInCombat
     {
         [SerializeField] private GameObject _playableOutline;
 
@@ -18,7 +18,7 @@ namespace Model.Cards
         public void Discard()
         {
             Spell.OnDiscard();
-            MoveToDiscardPile();
+            TransformIntoCardInAnotherArea<CardInDiscardPile>();
         }
 
 
@@ -27,7 +27,7 @@ namespace Model.Cards
             GameBoard.PlayerHand.RemoveCard(this);
         }
 
-        private void Start()
+        public override void Init()
         {
             GameBoard.PlayerHand.AddCard(this);
             PointerTarget.OnClick += OnClick;
@@ -47,7 +47,6 @@ namespace Model.Cards
             GameBoard.Turn.AddCardPlayed();
             GameBoard.PlayerHand.OnSpellPlayed?.Invoke(Spell);
             Spell.OnPlay(GameBoard.PlayerBoard.TrySpendGrowth());
-            MoveToBoard();
         }
 
         private void OnDestroy()

@@ -14,6 +14,7 @@ namespace Model.Combat.Characters
         [SerializeField] private int _maxHealth;
         private int _health;
         private int _armor;
+        private bool _dead;
         protected List<int> _pereodicDamage = new List<int>();
         
         [field: Inject]
@@ -34,6 +35,11 @@ namespace Model.Combat.Characters
                     OnLoseHealth?.Invoke(_health - value);
                 OnHealthChanged?.Invoke(value);
                 _health = value;
+                if (_health == 0)
+                {
+                    _dead = true;
+                    OnDeath?.Invoke();
+                }
             }
         }
 
@@ -62,6 +68,7 @@ namespace Model.Combat.Characters
         public event Action<int> OnBleedAdded;
         public event Action<int, int> OnBleedValueChanged;
         public event Action<int> OnBleedRemoved;
+        public event Action OnDeath;
 
         [DontCallFromSpells]
         public void DealDamage(int damage)

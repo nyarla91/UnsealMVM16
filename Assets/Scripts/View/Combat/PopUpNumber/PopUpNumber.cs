@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace View.PopUpNumber
+namespace View.Combat.PopUpNumber
 {
     public class PopUpNumber : RectTransformer
     {

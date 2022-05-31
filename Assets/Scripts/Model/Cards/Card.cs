@@ -1,9 +1,7 @@
 ﻿using Essentials;
 using Essentials.Pointers;
 using Model.Cards.Spells;
-using Model.Combat.GameAreas;
 using UnityEngine;
-using Zenject;
 
 namespace Model.Cards
 {
@@ -20,41 +18,28 @@ namespace Model.Cards
         public Quaternion TargetRotation { get; set; }
 
         public virtual bool ShowPlayableOutline => false;
+        protected virtual bool LocalPosition => false;
 
-        [field: Inject] protected GameBoard GameBoard { get; private set; }
 
-        protected void MoveToDeck() => TransformIntoCardInAnotherArea<CardInDeck>();
-        protected void MoveToDiscardPile() => TransformIntoCardInAnotherArea<CardInDiscardPile>();
-
-        protected void MoveToHand()
-        {
-            if (GameBoard.PlayerHand.IsFull)
-                return;
-            TransformIntoCardInAnotherArea<CardInHand>();
-        }
-
-        protected void MoveToBoard()
-        {
-            if (GameBoard.PlayerBoard.IsFull)
-                return;
-            TransformIntoCardInAnotherArea<CardOnBoard>();
-        }
-
-        private void TransformIntoCardInAnotherArea<T>() where T : Card
+        protected void TransformIntoCardInAnotherArea<T>() where T : Card
         {
             DetachFromPlayArea();
             T card = gameObject.AddComponent<T>();
-            GetComponent<ICardPlaceChangedHandler>()?.OnCardPlaceChanged(card);
-            card.GameBoard = GameBoard;
+            PassBoard(card);
+            card.Init();
             DestroyImmediate(this);
         }
 
+        protected abstract void PassBoard(Card card);
+
         protected abstract void DetachFromPlayArea();
+        public abstract void Init();
 
         protected virtual void Awake()
         {
             PointerTarget = GetComponent<PointerTarget>();
             Spell = GetComponent<Spell>();
+            GetComponent<ICardPlaceChangedHandler>()?.OnCardPlaceChanged(this);
         }
 
         private void FixedUpdate()
@@ -64,7 +49,15 @@ namespace Model.Cards
 
         private void MoveAndRotateTowardsTarget()
         {
-            transform.position = Vector3.Lerp(transform.position, TargetPosition, MovementSpeed * Time.fixedDeltaTime);
+            if (LocalPosition)
+            {
+                transform.localPosition = Vector3.Lerp(transform.localPosition, TargetPosition, MovementSpeed * Time.fixedDeltaTime);
+            }
+            else
+            {
+                transform.position = Vector3.Lerp(transform.position, TargetPosition, MovementSpeed * Time.fixedDeltaTime);
+            }
+            
             transform.rotation =
                 Quaternion.Lerp(transform.rotation, TargetRotation, MovementSpeed * Time.fixedDeltaTime);
         }

@@ -1,5 +1,4 @@
-﻿using System;
-using Essentials;
+﻿using Essentials;
 using Model.Cards.Spells;
 using TMPro;
 using UnityEngine;
@@ -21,17 +20,20 @@ namespace View.Cards
         public Transform OffsetStandart { get; set; }
         private Vector3 TargetPositionOffset { get; set; }
         private Quaternion TargetRotationOffset { get; set; }
+        private Vector3 TargetScale { get; set; } = Vector3.one;
 
         public void Maximize()
         {
             TargetPositionOffset = OffsetStandart.localPosition;
             TargetRotationOffset = OffsetStandart.localRotation;
+            TargetScale = OffsetStandart.localScale;
         }
 
         public void Minimize()
         {
             TargetPositionOffset = Vector3.zero;
             TargetRotationOffset = Quaternion.identity;
+            TargetScale = Vector3.one;
         }
 
         public void UpdateCharges(int charges)
@@ -50,12 +52,13 @@ namespace View.Cards
 
         private void FixedUpdate()
         {
-            MoveAndRotateTowardsTarget();
+            TransformTowardsTarget();
         }
 
-        private void MoveAndRotateTowardsTarget()
+        private void TransformTowardsTarget()
         {
             transform.localPosition = Vector3.Lerp(transform.localPosition, TargetPositionOffset, MaximizeSpeed * Time.fixedDeltaTime);
+            transform.localScale = Vector3.Lerp(transform.localScale, TargetScale, MaximizeSpeed * Time.fixedDeltaTime);
             transform.localRotation =
                 Quaternion.Lerp(transform.localRotation, TargetRotationOffset, MaximizeSpeed * Time.fixedDeltaTime);
         }

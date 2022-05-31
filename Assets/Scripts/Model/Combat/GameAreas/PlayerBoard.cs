@@ -8,7 +8,7 @@ namespace Model.Combat.GameAreas
 {
     public sealed class PlayerBoard : CardArea<CardOnBoard>
     {
-        public override int MaxSize => 5;
+        protected override int MaxSize => 5;
 
         public int PassiveModifier { get; set; } = 1;
 

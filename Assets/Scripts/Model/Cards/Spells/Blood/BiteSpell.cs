@@ -2,7 +2,7 @@
 using Model.Combat.Effects;
 using Model.Localization;
 
-namespace Model.Cards.Spells
+namespace Model.Cards.Spells.Blood
 {
     public class BiteSpell : Spell
     {

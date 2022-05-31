@@ -17,6 +17,9 @@ namespace Model.Combat.Effects
 
         public override void Execute()
         {
+            if (_target == null)
+                return;
+
             _target.DealPereodicDamage(_growth ? 1 : 0 + _damage);
         }
     }

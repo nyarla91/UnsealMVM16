@@ -10,7 +10,6 @@ namespace Essentials.Pointers
         
         [Tooltip("Period of invoking OnDrag event\n0 or less - every frame")]
         [SerializeField] private float _dragPeriod;
-        public float DeltaDragTime => _dragPeriod > 0 ? _dragPeriod : Time.deltaTime;
         
         public delegate void MousePointActionHandler(PointerType button, Vector3 contactPoint);
         public MousePointActionHandler OnDown, OnUp, OnClick, OnDoubleClick;
@@ -18,7 +17,7 @@ namespace Essentials.Pointers
         public delegate void MouseActionHandler(PointerType button);
         public MouseActionHandler OnDrag, OnDragEnd;
         
-        public Action OnOver, OnExit;
+        public Action OnEnter, OnExit;
         
         private Dictionary<PointerType, Coroutine> _dragCoroutines = new Dictionary<PointerType, Coroutine>();
 
@@ -38,7 +37,6 @@ namespace Essentials.Pointers
                 else
                     yield return null;
             }
-                
         }
 
         public void TryEndDrag(PointerType button)

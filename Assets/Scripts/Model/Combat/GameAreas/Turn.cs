@@ -5,6 +5,7 @@ using Model.Cards;
 using Model.Combat.Effects;
 using Model.Combat.Effects.Inner;
 using Model.Combat.Shapeshifting;
+using Model.Global;
 using UnityEngine;
 
 namespace Model.Combat.GameAreas
@@ -81,6 +82,11 @@ namespace Model.Combat.GameAreas
             if (Input.GetKeyDown(KeyCode.T))
             {
                 EndTurn();
+            }
+
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                GameObject.FindObjectOfType<SceneLoader>().LoadTravel();
             }
         }
 
