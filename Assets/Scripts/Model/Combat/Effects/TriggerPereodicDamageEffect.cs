@@ -16,7 +16,7 @@ namespace Model.Combat.Effects
             if (_target == null)
                 return;
 
-            _target.TriggerPereodicDamage();
+            _target?.TriggerPereodicDamage();
         }
     }
 }

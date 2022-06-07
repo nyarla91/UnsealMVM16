@@ -18,9 +18,9 @@ namespace Model.Cards.Spells.Moon
         
         private Character _target;
         
-        public override async void OnPlay(bool growth)
+        public override async void OnPlay(bool burst)
         {
-            base.OnPlay(growth);
+            base.OnPlay(burst);
             GameBoard.PlayerHand.OnSpellPlayed += OnSpellPlayed;
         }
 
@@ -34,7 +34,7 @@ namespace Model.Cards.Spells.Moon
             GameBoard.PlayerHand.OnSpellPlayed -= OnSpellPlayed;
             int damage = Charges;
             Character target = await GetTarget<Character>(ChooseEnemyMessage, true);
-            GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.1f, target, damage, Growth), 0);
+            GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.1f, target, damage, Burst), 0);
             base.OnPurge();
         }
     }

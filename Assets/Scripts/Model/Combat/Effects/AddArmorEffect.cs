@@ -6,13 +6,13 @@ namespace Model.Combat.Effects
     {
         private readonly Character _target;
         private readonly int _armor;
-        private readonly bool _growth;
+        private readonly bool _burst;
 
-        public AddArmorEffect(float dealyAfter, Character target, int armor, bool growth) : base(dealyAfter)
+        public AddArmorEffect(float dealyAfter, Character target, int armor, bool burst) : base(dealyAfter)
         {
             _target = target;
             _armor = armor;
-            _growth = growth;
+            _burst = burst;
         }
 
         public override void Execute()
@@ -20,7 +20,7 @@ namespace Model.Combat.Effects
             if (_target == null)
                 return;
             
-            _target.AddArmor(_growth ? 1 : 0 + _armor);
+            _target.AddArmor(_burst ? 1 : 0 + _armor);
         }
     }
 }

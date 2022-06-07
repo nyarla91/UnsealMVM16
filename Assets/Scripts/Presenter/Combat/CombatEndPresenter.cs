@@ -1,4 +1,6 @@
-﻿using Model.Combat.GameAreas;
+﻿using Model.Combat;
+using Model.Combat.Characters;
+using Model.Combat.GameAreas;
 using Model.Global;
 using Model.Global.Save;
 using UnityEngine;
@@ -10,31 +12,19 @@ namespace Presenter.Combat
 {
     public class CombatEndPresenter : MonoBehaviour
     {
+        [SerializeField] private CombatEnd _model;
         [SerializeField] private AbilitiyTooltip _abilitiyTooltip;
-        [SerializeField] private UIDialog _rewardScreen;
         [SerializeField] private RectTransform _rewardPosition;
+        [SerializeField] private UIDialog _rewardScreen;
         [SerializeField] private UIDialog _deathScreen;
         
-        [Inject] private PermanentSave _permanentSave;
         [Inject] private GlobalTravelState _travelState;
-        [Inject] private SceneLoader _sceneLoader;
         [Inject] private GameBoard _gameBoard;
 
         public AbilitiyTooltip AbilitiyTooltip => _abilitiyTooltip;
 
-        public void ClaimReward()
-        {
-            _permanentSave.Data.CombatsCleared.Add(_travelState.NextCombatData.Name);
-            _travelState.NextCombatData.Reward.ClaimReward(_permanentSave);
-            _permanentSave.Save();
-            _sceneLoader.LoadTravel();
-        }
-
-        public void ReviveAtShrine()
-        {
-            _travelState.Reset();
-            _sceneLoader.LoadTravel();
-        }
+        public void OnClaimPressed() => _model.ExitVictory();
+        public void OnRevivePressed() => _model.ExitDeath();
         
         private void Awake()
         {

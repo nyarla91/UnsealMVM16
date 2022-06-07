@@ -66,13 +66,13 @@ namespace View.Cards
 
         public static string FormatDescription(string description)
         {
-            description = description.Replace("[", "<b><color=#808000ff>");
+            description = description.Replace("[", "<b><color=#ffa500ff>");
             description = description.Replace("]", "</color></b>");
             description = description.Replace("<hp>", "<sprite index=0>");
             description = description.Replace("<dm>", "<sprite index=1>");
             description = description.Replace("<ap>", "<sprite index=2>");
             description = description.Replace("<bl>", "<sprite index=3>");
-            description = description.Replace("<gr>", "<sprite index=4>");
+            description = description.Replace("<br>", "<sprite index=4>");
             description = description.Replace("<ch>", "<sprite index=5>");
             description = description.Replace("<tx>", "<sprite index=6>");
             description = description.Replace("<cr>", "<sprite index=7>");

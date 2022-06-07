@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Essentials;
 using Model.Cards;
+using Model.Cards.Combat;
 using Model.Combat.Effects;
 using Model.Combat.Effects.Inner;
 using Model.Combat.Targeting;
@@ -29,8 +30,9 @@ namespace Model.Combat.GameAreas
         {
             if (Cards.Count == 0)
             {
-                GameBoard.EffectQueue.AddEffect(new DrawTopCardEffect(0.1f, this), 0);
-                GameBoard.EffectQueue.AddEffect(new ShuffleDeckEffect(0.1f, this), 0);
+                GameBoard.EffectQueue.AddEffect(new CureIntoxicationEffect(0.1f, GameBoard.Player, 1), 0);
+                GameBoard.EffectQueue.AddEffect(new ShuffleDeckEffect(0.1f, this), 1);
+                GameBoard.EffectQueue.AddEffect(new DrawTopCardEffect(0.1f, this), 2);
                 GameBoard.PlayerDiscardPile.ShuffleIntoDeck();
             }
             else

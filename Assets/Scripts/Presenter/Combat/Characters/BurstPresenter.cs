@@ -3,9 +3,9 @@ using UnityEngine;
 using View.Combat.Characters;
 using Zenject;
 
-namespace Presenter.Combat
+namespace Presenter.Combat.Characters
 {
-    public class GrowthPresenter : MonoBehaviour
+    public class BurstPresenter : MonoBehaviour
     {
         [SerializeField] private Token _token;
         
@@ -14,10 +14,10 @@ namespace Presenter.Combat
 
         private void Awake()
         {
-            _board.PlayerBoard.OnGrowthChanged += UpdateGrowth;
+            _board.PlayerBoard.OnBurstChanged += UpdateBurst;
         }
 
-        private void UpdateGrowth(int growth)
+        private void UpdateBurst(int growth)
         {
             _token.Value = growth;
             _token.Flip();

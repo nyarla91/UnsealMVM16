@@ -37,7 +37,7 @@ namespace Model.Combat.GameAreas
                 RearrangeCards();
         }
 
-        protected TCard CreateCard(string spellName, Vector3 startingPosition)
+        public TCard CreateCard(string spellName, Vector3 startingPosition)
         {
             Type spellType = Type.GetType(spellName);
             if (spellType == null)
@@ -47,7 +47,7 @@ namespace Model.Combat.GameAreas
             return CreateCard(spellType, startingPosition);
         }
 
-        protected TCard CreateCard(Type spellType, Vector3 startingPosition)
+        public TCard CreateCard(Type spellType, Vector3 startingPosition)
         {
             GameObject card = Instantiate(_cardPrefab, startingPosition, Quaternion.identity, transform);
             card.AddComponent(spellType);

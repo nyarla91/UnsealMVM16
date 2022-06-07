@@ -16,11 +16,11 @@ namespace Model.Cards.Spells.Moon
             "Наносит 1<dm>\nВозьмите <cr>\nОчистите эту <cr>"
         );
         public override SpellType Type => SpellType.None;
-        public override async void OnPlay(bool growth)
+        public override async void OnPlay(bool burst)
         {
-            base.OnPlay(growth);
+            base.OnPlay(burst);
             Character target = await GetTarget<Character>(ChooseEnemyMessage, true);
-            GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.2f, target, 1, growth));
+            GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.2f, target, 1, burst));
             GameBoard.EffectQueue.AddEffect(new DrawTopCardEffect(0.1f, GameBoard.PlayerDeck));
             GameBoard.EffectQueue.AddEffect(new PurgeCardEffect(0.1f, GetComponent<CardOnBoard>()));
         }

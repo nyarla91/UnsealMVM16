@@ -28,7 +28,7 @@ namespace Model.Combat.Characters
         public int Health
         {
             get => _health;
-            set
+            protected set
             {
                 value = Mathf.Max(value, 0);
                 if (_health == value)
@@ -83,6 +83,16 @@ namespace Model.Combat.Characters
             if (damage > Armor)
                 Health -= damage - Armor;
             Armor -= damage;
+        }
+
+        [DontCallFromSpells]
+        public void LoseHealth(int damage)
+        {
+            if (_dead || damage <= 0)
+                return;
+            
+            OnTakeDamage?.Invoke(damage);
+            Health -= damage;
         }
 
         [DontCallFromSpells]

@@ -15,14 +15,14 @@ namespace Model.Cards.Spells.Moon
             "Наносит выбранному противнику 1<dm> за каждую <cr>, разыгранную на этом ходу (включая эту)"
         );
         public override SpellType Type => SpellType.Moon;
-        public override async void OnPlay(bool growth)
+        public override async void OnPlay(bool burst)
         {
-            base.OnPlay(growth);
+            base.OnPlay(burst);
             Enemy target = await GetTarget<Enemy>(ChooseEnemyMessage, true);
             if (target == null)
                 return;
             
-            GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.1f, target, GameBoard.Turn.CardsPlayedThisTurn, Growth));
+            GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.1f, target, GameBoard.Turn.CardsPlayedThisTurn, Burst));
         }
     }
 }

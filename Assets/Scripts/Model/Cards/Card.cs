@@ -48,7 +48,10 @@ namespace Model.Cards
             TargetPosition = LocalPosition ? transform.localPosition : transform.position;
             PointerTarget = GetComponent<PointerTarget>();
             Spell = GetComponent<Spell>();
-            GetComponent<ICardPlaceChangedHandler>()?.OnCardPlaceChanged(this);
+            foreach (ICardPlaceChangedHandler handler in GetComponents<ICardPlaceChangedHandler>())
+            {
+                handler?.OnCardPlaceChanged(this);
+            }
         }
 
         private void FixedUpdate()

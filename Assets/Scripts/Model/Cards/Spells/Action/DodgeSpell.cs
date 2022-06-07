@@ -16,10 +16,11 @@ namespace Model.Cards.Spells.Action
         public override SpellType Type => SpellType.Action;
         public override bool InfiniteInDeck => true;
 
-        public override void OnPlay(bool growth)
+        public override void OnPlay(bool burst)
         {
-            GameBoard.EffectQueue.AddEffect(new AddArmorEffect(0.1f, GameBoard.Player, 3, growth));
-            base.OnPlay(growth);
+            GameBoard.EffectQueue.AddEffect(new AddArmorEffect(0.1f, GameBoard.Player, 3, burst));
+            GameBoard.EffectQueue.AddEffect(new AddIntoxicationEffect(0.1f, GameBoard.Player, 1));
+            base.OnPlay(burst);
         }
     }
 }

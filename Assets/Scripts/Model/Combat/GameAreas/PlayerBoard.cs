@@ -13,29 +13,29 @@ namespace Model.Combat.GameAreas
 
         public int PassiveModifier { get; set; } = 1;
 
-        public int Growth
+        public int Burst
         {
-            get => _growth;
+            get => _burst;
             private set
             {
-                if (_growth != value)
-                    OnGrowthChanged?.Invoke(value);
-                _growth = value;
+                if (_burst != value)
+                    OnBurstChanged?.Invoke(value);
+                _burst = value;
             }
         }
 
         public Action<Spell> OnCardPurged;
-        public event Action<int> OnGrowthChanged;
-        private int _growth = 0;
+        public event Action<int> OnBurstChanged;
+        private int _burst = 0;
 
         [DontCallFromSpells]
-        public void AddGrowth(int growth) => Growth += growth;
+        public void AddGrowth(int burst) => Burst += burst;
 
         public bool TrySpendGrowth()
         {
-            if (Growth <= 0)
+            if (Burst <= 0)
                 return false;
-            Growth--;
+            Burst--;
             return true;
         }
         

@@ -16,15 +16,15 @@ namespace Model.Cards.Spells.Blood
         );
         public override SpellType Type => SpellType.Blood;
 
-        public override async void OnPlay(bool growth)
+        public override async void OnPlay(bool burst)
         {
-            base.OnPlay(growth);
+            base.OnPlay(burst);
             Enemy target = await GetTarget<Enemy>(ChooseEnemyMessage, true);
             if (target == null)
                 return;
             
-            GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.1f, target, 2, growth));
-            GameBoard.EffectQueue.AddEffect(new DealPereodicDamageEffect(0.1f, target, 3, growth));
+            GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.1f, target, 2, burst));
+            GameBoard.EffectQueue.AddEffect(new DealPereodicDamageEffect(0.1f, target, 3, burst));
         }
     }
 }

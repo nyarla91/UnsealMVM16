@@ -16,9 +16,9 @@ namespace Model.Cards.Spells.Action
         public override SpellType Type => SpellType.Action;
 
 
-        public override void OnPlay(bool growth)
+        public override void OnPlay(bool burst)
         {
-            base.OnPlay(growth);
+            base.OnPlay(burst);
             GameBoard.Turn.OnPlayerTurnEnd += OnPlayerTurnEnd;
         }
 
@@ -29,7 +29,7 @@ namespace Model.Cards.Spells.Action
                 GameBoard.EffectQueue.AddEffect(new WaitEffect(0.1f), 0);
                 foreach (var enemy in GameBoard.EnemyPool.ActiveEnemies)
                 {
-                    GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0, enemy, 1, Growth), 0);
+                    GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0, enemy, 1, Burst), 0);
                 }
             }
         }

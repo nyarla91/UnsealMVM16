@@ -15,8 +15,7 @@ namespace Model.Combat.Effects
 
         public override void Execute()
         {
-            if (_cardToPurge != null)
-                _cardToPurge.Purge();
+            _cardToPurge?.Purge();
         }
     }
 }

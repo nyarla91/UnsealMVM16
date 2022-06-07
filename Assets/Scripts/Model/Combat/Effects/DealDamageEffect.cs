@@ -7,21 +7,18 @@ namespace Model.Combat.Effects
     {
         private readonly Character _target;
         private readonly int _damage;
-        private readonly bool _growth;
+        private readonly bool _burst;
 
-        public DealDamageEffect(float dealyAfter, Character target, int damage, bool growth) : base(dealyAfter)
+        public DealDamageEffect(float dealyAfter, Character target, int damage, bool burst) : base(dealyAfter)
         {
             _target = target;
             _damage = damage;
-            _growth = growth;
+            _burst = burst;
         }
 
         public override void Execute()
         {
-            if (_target == null)
-                return;
-
-            _target.DealDamage((_growth ? 1 : 0) + _damage);
+            _target?.DealDamage((_burst ? 1 : 0) + _damage);
         }
     }
 }

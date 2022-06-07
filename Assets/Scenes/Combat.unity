@@ -1541,8 +1541,8 @@ MonoBehaviour:
   _skipState:
     material: {fileID: 2100000, guid: 8dba9e887f54b4b45a21aa3b97a4e995, type: 2}
     _text:
-      _eng: Skip
-      _rus: "\u041F\u0440\u043E\u043F\u0443\u0441\u0442\u0438\u0442\u044C"
+      _eng: Next
+      _rus: "\u0414\u0430\u043B\u0435\u0435"
 --- !u!1 &587869073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,7 +2763,6 @@ GameObject:
   - component: {fileID: 1080922715}
   - component: {fileID: 1080922714}
   - component: {fileID: 1080922713}
-  - component: {fileID: 1080922712}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2771,22 +2770,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1080922712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080922710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79163038d6b849f0993729f664e70399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _abilitiyTooltip: {fileID: 369467323}
-  _rewardScreen: {fileID: 945819769}
-  _rewardPosition: {fileID: 836707847}
-  _deathScreen: {fileID: 0}
 --- !u!114 &1080922713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3524,7 +3507,7 @@ MonoBehaviour:
   UnityOnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080922712}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Presenter.Combat.CombatEndPresenter, Assembly-CSharp
         m_MethodName: ClaimReward
         m_Mode: 1
@@ -3824,9 +3807,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080922712}
+      - m_Target: {fileID: 1694984476}
         m_TargetAssemblyTypeName: Presenter.Combat.CombatEndPresenter, Assembly-CSharp
-        m_MethodName: ClaimReward
+        m_MethodName: OnClaimPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4224,6 +4207,69 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1694984475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1694984478}
+  - component: {fileID: 1694984477}
+  - component: {fileID: 1694984476}
+  m_Layer: 0
+  m_Name: CombatEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1694984476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694984475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79163038d6b849f0993729f664e70399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _model: {fileID: 1694984477}
+  _abilitiyTooltip: {fileID: 369467323}
+  _rewardPosition: {fileID: 836707847}
+  _rewardScreen: {fileID: 945819769}
+  _deathScreen: {fileID: 0}
+--- !u!114 &1694984477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694984475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c09df678fbc49d1b107ad4dcab31268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1959912864}
+--- !u!4 &1694984478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694984475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1429824, y: 1.7087687, z: -2.2671134}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1789999934
 GameObject:
   m_ObjectHideFlags: 0

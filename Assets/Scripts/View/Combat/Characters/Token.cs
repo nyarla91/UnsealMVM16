@@ -46,12 +46,12 @@ namespace View.Combat.Characters
         private void Awake()
         {
             TargetPosition = transform.position;
+            if (!_startOnGround)
+                AscendImmediately();
         }
 
         private void Start()
         {
-            if (!_startOnGround)
-                AscendImmediately();
         }
 
         private void FixedUpdate()

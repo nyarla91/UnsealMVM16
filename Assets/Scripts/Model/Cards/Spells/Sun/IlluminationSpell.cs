@@ -17,9 +17,9 @@ namespace Model.Cards.Spells.Sun
 
         public override SpellType Type => SpellType.Sun;
 
-        public override void OnPlay(bool growth)
+        public override void OnPlay(bool burst)
         {
-            base.OnPlay(growth);
+            base.OnPlay(burst);
             GameBoard.Turn.OnPlayerTurnEnd += TurnOnOnPlayerTurnEnd;
         }
 
@@ -30,7 +30,7 @@ namespace Model.Cards.Spells.Sun
             
             for (int i = 0; i < GameBoard.PlayerBoard.PassiveModifier; i++)
             {
-                GameBoard.EffectQueue.AddEffect(new RestoreHealthEffect(0.1f, GameBoard.Player, 1, Growth), 0);
+                GameBoard.EffectQueue.AddEffect(new RestoreHealthEffect(0.1f, GameBoard.Player, 1, Burst), 0);
             }
         }
 

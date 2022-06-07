@@ -16,7 +16,7 @@ namespace Model.Cards.Spells.Sun
             "Наносит 2<dm>. Вы можете сбросить <cr>, чтобы нанести на 3<dm> больше."
         );
         public override SpellType Type => SpellType.None;
-        public override async void OnPlay(bool growth)
+        public override async void OnPlay(bool burst)
         {
             int damage = 2;
             CardInHand cardToDiscard = await GetTarget<CardInHand>(ChooseCardToDiscard, false);
@@ -28,9 +28,9 @@ namespace Model.Cards.Spells.Sun
             Enemy enemy = await GetTarget<Enemy>(ChooseEnemyMessage, true);
             if (enemy != null)
             {
-                GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.1f, enemy, damage, growth));
+                GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.1f, enemy, damage, burst));
             }
-            base.OnPlay(growth);
+            base.OnPlay(burst);
         }
     }
 }

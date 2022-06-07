@@ -755,6 +755,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.246
       objectReference: {fileID: 0}
+    - target: {fileID: 2658902415237828146, guid: 15c4530695e7afa40906f299368ebe75, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5560061667597993342, guid: 15c4530695e7afa40906f299368ebe75, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.316
@@ -802,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75400f8e946d4909991ad3c6540245c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 4
+  _health: 99
   _minAttack: 2
   _maxAttack: 3
   _minArmor: 3

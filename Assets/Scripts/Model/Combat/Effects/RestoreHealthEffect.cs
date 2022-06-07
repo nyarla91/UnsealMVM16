@@ -7,21 +7,18 @@ namespace Model.Combat.Effects
     {
         private readonly Character _target;
         private readonly int _health;
-        private readonly bool _growth;
+        private readonly bool _burst;
 
-        public RestoreHealthEffect(float dealyAfter, Character target, int health, bool growth) : base(dealyAfter)
+        public RestoreHealthEffect(float dealyAfter, Character target, int health, bool burst) : base(dealyAfter)
         {
             _target = target;
             _health = health;
-            _growth = growth;
+            _burst = burst;
         }
 
         public override void Execute()
         {
-            if (_target == null)
-                return;
-
-            _target.RestoreHealth(_growth ? 1 : 0 + _health);
+            _target?.RestoreHealth(_burst ? 1 : 0 + _health);
         }
     }
 }

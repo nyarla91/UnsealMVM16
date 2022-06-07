@@ -17,13 +17,13 @@ namespace Model.Cards.Spells.Nature
         );
         public override SpellType Type => SpellType.Nature;
 
-        public override async void OnPlay(bool growth)
+        public override async void OnPlay(bool burst)
         {
-            base.OnPlay(growth);
+            base.OnPlay(burst);
             Enemy target = await GetTarget<Enemy>(ChooseEnemyMessage, true);
             for (int i = 0; i < 3; i++)
             {
-                GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.05f, target, 1, growth));
+                GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.05f, target, 1, burst));
             }
         }
     }

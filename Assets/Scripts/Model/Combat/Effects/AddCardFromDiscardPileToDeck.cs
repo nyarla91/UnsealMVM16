@@ -13,7 +13,7 @@ namespace Model.Combat.Effects
 
         public override void Execute()
         {
-            _card.AddToDeck();
+            _card?.AddToDeck();
         }
     }
 }

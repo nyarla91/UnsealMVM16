@@ -15,15 +15,15 @@ namespace Model.Cards.Spells.Action
         );
         public override SpellType Type => SpellType.Action;
         
-        public override void OnPlay(bool growth)
+        public override void OnPlay(bool burst)
         {
-            base.OnPlay(growth);
-            GameBoard.EffectQueue.AddEffect(new AddArmorEffect(0.1f, GameBoard.Player, 2, growth));
+            base.OnPlay(burst);
+            GameBoard.EffectQueue.AddEffect(new AddArmorEffect(0.1f, GameBoard.Player, 2, burst));
         }
 
         public override void OnPurge()
         {
-            GameBoard.EffectQueue.AddEffect(new AddArmorEffect(0.1f, GameBoard.Player, 2, Growth), 0);
+            GameBoard.EffectQueue.AddEffect(new AddArmorEffect(0.1f, GameBoard.Player, 2, Burst), 0);
             base.OnPurge();
         }
     }

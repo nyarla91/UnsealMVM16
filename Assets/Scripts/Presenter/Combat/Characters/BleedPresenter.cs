@@ -9,6 +9,7 @@ namespace Presenter.Combat.Characters
     public class BleedPresenter : ComponentInstantiator
     {
         [SerializeField] private Token _tokenPrefab;
+        [SerializeField] private Transform _origin;
         [SerializeField] private Character _character;
 
         private List<Token> _bleedTokens = new List<Token>();
@@ -52,7 +53,7 @@ namespace Presenter.Combat.Characters
             {
                 float x = (i + 1) % TokensInRow * Spacing - Spacing;
                 float z = ((int) ((i + 1) / TokensInRow)) * -RowsSpacing;
-                Vector3 position = transform.position + new Vector3(-1 + x, 0, -1 + z);
+                Vector3 position = _origin.position + new Vector3(x, 0, z);
                 _bleedTokens[i].TargetPosition = position;
             }
         }

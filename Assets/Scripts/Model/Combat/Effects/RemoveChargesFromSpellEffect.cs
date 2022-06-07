@@ -15,6 +15,9 @@ namespace Model.Combat.Effects
 
         public override void Execute()
         {
+            if (_spell == null)
+                return;
+            
             _spell.Charges -= _charges;
         }
     }

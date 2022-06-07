@@ -13,7 +13,7 @@ namespace Model.Combat.Effects
 
         public override void Execute()
         {
-            _target.ClearArmor();
+            _target?.ClearArmor();
         }
     }
 }

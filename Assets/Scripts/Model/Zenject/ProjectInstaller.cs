@@ -9,13 +9,11 @@ namespace Model.Zenject
     {
         [SerializeField] private SceneLoader _sceneLoaderPrefab;
         [SerializeField] private GlobalTravelState _globalTravelStatePrefab;
-        [SerializeField] private GlobalDeck _globalDeck;
         [SerializeField] private PermanentSave _permanentSavePrefab;
         [SerializeField] private ManualSave _manualSavePrefab;
 
         public override void InstallBindings()
         {
-            BindFromPrefab(_globalDeck);
             BindFromPrefab(_globalTravelStatePrefab);
             BindFromPrefab(_sceneLoaderPrefab);
             BindFromPrefab(_permanentSavePrefab);

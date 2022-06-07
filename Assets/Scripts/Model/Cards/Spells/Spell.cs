@@ -9,7 +9,7 @@ using Zenject;
 
 namespace Model.Cards.Spells
 {
-    public abstract class Spell : Transformer
+    public abstract class Spell : Transformer, ICardPlaceChangedHandler
     {
         private int _charges;
         private Material _icon;
@@ -19,17 +19,17 @@ namespace Model.Cards.Spells
         public virtual Func<bool> PlayRequirements => () => true;
         public virtual bool InfiniteInDeck => false;
         public Material Icon => _icon ??= Resources.Load<Material>("SpellIcons/" + Name.Eng);
-        protected LocalizedString ChooseEnemyMessage => new LocalizedString
+        protected static LocalizedString ChooseEnemyMessage => new LocalizedString
         (
             "Choose enemy",
             "Выберите противника"
         );
-        protected LocalizedString ChooseCardToDiscard => new LocalizedString
+        protected static LocalizedString ChooseCardToDiscard => new LocalizedString
         (
             "Choose card to discard",
             "Выберите карту, которую сбросите"
         );
-        protected LocalizedString ChooseCardToPurge => new LocalizedString
+        protected static LocalizedString ChooseCardToPurge => new LocalizedString
         (
             "Choose card to purge",
             "Выберите карту, которую очистите"
@@ -37,7 +37,7 @@ namespace Model.Cards.Spells
 
         [field: Inject] public GameBoard GameBoard { protected get; set; }
 
-        protected bool Growth { get; private set; }
+        protected bool Burst { get; private set; }
 
         public int Charges
         {
@@ -52,12 +52,14 @@ namespace Model.Cards.Spells
                 _charges = value;
             }
         }
+        
+        protected Card CardPlace { get; private set; }
 
         public event Action<int> OnChargesChanged;
 
-        public virtual void OnPlay(bool growth)
+        public virtual void OnPlay(bool burst)
         {
-            Growth = growth;
+            Burst = burst;
         }
 
         public virtual void OnPurge()
@@ -90,6 +92,11 @@ namespace Model.Cards.Spells
         private void OnDestroy()
         {
             GetComponent<ISpellRemovedHandler>()?.OnSpellRemoved();
+        }
+
+        public void OnCardPlaceChanged(Card newPlace)
+        {
+            CardPlace = newPlace;
         }
     }
 

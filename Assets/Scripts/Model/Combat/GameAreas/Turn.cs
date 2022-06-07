@@ -28,6 +28,11 @@ namespace Model.Combat.GameAreas
             "Choose 3 cards to purge",
             "Выберите и очистите 3 карты"
         );
+        private readonly LocalizedString _discardAnyCardsMessage = new LocalizedString
+        (
+            "Discard any cards",
+            "Сбросьте любые карты"
+        );
         
         public bool IsPlayerTurn { get; private set; } = true;
         public int CardsPlayedThisTurn { get; private set; }
@@ -57,7 +62,15 @@ namespace Model.Combat.GameAreas
             {
                 _gameBoard.EffectQueue.AddEffect(new PurgeCardEffect(0.1f, card));
             }
-
+            await _gameBoard.EffectQueue.WaitForEffects();
+            
+            List<CardInHand> cardsToDiscard = await _gameBoard.TargetChooser.StartTargetsChoose<CardInHand>
+                (_gameBoard.PlayerDiscardPile.transform, _discardAnyCardsMessage, 15, false);
+            foreach (var card in cardsToDiscard)
+            {
+                _gameBoard.EffectQueue.AddEffect(new DiscardACardEffect(0.1f, card));
+            }
+            
             await _gameBoard.EffectQueue.WaitForEffects();
             
             DrawCardsUpToMax();

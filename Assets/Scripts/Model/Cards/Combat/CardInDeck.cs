@@ -1,9 +1,6 @@
-﻿using Model.Cards.Combat;
-using Model.Combat.Effects;
-using UnityEngine;
-using PointerType = Essentials.Pointers.PointerType;
+﻿using Model.Combat.Effects;
 
-namespace Model.Cards
+namespace Model.Cards.Combat
 {
     public sealed class CardInDeck : CardInCombat
     {
@@ -14,8 +11,8 @@ namespace Model.Cards
             if (GameBoard.PlayerHand.IsFull)
                 return;
             
-            Spell.OnDraw();
             TransformIntoCardInAnotherArea<CardInHand>();
+            Spell.OnDraw();
         }
 
         protected override void DetachFromPlayArea()
