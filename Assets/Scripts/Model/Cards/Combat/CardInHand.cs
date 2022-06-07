@@ -1,18 +1,15 @@
-﻿using System.Threading.Tasks;
-using Model.Combat.Effects;
+﻿using Model.Combat.Effects;
 using UnityEngine;
 using PointerType = Essentials.Pointers.PointerType;
 
-namespace Model.Cards
+namespace Model.Cards.Combat
 {
     public sealed class CardInHand : CardInCombat
     {
-        [SerializeField] private GameObject _playableOutline;
-
         public override bool ShowPlayableOutline => Playable;
 
-        private bool Playable => !GameBoard.TargetChooser.ChooseActive && !GameBoard.EffectQueue.EffectInProgress &&
-                                 !GameBoard.PlayerBoard.IsFull && Spell.Requirements.Invoke();
+        private bool Playable => !GameBoard.TargetChooser.ChooseActive && !GameBoard.EffectQueue.EffectInProgress && 
+            !GameBoard.PlayerBoard.IsFull && Spell.PlayRequirements.Invoke() && GameBoard.PlayerHand.ForbiddenType != Spell.Type;
         
         [DontCallFromSpells]
         public void Discard()
@@ -47,6 +44,7 @@ namespace Model.Cards
             GameBoard.Turn.AddCardPlayed();
             GameBoard.PlayerHand.OnSpellPlayed?.Invoke(Spell);
             Spell.OnPlay(GameBoard.PlayerBoard.TrySpendGrowth());
+            TransformIntoCardInAnotherArea<CardOnBoard>();
         }
 
         private void OnDestroy()

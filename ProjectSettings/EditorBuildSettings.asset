@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Combat.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Deckbuilding.unity
+    guid: 46a36a32263662e4c994f671bfc1b39c
   m_configObjects: {}

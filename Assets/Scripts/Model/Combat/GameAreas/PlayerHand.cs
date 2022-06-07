@@ -1,16 +1,17 @@
 ﻿using System;
 using Model.Cards;
+using Model.Cards.Combat;
 using Model.Cards.Spells;
 using UnityEngine;
 
 namespace Model.Combat.GameAreas
 {
-    public sealed class PlayerHand : CardArea<CardInHand>
+    public sealed class PlayerHand : CombatCardArea<CardInHand>
     {
         protected override int MaxSize => 10;
 
         public Action<Spell> OnSpellPlayed;
-        public SpellType ForbiddenType { get; set; }
+        public SpellType ForbiddenType { get; set; } = SpellType.None;
         
         protected override void RearrangeCards()
         {

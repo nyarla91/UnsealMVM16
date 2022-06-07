@@ -9,10 +9,24 @@ namespace Model.Combat.Targeting
 {
     public class TargetToChoose : MonoBehaviour
     {
-        [Inject] private GameBoard _board;
         private PointerTarget _pointerTarget;
 
         private bool _chooseAvailable;
+        
+        [Inject] private GameBoard _gameBoard;
+
+        public GameBoard GameBoard
+        {
+            get => _gameBoard;
+            set
+            {
+                if (_gameBoard != null)
+                    return;
+                
+                _gameBoard = value;
+                _gameBoard.TargetChooser.AddTarget(this);
+            }
+        }
 
         public event Action OnStartChoosing;
         public event Action OnChooseSwitch;
@@ -34,11 +48,10 @@ namespace Model.Combat.Targeting
         {
             _pointerTarget = GetComponent<PointerTarget>();
             _pointerTarget.OnClick += OnClick;
-        }
-
-        private void Start()
-        {
-            _board.TargetChooser.AddTarget(this);
+            if (_gameBoard != null)
+            {
+                _gameBoard.TargetChooser.AddTarget(this);
+            }
         }
 
         private void OnClick(PointerType button, Vector3 contactpoint)
@@ -46,12 +59,12 @@ namespace Model.Combat.Targeting
             if (button != PointerType.Left || !_chooseAvailable)
                 return;
 
-            if (_board.TargetChooser.TargetChosen(this))
+            if (GameBoard.TargetChooser.TargetChosen(this))
             {
-                _board.TargetChooser.RemoveChosenTarget(this);
+                GameBoard.TargetChooser.RemoveChosenTarget(this);
                 OnChooseSwitch?.Invoke();
             }
-            else if (_board.TargetChooser.TryAddChosenTarget(this))
+            else if (GameBoard.TargetChooser.TryAddChosenTarget(this))
             {
                 OnChooseSwitch?.Invoke();
             }
@@ -59,7 +72,7 @@ namespace Model.Combat.Targeting
 
         private void OnDestroy()
         {
-            _board.TargetChooser.RemoveTarget(this);
+            GameBoard?.TargetChooser.RemoveTarget(this);
         }
     }
 }

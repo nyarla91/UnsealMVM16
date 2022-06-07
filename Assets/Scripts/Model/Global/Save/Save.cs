@@ -25,6 +25,6 @@ namespace Model.Global.Save
             return true;
         }
 
-        private string FileNameToPath(string fileName) => $"Saves/{fileName}.txt";
+        private string FileNameToPath(string fileName) => $"{Application.dataPath}/{fileName}.json";
     }
 }

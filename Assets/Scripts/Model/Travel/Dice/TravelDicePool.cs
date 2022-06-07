@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Essentials;
+using Model.Global.Save;
 using UnityEngine;
+using Zenject;
 
 namespace Model.Travel.Dice
 {
@@ -12,6 +14,8 @@ namespace Model.Travel.Dice
 
         private readonly List<TravelDie> _dice = new List<TravelDie>();
         private TravelDie _selectedDie;
+
+        [Inject] private PermanentSave _permanentSave;
 
         private List<TravelDie> ReadyDice => _dice.Where(die => !die.Exhausted).ToList();
         private List<TravelDie> ExhaustedDice => _dice.Where(die => die.Exhausted).ToList();
@@ -34,9 +38,10 @@ namespace Model.Travel.Dice
 
         private void Awake()
         {
-            foreach (var startingDie in _startingDice)
+            foreach (string dieName in  _permanentSave.Data.Dice)
             {
-                InstantiateForComponent(out TravelDie die, startingDie, transform);
+                TravelDie prefab = Resources.Load<GameObject>($"Dice/{dieName}").GetComponent<TravelDie>();
+                InstantiateForComponent(out TravelDie die, prefab, transform);
                 _dice.Add(die);
                 die.Init(this);
                 die.transform.localPosition = Vector3.zero;
@@ -49,7 +54,7 @@ namespace Model.Travel.Dice
         {
             foreach (var exhaustedDie in ExhaustedDice)
             {
-                exhaustedDie.TargetLocalPosition = new Vector3(0, -0.5f, -3f);
+                exhaustedDie.TargetLocalPosition = new Vector3(0, -0.5f, -5f);
             }   
             
             if (ReadyDice.Count == 0)
@@ -62,6 +67,28 @@ namespace Model.Travel.Dice
                 Vector3 localPosition = new Vector3((leftMostIndex + i) * unitsPerIndex, 0, 0);
                 ReadyDice[i].TargetLocalPosition = localPosition;
             }
+        }
+
+        public void ReadyAll()
+        {
+            foreach (TravelDie travelDie in _dice)
+            {
+                travelDie.Ready();
+            }
+        }
+
+        public void RerollAll()
+        {
+            foreach (TravelDie travelDie in _dice)
+            {
+                travelDie.Roll();
+            }
+        }
+
+        public void NextTurn()
+        {
+            ReadyAll();
+            RerollAll();
         }
     }
 }

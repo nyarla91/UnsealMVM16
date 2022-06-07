@@ -1,4 +1,5 @@
-﻿using Model.Combat.Characters;
+﻿using Model.Cards.Combat;
+using Model.Combat.Characters;
 using Model.Combat.Effects;
 using Model.Localization;
 
@@ -18,7 +19,7 @@ namespace Model.Cards.Spells.Moon
         public override async void OnPlay(bool growth)
         {
             base.OnPlay(growth);
-            Character target = await GetTarget<Character>(true);
+            Character target = await GetTarget<Character>(ChooseEnemyMessage, true);
             GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.2f, target, 1, growth));
             GameBoard.EffectQueue.AddEffect(new DrawTopCardEffect(0.1f, GameBoard.PlayerDeck));
             GameBoard.EffectQueue.AddEffect(new PurgeCardEffect(0.1f, GetComponent<CardOnBoard>()));

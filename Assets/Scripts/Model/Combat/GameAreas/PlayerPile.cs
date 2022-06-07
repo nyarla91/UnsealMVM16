@@ -1,10 +1,11 @@
 ﻿using System;
 using Model.Cards;
+using Model.Cards.Combat;
 using UnityEngine;
 
 namespace Model.Combat.GameAreas
 {
-    public class PlayerPile<T2> : CardArea<T2> where T2 : Card
+    public class PlayerPile<TCard> : CombatCardArea<TCard> where TCard : CardInCombat
     {
         protected override void RearrangeCards()
         {

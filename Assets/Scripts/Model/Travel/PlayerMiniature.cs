@@ -1,6 +1,6 @@
-﻿using System;
-using Essentials;
+﻿using Essentials;
 using Model.Global;
+using Model.Global.Save;
 using Model.Travel.Map;
 using UnityEngine;
 using Zenject;
@@ -16,11 +16,13 @@ namespace Model.Travel
         public Node CurrentNode => _currentNode;
 
         private GlobalTravelState _globalTravelState;
-        
+        private ManualSave _manualSave;
+
         [Inject]
-        private void Construct(GlobalTravelState globalTravelState)
+        private void Construct(GlobalTravelState globalTravelState, ManualSave manualSave)
         {
             _globalTravelState = globalTravelState;
+            _manualSave = manualSave;
         }
 
         public void MoveToNode(Node destination)
@@ -32,19 +34,35 @@ namespace Model.Travel
         public void MoveToNodeInstantly(Node destination)
         {
             MoveToNode(destination);
+            destination.OnPlayerStartHere();
             transform.position = destination.transform.position;
         }
 
         private void Start()
         {
-            Collider[] overlap = Physics.OverlapSphere(_globalTravelState.CurrentNodePosition, 0.01f);
-            if (overlap == null || overlap.Length == 0 || !overlap[0].TryGetComponent(out Node node))
-            {
+            if (TryLoadNodeFromPosition(out Node loadedNode, _globalTravelState.CurrentNodePosition))
+                MoveToNodeInstantly(loadedNode);
+            else if (TryLoadNodeFromPosition(out loadedNode, _manualSave.Data.NodePosition))
+                MoveToNodeInstantly(loadedNode);
+            else
                 MoveToNodeInstantly(_startingNode);
-                return;
+        }
+
+        private bool TryLoadNodeFromPosition(out Node node, Vector3 position)
+        {
+            if (position == Vector3.down)
+            {
+                node = null;
+                return false;
             }
-            MoveToNodeInstantly(node);
-            
+            Collider[] overlap = Physics.OverlapSphere(position, 0.01f);
+            if (overlap == null || overlap.Length == 0 || !overlap[0].TryGetComponent(out Node overlapNode))
+            {
+                node = null;
+                return false;
+            }
+            node = overlapNode;
+            return true;
         }
 
         private void FixedUpdate()

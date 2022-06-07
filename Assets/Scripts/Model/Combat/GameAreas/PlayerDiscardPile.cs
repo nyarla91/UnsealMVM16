@@ -6,13 +6,11 @@ namespace Model.Combat.GameAreas
 {
     public class PlayerDiscardPile : PlayerPile<CardInDiscardPile>
     {
-        [SerializeField] private GameBoard _gameBoard;
-        
         public void ShuffleIntoDeck()
         {
             foreach (var card in Cards)
             {
-                _gameBoard.EffectQueue.InsertEffect(new AddCardFromDiscardPileToDeck(0.025f, card), 0);
+                GameBoard.EffectQueue.AddEffect(new AddCardFromDiscardPileToDeck(0.025f, card), 0);
             }
         }
     }

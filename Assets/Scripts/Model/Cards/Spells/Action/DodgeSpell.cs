@@ -13,7 +13,9 @@ namespace Model.Cards.Spells.Action
             "Gain 3<ap>",
             "Получите 3<ap>"
         );
-        public override SpellType Type => SpellType.None;
+        public override SpellType Type => SpellType.Action;
+        public override bool InfiniteInDeck => true;
+
         public override void OnPlay(bool growth)
         {
             GameBoard.EffectQueue.AddEffect(new AddArmorEffect(0.1f, GameBoard.Player, 3, growth));

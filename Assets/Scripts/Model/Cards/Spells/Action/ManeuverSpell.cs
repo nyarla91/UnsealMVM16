@@ -13,7 +13,7 @@ namespace Model.Cards.Spells.Action
             "Gain 2<ap>\n[Purge:] Gain 2<ap>",
             "Получите 2<ap>\n[Очищение:] Получите 2<ap>"
         );
-        public override SpellType Type => SpellType.None;
+        public override SpellType Type => SpellType.Action;
         
         public override void OnPlay(bool growth)
         {
@@ -23,7 +23,7 @@ namespace Model.Cards.Spells.Action
 
         public override void OnPurge()
         {
-            GameBoard.EffectQueue.InsertEffect(new AddArmorEffect(0.1f, GameBoard.Player, 2, Growth), 0);
+            GameBoard.EffectQueue.AddEffect(new AddArmorEffect(0.1f, GameBoard.Player, 2, Growth), 0);
             base.OnPurge();
         }
     }

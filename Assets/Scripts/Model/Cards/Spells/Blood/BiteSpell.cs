@@ -19,7 +19,7 @@ namespace Model.Cards.Spells.Blood
         public override async void OnPlay(bool growth)
         {
             base.OnPlay(growth);
-            Enemy target = await GetTarget<Enemy>(true);
+            Enemy target = await GetTarget<Enemy>(ChooseEnemyMessage, true);
             if (target == null)
                 return;
             

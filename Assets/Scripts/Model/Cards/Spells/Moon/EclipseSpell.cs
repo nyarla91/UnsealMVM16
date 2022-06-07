@@ -33,8 +33,8 @@ namespace Model.Cards.Spells.Moon
         {
             GameBoard.PlayerHand.OnSpellPlayed -= OnSpellPlayed;
             int damage = Charges;
-            Character target = await GetTarget<Character>(true);
-            GameBoard.EffectQueue.InsertEffect(new DealDamageEffect(0.1f, target, damage, Growth), 0);
+            Character target = await GetTarget<Character>(ChooseEnemyMessage, true);
+            GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.1f, target, damage, Growth), 0);
             base.OnPurge();
         }
     }

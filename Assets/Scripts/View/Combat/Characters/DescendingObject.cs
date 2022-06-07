@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using Essentials;
 using UnityEngine;
 
@@ -12,8 +13,10 @@ namespace View.Combat.Characters
 
         protected Vector3 TopLocalPosition => MovedObject.localPosition.WithY(20);
         protected Vector3 GoundLocalPosition => MovedObject.localPosition.WithY(0);
-        
-        public void Descend()
+
+        public void Descend() => Descend(DoNothing);
+
+        public void Descend(Action OnComplete)
         {
             if (_descended)
                 return;
@@ -21,10 +24,12 @@ namespace View.Combat.Characters
             _descended = true;
             MovedObject.DOComplete();
             MovedObject.localPosition = TopLocalPosition;
-            MovedObject.DOLocalMove(GoundLocalPosition, 0.5f);
+            MovedObject.DOLocalMove(GoundLocalPosition, 0.5f).onComplete += OnComplete.Invoke;
         }
 
-        public void Ascend(bool destroy)
+        public void Ascend(bool destroy) => Ascend(destroy, DoNothing);
+
+        public void Ascend(bool destroy, Action OnComplete)
         {
             if (!_descended)
                 return;
@@ -32,10 +37,15 @@ namespace View.Combat.Characters
             _descended = false;
             MovedObject.DOComplete();
             MovedObject.localPosition = GoundLocalPosition;
-            MovedObject.DOLocalMove(TopLocalPosition, 0.5f).onComplete += () => { if (destroy) Destroy(gameObject); };
+            MovedObject.DOLocalMove(TopLocalPosition, 0.5f).onComplete += () =>
+            {
+                if (destroy)
+                    Destroy(gameObject);
+                OnComplete.Invoke();
+            };
         }
 
-        protected void AscendImmediately()
+        public void AscendImmediately()
         {
             if (!_descended)
                 return;
@@ -44,5 +54,7 @@ namespace View.Combat.Characters
             MovedObject.DOComplete();
             MovedObject.localPosition = TopLocalPosition;
         }
+
+        private void DoNothing(){}
     }
 }

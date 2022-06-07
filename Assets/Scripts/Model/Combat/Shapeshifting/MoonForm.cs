@@ -5,10 +5,11 @@ using UnityEngine.Rendering.Universal;
 
 namespace Model.Combat.Shapeshifting
 {
-    public class MoonForm : ShapeshifterForm
+    public class MoonForm : Form
     {
-        public override void OnEnter()
+        public override void Enter()
         {
+            base.Enter();
             GameBoard.PlayerBoard.OnCardPurged += OnCardPurged;
             GameBoard.PlayerHand.ForbiddenType = SpellType.Sun;
         }
@@ -17,12 +18,13 @@ namespace Model.Combat.Shapeshifting
         {
             if (GameBoard.Turn.IsPlayerTurn)
             {
-                GameBoard.EffectQueue.InsertEffect(new AddArmorEffect(0.05f, GameBoard.Player, 3, false), 0);
+                GameBoard.EffectQueue.AddEffect(new AddArmorEffect(0.05f, GameBoard.Player, 3, false), 0);
             }
         }
 
-        public override void OnExit()
+        public override void Exit()
         {
+            base.Exit();
             GameBoard.PlayerBoard.OnCardPurged -= OnCardPurged;
             GameBoard.PlayerHand.ForbiddenType = SpellType.None;
         }

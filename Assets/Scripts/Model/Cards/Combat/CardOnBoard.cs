@@ -1,9 +1,8 @@
 ﻿using Model.Combat.Effects;
-using UnityEngine;
 using PointerType = Essentials.Pointers.PointerType;
 using Vector3 = UnityEngine.Vector3;
 
-namespace Model.Cards
+namespace Model.Cards.Combat
 {
     public sealed class CardOnBoard : CardInCombat
     {

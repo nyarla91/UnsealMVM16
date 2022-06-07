@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8548762881126510935
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4124016819736583959, guid: 88416e3e86d90444a91947858170304d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124016819736583959, guid: 88416e3e86d90444a91947858170304d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124016819736583959, guid: 88416e3e86d90444a91947858170304d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.147
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124016819736583959, guid: 88416e3e86d90444a91947858170304d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.359
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124016819736583959, guid: 88416e3e86d90444a91947858170304d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124016819736583959, guid: 88416e3e86d90444a91947858170304d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124016819736583959, guid: 88416e3e86d90444a91947858170304d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124016819736583959, guid: 88416e3e86d90444a91947858170304d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124016819736583959, guid: 88416e3e86d90444a91947858170304d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124016819736583959, guid: 88416e3e86d90444a91947858170304d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124016819736583959, guid: 88416e3e86d90444a91947858170304d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186525373889727027, guid: 88416e3e86d90444a91947858170304d, type: 3}
+      propertyPath: m_Name
+      value: RegularForm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055410960006422708, guid: 88416e3e86d90444a91947858170304d, type: 3}
+      propertyPath: _model
+      value: 
+      objectReference: {fileID: 1310649546}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 88416e3e86d90444a91947858170304d, type: 3}
+--- !u!1 &5528951572971420516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4186525373889727027, guid: 88416e3e86d90444a91947858170304d, type: 3}
+  m_PrefabInstance: {fileID: 8548762881126510935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1310649546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5528951572971420516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d27e53477a24c4b9c2d6542cc9e1233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetToChoose: {fileID: 6174520856096462984}
+  _name:
+    _eng: Human form
+    _rus: "\u0427\u0435\u043B\u043E\u0432\u0435\u0447\u0435\u0441\u043A\u0438\u0439
+      \u043E\u0431\u043B\u0438\u043A"
+  _description:
+    _eng: No effect
+    _rus: "\u041D\u0435\u0442 \u044D\u0444\u0444\u0435\u043A\u0442\u0430"
+--- !u!114 &6174520856096462984 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2527364422067415519, guid: 88416e3e86d90444a91947858170304d, type: 3}
+  m_PrefabInstance: {fileID: 8548762881126510935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5528951572971420516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24bccd8899284301a9354e9e0ad1d5e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

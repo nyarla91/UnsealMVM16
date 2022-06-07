@@ -2,6 +2,8 @@
 using Essentials;
 using Essentials.Pointers;
 using Model.Combat.Targeting;
+using Model.Localization;
+using TMPro;
 using UnityEngine;
 
 namespace Presenter.Combat.Targeting
@@ -9,6 +11,7 @@ namespace Presenter.Combat.Targeting
     public class TargetChooserPresenter : MonoBehaviour
     {
         [SerializeField] private TargetChooser _targetChooser;
+        [SerializeField] private TMP_Text _message;
         [SerializeField] private LineRenderer _line;
         
         private Transform _origin;
@@ -23,9 +26,17 @@ namespace Presenter.Combat.Targeting
             _lineCenter = RaycastMouseRegion(CameraProperties.Instance.Main.ScreenPointToRay(screenPoint));
         }
 
-        private void Show(Transform origin) => _origin = origin;
+        private void Show(Transform origin, LocalizedString message)
+        {
+            _message.text = message.Localized;
+            _origin = origin;
+        }
 
-        private void Hide() => _origin = null;
+        private void Hide()
+        {
+            _message.text = String.Empty;
+            _origin = null;
+        }
 
         private void FixedUpdate()
         {
@@ -52,7 +63,7 @@ namespace Presenter.Combat.Targeting
 
         private Vector3 RaycastMouseRegion(Ray ray)
         {
-            LayerMask mask = LayerMask.GetMask("UI");
+            LayerMask mask = LayerMask.GetMask($"MouseRegion");
             return Physics.Raycast(ray, out RaycastHit raycast, 5000, mask) ? raycast.point : Vector3.zero;
         }
     }

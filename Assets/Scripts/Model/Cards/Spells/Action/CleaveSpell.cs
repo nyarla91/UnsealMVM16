@@ -13,7 +13,7 @@ namespace Model.Cards.Spells.Action
             "[Passive:] At the end of your turn deal 1<dm> to all enemies.",
             "[Пассивно:] В конце вашего хода наносит 1<dm> всем противникам."
         );
-        public override SpellType Type => SpellType.None;
+        public override SpellType Type => SpellType.Action;
 
 
         public override void OnPlay(bool growth)
@@ -26,10 +26,10 @@ namespace Model.Cards.Spells.Action
         {
             for (int i = 0; i < GameBoard.PlayerBoard.PassiveModifier; i++)
             {
-                GameBoard.EffectQueue.InsertEffect(new WaitEffect(0.1f), 0);
-                foreach (var enemy in GameBoard.Enemies)
+                GameBoard.EffectQueue.AddEffect(new WaitEffect(0.1f), 0);
+                foreach (var enemy in GameBoard.EnemyPool.ActiveEnemies)
                 {
-                    GameBoard.EffectQueue.InsertEffect(new DealDamageEffect(0, enemy, 1, Growth), 0);
+                    GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0, enemy, 1, Growth), 0);
                 }
             }
         }

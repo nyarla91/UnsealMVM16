@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Model.Localization;
 using UnityEngine;
 
 namespace Model.Combat.Targeting
@@ -13,23 +14,27 @@ namespace Model.Combat.Targeting
         private Type _currentlyChosenType;
         private int _targetsReuired;
         public bool ChooseActive { get; private set; }
+        public bool ExactNumber { get; private set; }
+        public bool SkipButtonPressed { get; set; }
 
-        public event Action<Transform> OnChooseStart;
+        public event Action<Transform, LocalizedString> OnChooseStart;
         public event Action OnChooseEnd;
 
-        public async Task<T> StartTargetChoose<T>(Transform origin, bool compulsory)  where T : MonoBehaviour
+        public async Task<T> StartTargetChoose<T>(Transform origin, LocalizedString message, bool compulsory)  where T : MonoBehaviour
         {
-            List<T> targets = await StartTargetsChoose<T>(origin, 1, compulsory);
+            List<T> targets = await StartTargetsChoose<T>(origin, message, 1, compulsory);
             if (targets.Count > 0)
                 return targets[0];
             return null;
         }
 
-        public async Task<List<T>> StartTargetsChoose<T>(Transform origin, int ammount, bool exactNumber)  where T : MonoBehaviour
+        public async Task<List<T>> StartTargetsChoose<T>(Transform origin, LocalizedString message, int ammount, bool exactNumber)  where T : MonoBehaviour
         {
+            SkipButtonPressed = false;
+            ExactNumber = exactNumber;
             ChooseActive = true;
             _targetsReuired = ammount;
-            OnChooseStart?.Invoke(origin);
+            OnChooseStart?.Invoke(origin, message);
             _chosenTargets = new List<TargetToChoose>();
             _currentlyChosenType = typeof(T);
             List<TargetToChoose> properTargets = _targets.Where(target => 
@@ -45,10 +50,11 @@ namespace Model.Combat.Targeting
             {
                 target.StartChoose();
             }
-            while (_chosenTargets.Count != ammount && _chosenTargets.Count < properTargets.Count && (exactNumber || !Input.GetKey(KeyCode.R)))
+            while (_chosenTargets.Count != ammount && _chosenTargets.Count < properTargets.Count && (exactNumber || !SkipButtonPressed))
             {
                 await Task.Delay(100);
             }
+            SkipButtonPressed = false;
             await Task.Delay(125);
             ChooseActive = false;
             foreach (var target in properTargets)

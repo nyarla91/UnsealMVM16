@@ -4,10 +4,10 @@ namespace Model.Deckbulding
 {
     public class DeckbuildingBoard : MonoBehaviour
     {
-        [SerializeField] private BuidledDeck _buidledDeck;
+        [SerializeField] private BuildedDeck buildedDeck;
         [SerializeField] private Libary _libary;
 
-        public BuidledDeck BuidledDeck => _buidledDeck;
+        public BuildedDeck BuildedDeck => buildedDeck;
         public Libary Libary => _libary;
     }
 }

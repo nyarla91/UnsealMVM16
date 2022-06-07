@@ -16,11 +16,26 @@ namespace Model.Cards.Spells
         public abstract LocalizedString Name { get; }
         public abstract LocalizedString Description { get; }
         public abstract SpellType Type { get; }
-        public virtual Func<bool> Requirements => () => true;
+        public virtual Func<bool> PlayRequirements => () => true;
+        public virtual bool InfiniteInDeck => false;
         public Material Icon => _icon ??= Resources.Load<Material>("SpellIcons/" + Name.Eng);
+        protected LocalizedString ChooseEnemyMessage => new LocalizedString
+        (
+            "Choose enemy",
+            "Выберите противника"
+        );
+        protected LocalizedString ChooseCardToDiscard => new LocalizedString
+        (
+            "Choose card to discard",
+            "Выберите карту, которую сбросите"
+        );
+        protected LocalizedString ChooseCardToPurge => new LocalizedString
+        (
+            "Choose card to purge",
+            "Выберите карту, которую очистите"
+        );
 
-        [field: Inject]
-        protected GameBoard GameBoard { get; set; }
+        [field: Inject] public GameBoard GameBoard { protected get; set; }
 
         protected bool Growth { get; private set; }
 
@@ -61,14 +76,14 @@ namespace Model.Cards.Spells
             GetComponent<ISpellAddedHandler>()?.OnSpellAdded(this);
         }
 
-        protected async Task<List<T>> GetTargets<T>(int ammount, bool exactNumber) where T : MonoBehaviour
+        protected async Task<List<T>> GetTargets<T>(LocalizedString message, int ammount, bool exactNumber) where T : MonoBehaviour
         {
-            return await GameBoard.TargetChooser.StartTargetsChoose<T>(transform, ammount, exactNumber);
+            return await GameBoard.TargetChooser.StartTargetsChoose<T>(transform, message, ammount, exactNumber);
         }
 
-        protected async Task<T> GetTarget<T>(bool compulsory)where T : MonoBehaviour
+        protected async Task<T> GetTarget<T>(LocalizedString message, bool compulsory)where T : MonoBehaviour
         {
-            List<T> targets = await GetTargets<T>(1, compulsory);
+            List<T> targets = await GetTargets<T>(message, 1, compulsory);
             return targets.Count > 0 ? targets[0] : null;
         }
 

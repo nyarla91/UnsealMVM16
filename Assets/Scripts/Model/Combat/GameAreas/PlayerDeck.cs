@@ -3,19 +3,24 @@ using Essentials;
 using Model.Cards;
 using Model.Combat.Effects;
 using Model.Combat.Effects.Inner;
+using Model.Combat.Targeting;
+using Model.Global.Save;
+using Presenter.Cards;
 using UnityEngine;
+using View.Cards;
+using Zenject;
 
 namespace Model.Combat.GameAreas
 {
     public sealed class PlayerDeck : PlayerPile<CardInDeck>
     {
-        [SerializeField] private GameBoard _gameBoard;
-
+        [Inject] private ManualSave _manualSave;
+        
         public void DrawCards(int ammount)
         {
             for (int i = 0; i < ammount; i++)
             {
-                _gameBoard.EffectQueue.AddEffect(new DrawTopCardEffect(0.1f, this));
+                GameBoard.EffectQueue.AddEffect(new DrawTopCardEffect(0.1f, this));
             }
         }
         
@@ -24,9 +29,9 @@ namespace Model.Combat.GameAreas
         {
             if (Cards.Count == 0)
             {
-                _gameBoard.EffectQueue.InsertEffect(new DrawTopCardEffect(0.1f, this), 0);
-                _gameBoard.EffectQueue.InsertEffect(new ShuffleDeckEffect(0.1f, this), 0);
-                _gameBoard.PlayerDiscardPile.ShuffleIntoDeck();
+                GameBoard.EffectQueue.AddEffect(new DrawTopCardEffect(0.1f, this), 0);
+                GameBoard.EffectQueue.AddEffect(new ShuffleDeckEffect(0.1f, this), 0);
+                GameBoard.PlayerDiscardPile.ShuffleIntoDeck();
             }
             else
             {
@@ -42,6 +47,11 @@ namespace Model.Combat.GameAreas
 
         private void Start()
         {
+            foreach (string card in _manualSave.Data.Deck)
+            {
+                CardInDeck createdCard = CreateCard(card, transform.position);
+                createdCard.GetComponent<TargetToChoose>().GameBoard = GameBoard;
+            }
             Shuffle();
         }
     }

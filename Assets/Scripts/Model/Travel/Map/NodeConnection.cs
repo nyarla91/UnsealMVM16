@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Linq;
 using Model.Travel.Dice;
-using Unity.VisualScripting;
-using UnityEditor;
+using Model.Travel.Map.MoveRequirements;
 using UnityEngine;
 
 namespace Model.Travel.Map
 {
-    [ExecuteAlways]
     public class NodeConnection : MonoBehaviour
     {
         [SerializeField] private bool _moveToEnds;
         [SerializeField] private bool _validateEndsHaveThis;
-        [SerializeField] private TravelDieSide _sideRequired;
         [SerializeField] private Node[] _ends;
 
-        public TravelDieSide SideRequired => _sideRequired;
+        private MoveRequirement _requirement;
         
         public event Action<Node[]> OnEndsUpdated; 
         
@@ -34,11 +30,15 @@ namespace Model.Travel.Map
 
         public Node GetOtherEnd(Node otherThanThis) => _ends[0].Equals(otherThanThis) ? _ends[1] : _ends[0];
 
-        public bool CompareSide(TravelDieSide side)
+        public bool CheckPatency(TravelDie die) => _requirement == null || _requirement.MeetsRequirements(die);
+
+        private void Start()
         {
-            if (_sideRequired == TravelDieSide.Walk)
-                return true;
-            return _sideRequired == side;
+            Collider[] overlap = Physics.OverlapSphere(transform.position, 0.01f);
+            if (overlap.Length == 0 || !overlap[0].TryGetComponent(out MoveRequirement requirement))
+                return;
+
+            _requirement = requirement;
         }
 
         [ContextMenu("Destroy Connection")]

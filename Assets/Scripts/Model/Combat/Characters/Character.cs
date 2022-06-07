@@ -17,10 +17,13 @@ namespace Model.Combat.Characters
         private bool _dead;
         protected List<int> _pereodicDamage = new List<int>();
         
-        [field: Inject]
-        protected GameBoard GameBoard { get; set; }
+        [field: Inject] public GameBoard GameBoard { protected get; set; }
 
-        public int MaxHealth => _maxHealth;
+        public int MaxHealth
+        {
+            get => _maxHealth;
+            protected set => _maxHealth = value;
+        }
 
         public int Health
         {
@@ -73,7 +76,7 @@ namespace Model.Combat.Characters
         [DontCallFromSpells]
         public void DealDamage(int damage)
         {
-            if (damage <= 0)
+            if (_dead || damage <= 0)
                 return;
             
             OnTakeDamage?.Invoke(damage);
@@ -85,7 +88,7 @@ namespace Model.Combat.Characters
         [DontCallFromSpells]
         public void DealPereodicDamage(int damage)
         {
-            if (damage <= 0)
+            if (_dead || damage <= 0)
                 return;
             
             OnBleedAdded?.Invoke(damage);
@@ -95,7 +98,7 @@ namespace Model.Combat.Characters
         [DontCallFromSpells]
         public void RestoreHealth(int health)
         {
-            if (health <= 0)
+            if (_dead || health <= 0)
                 return;
             
             OnRestoreHealth?.Invoke(health);
@@ -105,6 +108,9 @@ namespace Model.Combat.Characters
         [DontCallFromSpells]
         public void TriggerPereodicDamage()
         {
+            if (_dead)
+                return;
+            
             for (int i = _pereodicDamage.Count - 1; i >= 0; i--)
             {
                 DealDamage(1);
@@ -122,7 +128,7 @@ namespace Model.Combat.Characters
         [DontCallFromSpells]
         public void AddArmor(int armor)
         {
-            if (armor <= 0)
+            if (_dead || armor <= 0)
                 return;
             
             OnArmorAdded?.Invoke(armor);
@@ -130,7 +136,13 @@ namespace Model.Combat.Characters
         }
 
         [DontCallFromSpells]
-        public void ClearArmor() => Armor = 0;
+        public void ClearArmor()
+        {
+            if (_dead)
+                return;
+            
+            Armor = 0;
+        }
 
         private void Start()
         {

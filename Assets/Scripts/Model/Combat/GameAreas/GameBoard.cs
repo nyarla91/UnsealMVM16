@@ -16,8 +16,7 @@ namespace Model.Combat.GameAreas
         [SerializeField] private EffectQueue _effectQueue;
         [SerializeField] private Turn _turn;
         [SerializeField] private Player _player;
-
-        private readonly List<Enemy> _enemies = new List<Enemy>();
+        [SerializeField] private EnemyPool _enemyPool;
 
         public PlayerHand PlayerHand => _playerHand;
         public PlayerBoard PlayerBoard => _playerBoard;
@@ -27,16 +26,6 @@ namespace Model.Combat.GameAreas
         public EffectQueue EffectQueue => _effectQueue;
         public Turn Turn => _turn;
         public Player Player => _player;
-        public List<Enemy> Enemies => _enemies;
-
-        public void AddEnemy(Enemy enemy)
-        {
-            _enemies.Add(enemy);
-        }
-
-        public void RemoveEnemy(Enemy enemy)
-        {
-            _enemies.Remove(enemy);
-        }
+        public EnemyPool EnemyPool => _enemyPool;
     }
 }

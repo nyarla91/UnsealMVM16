@@ -10,9 +10,9 @@ namespace View.Cards
         private const float MaximizeSpeed = 15;
         
         [SerializeField] private MeshRenderer _icon;
-        [SerializeField] private TextMeshPro _name;
-        [SerializeField] private TextMeshPro _description;
-        [SerializeField] private TextMeshPro _type;
+        [SerializeField] private TMP_Text _name;
+        [SerializeField] private TMP_Text _description;
+        [SerializeField] private TMP_Text _type;
         [SerializeField] private GameObject _charges;
         [SerializeField] private TextMeshPro _chargesValue;
         
@@ -27,6 +27,7 @@ namespace View.Cards
             TargetPositionOffset = OffsetStandart.localPosition;
             TargetRotationOffset = OffsetStandart.localRotation;
             TargetScale = OffsetStandart.localScale;
+            
         }
 
         public void Minimize()
@@ -63,7 +64,7 @@ namespace View.Cards
                 Quaternion.Lerp(transform.localRotation, TargetRotationOffset, MaximizeSpeed * Time.fixedDeltaTime);
         }
 
-        private string FormatDescription(string description)
+        public static string FormatDescription(string description)
         {
             description = description.Replace("[", "<b><color=#808000ff>");
             description = description.Replace("]", "</color></b>");

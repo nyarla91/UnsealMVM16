@@ -20,7 +20,7 @@ namespace Model.Combat.Effects
                 _delayLeft = delay;
         }
 
-        public void InsertEffect(Effect effectToAdd, int index)
+        public void AddEffect(Effect effectToAdd, int index)
         {
             Delay(0.1f);
             _effects.Insert(index, effectToAdd);

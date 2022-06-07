@@ -1,6 +1,7 @@
 ﻿using Essentials;
 using Essentials.Pointers;
 using Model.Cards.Spells;
+using Model.Combat.Effects;
 using UnityEngine;
 
 namespace Model.Cards
@@ -12,7 +13,7 @@ namespace Model.Cards
         private bool _isMouseOver;
 
         protected PointerTarget PointerTarget { get; private set; }
-        protected Spell Spell { get; private set; }
+        public Spell Spell { get; private set; }
 
         public Vector3 TargetPosition { get; set; }
         public Quaternion TargetRotation { get; set; }
@@ -30,6 +31,13 @@ namespace Model.Cards
             DestroyImmediate(this);
         }
 
+        [DontCallFromSpells]
+        public void Exile()
+        {
+            DetachFromPlayArea();
+            Destroy(gameObject);
+        }
+
         protected abstract void PassBoard(Card card);
 
         protected abstract void DetachFromPlayArea();
@@ -37,6 +45,7 @@ namespace Model.Cards
 
         protected virtual void Awake()
         {
+            TargetPosition = LocalPosition ? transform.localPosition : transform.position;
             PointerTarget = GetComponent<PointerTarget>();
             Spell = GetComponent<Spell>();
             GetComponent<ICardPlaceChangedHandler>()?.OnCardPlaceChanged(this);

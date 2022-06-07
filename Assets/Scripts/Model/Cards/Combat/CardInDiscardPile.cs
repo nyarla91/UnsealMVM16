@@ -1,4 +1,5 @@
-﻿using Model.Combat.Effects;
+﻿using Model.Cards.Combat;
+using Model.Combat.Effects;
 using UnityEngine;
 
 namespace Model.Cards

@@ -13,7 +13,7 @@ namespace Model.Global.Save
 
         public void Save() => SaveData(_data, "permanent");
 
-        public void Load()
+        private void Load()
         {
             if (!TryLoadData(out _data, "permanent"))
             {
@@ -32,25 +32,67 @@ namespace Model.Global.Save
     public class PermanentSaveData : SavedData
     {
         [SerializeField] private List<string> _cardsUnlocked;
+        [SerializeField] private List<string> _formsUnlcoked;
+        [SerializeField] private List<string> _dice;
+        [SerializeField] private List<string> _combatsCleared;
+        [SerializeField] private int _keys;
 
         public List<string> CardsUnlocked
         {
             get => _cardsUnlocked;
-            set => _cardsUnlocked = value;
+            private set => _cardsUnlocked = value;
         }
+
+        public List<string> FormsUnlcoked
+        {
+            get => _formsUnlcoked;
+            private set => _formsUnlcoked = value;
+        }
+
+        public List<string> Dice
+        {
+            get => _dice;
+            private set => _dice = value;
+        }
+
+        public List<string> CombatsCleared
+        {
+            get => _combatsCleared;
+            private set => _combatsCleared = value;
+        }
+
+        public int Keys
+        {
+            get => _keys;
+            private set => _keys = value;
+        }
+
+        public void AddKey() => Keys++;
 
         public PermanentSaveData()
         {
+            _combatsCleared = new List<string>();
+            
             _cardsUnlocked = new []
             {
-                "Model.Cards.Spells.Blood.BiteSpell",
-                "Model.Cards.Spells.Blood.RoughWoundSpell",
-                "Model.Cards.Spells.Sun.IlluminationSpell",
-                "Model.Cards.Spells.Nature.SaplingSpell",
-                "Model.Cards.Spells.Nature.SpikedVineSpell",
-                "Model.Cards.Spells.Moon.EclipseSpell",
-                "Model.Cards.Spells.Moon.LunarFlashSpell",
-                "Model.Cards.Spells.Moon.MiracleSpell"
+                "Model.Cards.Spells.Action.HitSpell",
+                "Model.Cards.Spells.Action.DodgeSpell"
+            }.ToList();
+
+            _formsUnlcoked = new[]
+            {
+                "RegularForm",
+                "SunForm",
+                "MoonForm",
+                "BloodForm",
+                "NatureForm"
+            }.ToList();
+            
+            _dice = new []
+            {
+                "StartingDie",
+                "StartingDie",
+                "StartingDie"
             }.ToList();
         }
     }

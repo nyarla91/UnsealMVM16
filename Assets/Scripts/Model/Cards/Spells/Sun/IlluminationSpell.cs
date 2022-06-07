@@ -30,7 +30,7 @@ namespace Model.Cards.Spells.Sun
             
             for (int i = 0; i < GameBoard.PlayerBoard.PassiveModifier; i++)
             {
-                GameBoard.EffectQueue.InsertEffect(new RestoreHealthEffect(0.1f, GameBoard.Player, 1, Growth), 0);
+                GameBoard.EffectQueue.AddEffect(new RestoreHealthEffect(0.1f, GameBoard.Player, 1, Growth), 0);
             }
         }
 

@@ -35,7 +35,7 @@ namespace Model.Travel.Dice
             if (Exhausted)
                 return;
             Exhausted = true;
-            _dicePool.RearrangeDice();
+            _dicePool?.RearrangeDice();
         }
 
         public void Ready()
@@ -43,14 +43,21 @@ namespace Model.Travel.Dice
             if (!Exhausted)
                 return;
             Exhausted = false;
-            _dicePool.RearrangeDice();
+            _dicePool?.RearrangeDice();
         }
 
-            private void Select(PointerType button, Vector3 contactpoint)
+        public void Roll()
+        {
+            int sideIndex = Random.Range(0, 6);
+            CurrentSide = _sides[sideIndex];
+            OnRoll?.Invoke(sideIndex, CurrentSide);
+        }
+
+        private void Select(PointerType button, Vector3 contactpoint)
         {
             if (button != PointerType.Left)
                 return;
-            _dicePool.SelectDie(this);
+            _dicePool?.SelectDie(this);
         }
 
         private void Deselect(PointerType button)
@@ -60,26 +67,17 @@ namespace Model.Travel.Dice
             _dicePool.DeselectDie();
         }
 
+        private void Start()
+        {
+            Roll();
+            if (TargetLocalPosition.Equals(Vector3.zero))
+                TargetLocalPosition = transform.localPosition;
+        }
+
         private void FixedUpdate()
         {
             const float MovementSpeed = 12;
             transform.localPosition = Vector3.Lerp(transform.localPosition, TargetLocalPosition, Time.fixedDeltaTime * MovementSpeed);
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                Ready();
-                Roll();
-            }
-        }
-
-        private void Roll()
-        {
-            int sideIndex = Random.Range(0, 6);
-            CurrentSide = _sides[sideIndex];
-            OnRoll?.Invoke(sideIndex, CurrentSide);
         }
     }
 

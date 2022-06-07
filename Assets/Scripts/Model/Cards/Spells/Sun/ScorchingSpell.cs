@@ -1,4 +1,5 @@
-﻿using Model.Combat.Characters;
+﻿using Model.Cards.Combat;
+using Model.Combat.Characters;
 using Model.Combat.Effects;
 using Model.Localization;
 
@@ -18,13 +19,13 @@ namespace Model.Cards.Spells.Sun
         public override async void OnPlay(bool growth)
         {
             int damage = 2;
-            CardInHand cardToDiscard = await GetTarget<CardInHand>(false);
+            CardInHand cardToDiscard = await GetTarget<CardInHand>(ChooseCardToDiscard, false);
             if (cardToDiscard != null)
             {
                 GameBoard.EffectQueue.AddEffect(new DiscardACardEffect(0.1f, cardToDiscard));
                 damage += 3;
             }
-            Enemy enemy = await GetTarget<Enemy>(true);
+            Enemy enemy = await GetTarget<Enemy>(ChooseEnemyMessage, true);
             if (enemy != null)
             {
                 GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.1f, enemy, damage, growth));

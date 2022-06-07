@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Essentials.Pointers
 {
@@ -13,9 +14,13 @@ namespace Essentials.Pointers
         
         public delegate void MousePointActionHandler(PointerType button, Vector3 contactPoint);
         public MousePointActionHandler OnDown, OnUp, OnClick, OnDoubleClick;
+
+        public UnityEvent<PointerType> UnityOnDown, UnityOnUp, UnityOnClick, UnityOnDoubleClick;
         
         public delegate void MouseActionHandler(PointerType button);
         public MouseActionHandler OnDrag, OnDragEnd;
+        
+        public UnityEvent<PointerType> UnityOnDrag, UnityOnDragEnd;
         
         public Action OnEnter, OnExit;
         
@@ -25,6 +30,12 @@ namespace Essentials.Pointers
         {
             PointerCaster.Instance.AddTarget(this);
             OnDown += (button, contact) => _dragCoroutines.Add(button, StartCoroutine(Drag(button)));
+            OnDown += (button, point) => UnityOnDown?.Invoke(button);
+            OnUp += (button, point) => UnityOnUp?.Invoke(button);
+            OnClick += (button, point) => UnityOnClick?.Invoke(button);
+            OnDoubleClick += (button, point) => UnityOnDoubleClick?.Invoke(button);
+            OnDrag += (button) => UnityOnDrag?.Invoke(button);
+            OnDragEnd += (button) => UnityOnDragEnd?.Invoke(button);
         }
 
         private IEnumerator Drag(PointerType button)

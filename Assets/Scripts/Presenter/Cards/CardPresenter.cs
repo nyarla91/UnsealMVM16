@@ -1,9 +1,11 @@
-﻿using Essentials;
+﻿using System.Collections;
+using Essentials;
 using Essentials.Pointers;
 using Model.Cards;
 using Model.Cards.Spells;
 using UnityEngine;
 using View.Cards;
+using Zenject;
 
 namespace Presenter.Cards
 {
@@ -15,10 +17,20 @@ namespace Presenter.Cards
 
         private Spell _spell;
         private PointerTarget _pointerTarget;
-        private Card _card;
+        private Card _model;
+        private Coroutine _tooltipCoroutine;
+        
+        [field: Inject] public AbilitiyTooltip Tooltip { get; set; }
 
-        public void Show() => _view.gameObject.SetActive(true);
-        public void Hide() => _view.gameObject.SetActive(false);
+        public void Show()
+        {
+            _view.gameObject.SetActive(true);
+        }
+
+        public void Hide()
+        {
+            _view.gameObject.SetActive(false);
+        }
 
         public void OnSpellAdded(Spell spell)
         {
@@ -29,7 +41,7 @@ namespace Presenter.Cards
 
         public void OnCardPlaceChanged(Card newPlace)
         {
-            _card = newPlace;
+            _model = newPlace;
             _view.OffsetStandart = _standarts.Dictionary[newPlace.GetType().Name];
         }
 
@@ -45,15 +57,35 @@ namespace Presenter.Cards
         private void Awake()
         {
             _pointerTarget = GetComponent<PointerTarget>();
-            _pointerTarget.OnEnter += _view.Maximize;
-            _pointerTarget.OnExit += _view.Minimize;
+            _pointerTarget.OnEnter += MaximizeView;
+            _pointerTarget.OnExit += MinimizeView;
+        }
+
+        private void MinimizeView()
+        {
+            _view.Minimize();
+            _tooltipCoroutine?.Stop(this);
+            _tooltipCoroutine = null;
+            Tooltip.Hide();
+        }
+
+        private void MaximizeView()
+        {
+            _view.Maximize();
+            _tooltipCoroutine = StartCoroutine(TooltipDelay());
+        }
+
+        private IEnumerator TooltipDelay()
+        {
+            yield return new WaitForSeconds(1);
+            Tooltip.Show(Tooltip.DescriptionToExlanation(_spell.Description.Eng));
         }
 
         private void Update()
         {
-            if (_card != null)
+            if (_model != null)
             {
-                _playabelOutline.SetActive(_card.ShowPlayableOutline);
+                _playabelOutline.SetActive(_model.ShowPlayableOutline);
             }
         }
     }

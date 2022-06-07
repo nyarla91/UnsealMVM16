@@ -1,8 +1,7 @@
 ﻿using Model.Combat.GameAreas;
-using UnityEngine;
 using Zenject;
 
-namespace Model.Cards
+namespace Model.Cards.Combat
 {
     public abstract class CardInCombat : Card
     {
@@ -10,7 +9,9 @@ namespace Model.Cards
         
         protected override void PassBoard(Card card)
         {
-            ((CardInCombat) card).GameBoard = GameBoard;
+            CardInCombat cardInCombat = ((CardInCombat) card);
+            cardInCombat.GameBoard = GameBoard;
+            cardInCombat.Spell.GameBoard = GameBoard;
         }
     }
 }

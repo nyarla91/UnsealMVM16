@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Essentials;
 using Essentials.Pointers;
 using Model.Travel.Dice;
@@ -11,12 +13,29 @@ namespace Model.Travel.Map
     public class Node : Transformer
     {
         [SerializeField] private PointerTarget _pointerTarget;
+        [SerializeField] private NodeKind _kind;
         [SerializeField] private List<NodeConnection> _connections;
 
         private PlayerMiniature _player;
         private TravelDicePool _dicePool;
+        private bool _interactionActive = true;
 
         public List<NodeConnection> Connections => _connections;
+
+        public bool InteractionActive
+        {
+            get => _interactionActive;
+            set
+            {
+                if (_interactionActive == value)
+                    return;
+                
+                _interactionActive = value;
+                OnSwitchInteractionActive?.Invoke(value);
+            }
+        }
+
+        public event Action<bool> OnSwitchInteractionActive;
 
         [Inject]
         private void Construct(PlayerMiniature player, TravelDicePool dicePool)
@@ -24,7 +43,6 @@ namespace Model.Travel.Map
             _player = player;
             _dicePool = dicePool;
         }
-
 
         public void AddConnection(NodeConnection connection)
         {
@@ -36,21 +54,36 @@ namespace Model.Travel.Map
             _connections.Remove(connection);
         }
 
-        private void UseDieOnThis(PointerType button, Vector3 contactPoint)
+        public void OnPlayerStartHere()
         {
-            print(GetAdjacentPlayerNode(out NodeConnection connectdion));
-            if (button != PointerType.Left || !_dicePool.IsDieSelected(out TravelDie selectedDie) || GetAdjacentPlayerNode(out NodeConnection connection)== null)
-                return;
-
-            if (!connection.CompareSide(selectedDie.CurrentSide))
-                return;
-            
-            _player.MoveToNode(this);
-            selectedDie.Exhaust();
-            OnPlayerEnter();
+            if (InteractionActive)
+                _kind?.OnPLayerStartHere();
         }
 
-        protected virtual void OnPlayerEnter() {}
+        private void StartUseDieOnThis(PointerType button, Vector3 contactpoint)
+        {
+            if (button != PointerType.Left)
+                return;
+            
+            StartCoroutine(UseDieOnThis());
+        }
+
+        private IEnumerator UseDieOnThis()
+        {
+            Node playerNode = GetAdjacentPlayerNode(out NodeConnection connection);
+            if (playerNode == null || !_dicePool.IsDieSelected(out TravelDie selectedDie))
+                yield break;
+
+            if (!connection.CheckPatency(selectedDie))
+                yield break;
+            
+            playerNode._kind?.OnPLayerLeave();
+            _player.MoveToNode(this);
+            selectedDie.Exhaust();
+            yield return new WaitForSeconds(0.5f);
+            if (InteractionActive)
+                _kind?.OnPLayerEnter();
+        }
 
         private Node GetAdjacentPlayerNode() => GetAdjacentPlayerNode(out NodeConnection nodeConnection);
 
@@ -71,7 +104,7 @@ namespace Model.Travel.Map
 
         private void Awake()
         {
-            _pointerTarget.OnUp += UseDieOnThis;
+            _pointerTarget.OnUp += StartUseDieOnThis;
         }
     }
 }

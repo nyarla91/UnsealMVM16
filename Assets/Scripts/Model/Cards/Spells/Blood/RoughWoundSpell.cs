@@ -11,15 +11,15 @@ namespace Model.Cards.Spells.Blood
             "Рваная ранв"
             );
         public override LocalizedString Description => new LocalizedString(
-            "Deal 2<dm>. Trigger all <bl> on it",
-            "Наносит 2<dm>. Вызывает срабатывание всего его <bl>"
+            "Deal 2<dm>. Trigger all <bl> on the target",
+            "Наносит 2<dm>. Вызывает срабатывание всего <bl> цели"
         );
         public override SpellType Type => SpellType.Blood;
 
         public override async void OnPlay(bool growth)
         {
             base.OnPlay(growth);
-            Character target = await GetTarget<Character>(true);
+            Character target = await GetTarget<Character>(ChooseEnemyMessage, true);
             if (target == null)
                 return;
             

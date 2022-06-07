@@ -38,7 +38,7 @@ namespace Model.Travel.Map
         [ContextMenu("Create Connections")]
         private void Start()
         {
-            foreach (var direction in AllDirections)
+            foreach (Vector3 direction in AllDirections)
             {
                 TryCreateConnection(direction);
             }
@@ -56,7 +56,7 @@ namespace Model.Travel.Map
 
             Node[] nodes = { _node, other };
 
-            Vector3 position = Vector3.Lerp(nodes[0].transform.position, nodes[1].transform.position, 0.5f);
+            Vector3 position = Vector3.Lerp(_node.transform.position, other.transform.position, 0.5f);
             InstantiateForComponent(out NodeConnection connection, _connectionPrefab, position);
             connection.Init(nodes);
         }

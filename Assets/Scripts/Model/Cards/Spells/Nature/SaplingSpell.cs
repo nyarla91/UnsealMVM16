@@ -13,7 +13,7 @@ namespace Model.Cards.Spells.Nature
             "Restore 1<hp> to yourself.\nGain 1<gr>",
             "Восстанавливает вам 1<hp>\nПолучите 1<gr>"
         );
-        public override SpellType Type => SpellType.Blood;
+        public override SpellType Type => SpellType.Nature;
 
         public override void OnPlay(bool growth)
         {

@@ -20,6 +20,8 @@ namespace View.Combat.Characters
 
         public Vector3 TargetPosition { get; set; }
 
+        protected virtual bool Move => true;
+
         public int Value
         {
             get => _value;
@@ -55,7 +57,8 @@ namespace View.Combat.Characters
         private void FixedUpdate()
         {
             const float MovementSpeed = 10;
-            transform.position = Vector3.Lerp(transform.position, TargetPosition, Time.fixedDeltaTime * MovementSpeed);
+            if (Move)
+                transform.position = Vector3.Lerp(transform.position, TargetPosition, Time.fixedDeltaTime * MovementSpeed);
         }
     }
 }

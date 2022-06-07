@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 namespace View.Combat.PopUpNumber
 {
-    public class PopUpNumber : RectTransformer
+    public class PopUpNumber : Transformer
     {
         [SerializeField] private TextMeshProUGUI _textMesh;
         [SerializeField] private Vector2 _magnitude;

@@ -1,14 +1,15 @@
 using System;
 using Model.Cards;
+using Model.Cards.Combat;
 using Model.Cards.Spells;
 using Model.Combat.Effects;
 using UnityEngine;
 
 namespace Model.Combat.GameAreas
 {
-    public sealed class PlayerBoard : CardArea<CardOnBoard>
+    public sealed class PlayerBoard : CombatCardArea<CardOnBoard>
     {
-        protected override int MaxSize => 5;
+        protected override int MaxSize => 6;
 
         public int PassiveModifier { get; set; } = 1;
 

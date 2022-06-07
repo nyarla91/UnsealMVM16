@@ -3,13 +3,12 @@ using UnityEngine;
 
 namespace Model.Combat.Shapeshifting
 {
-    public class RegularForm : ShapeshifterForm
+    public class RegularForm : Form
     {
-        public override void OnEnter()
+        public override void Enter()
         {
+            base.Enter();
             GameBoard.PlayerHand.ForbiddenType = SpellType.None;
         }
-
-        public override void OnExit() { }
     }
 }

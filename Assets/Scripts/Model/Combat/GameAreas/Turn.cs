@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Essentials;
 using Model.Cards;
+using Model.Cards.Combat;
 using Model.Combat.Effects;
 using Model.Combat.Effects.Inner;
 using Model.Combat.Shapeshifting;
 using Model.Global;
+using Model.Localization;
 using UnityEngine;
 
 namespace Model.Combat.GameAreas
@@ -14,10 +17,21 @@ namespace Model.Combat.GameAreas
     {
         [SerializeField] private GameBoard _gameBoard;
 
-        private ShapeshifterForm _currentForm;
+        private Form _currentForm;
+        private readonly LocalizedString _chooseFormMessage = new LocalizedString
+        (
+            "Choose new form",
+            "Выберите новый облик"
+        );
+        private readonly LocalizedString _chooseCardsToPurge = new LocalizedString
+        (
+            "Choose 3 cards to purge",
+            "Выберите и очистите 3 карты"
+        );
         
         public bool IsPlayerTurn { get; private set; } = true;
         public int CardsPlayedThisTurn { get; private set; }
+        public bool EndTurnButtonPressed { get; set; }
 
         public event Action OnPlayerTurnStart;
         public event Action OnPlayerTurnEnd;
@@ -37,7 +51,8 @@ namespace Model.Combat.GameAreas
             await _gameBoard.EffectQueue.WaitForEffects();
             
             IsPlayerTurn = false;
-            List<CardOnBoard> cardsToPurge = await _gameBoard.TargetChooser.StartTargetsChoose<CardOnBoard>(_gameBoard.PlayerDiscardPile.transform, 3, true);
+            List<CardOnBoard> cardsToPurge = await _gameBoard.TargetChooser.StartTargetsChoose<CardOnBoard>
+                (_gameBoard.PlayerDiscardPile.transform, _chooseCardsToPurge, 3, true);
             foreach (var card in cardsToPurge)
             {
                 _gameBoard.EffectQueue.AddEffect(new PurgeCardEffect(0.1f, card));
@@ -67,22 +82,30 @@ namespace Model.Combat.GameAreas
             if (IsPlayerTurn)
                 return;
 
-            ShapeshifterForm newForm = await _gameBoard.TargetChooser.StartTargetChoose<ShapeshifterForm>
-                (_gameBoard.Player.transform, true);
-            
-            _currentForm?.OnExit();
-            newForm.OnEnter();
-            _currentForm = newForm;
+            await ChooseForm();
             IsPlayerTurn = true;
             OnPlayerTurnStart?.Invoke();
         }
 
+        private async Task ChooseForm()
+        {
+            await _gameBoard.EffectQueue.WaitForEffects();
+            await Task.Delay(1);
+            Form newForm = await _gameBoard.TargetChooser.StartTargetChoose<Form>
+                (_gameBoard.Player.transform, _chooseFormMessage, true);
+
+            _currentForm?.Exit();
+            newForm?.Enter();
+            _currentForm = newForm;
+        }
+
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (EndTurnButtonPressed)
             {
                 EndTurn();
             }
+            EndTurnButtonPressed = false;
 
             if (Input.GetKeyDown(KeyCode.X))
             {
@@ -93,6 +116,7 @@ namespace Model.Combat.GameAreas
         private void Start()
         {
             DrawCardsUpToMax();
+            ChooseForm();
         }
     }
 }
