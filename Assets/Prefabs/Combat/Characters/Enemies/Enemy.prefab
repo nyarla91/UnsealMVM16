@@ -806,11 +806,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75400f8e946d4909991ad3c6540245c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 99
-  _minAttack: 2
-  _maxAttack: 3
+  _health: 199
+  _minAttack: 4
+  _maxAttack: 5
   _minArmor: 3
-  _maxArmor: 4
+  _maxArmor: 3
 --- !u!114 &7604559160130262400
 MonoBehaviour:
   m_ObjectHideFlags: 0

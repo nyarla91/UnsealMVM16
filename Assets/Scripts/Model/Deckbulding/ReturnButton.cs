@@ -1,28 +1,22 @@
-﻿using System;
-using Essentials.Pointers;
-using Model.Global;
+﻿using Model.Global;
 using UnityEngine;
 using Zenject;
-using PointerType = Essentials.Pointers.PointerType;
 
 namespace Model.Deckbulding
 {
     public class ReturnButton : MonoBehaviour
     {
-        [SerializeField] protected PointerTarget _pointerTarget;
-
-        [Inject] protected SceneLoader _sceneLoader;
+        [Inject] private SceneLoader _sceneLoader;
+        [Inject] private DeckbuildingBoard _deckbuildingBoard;
         
-        protected virtual void Awake()
+        public void SaveAndReturn()
         {
-            _pointerTarget.OnClick += OnClick;
+            _deckbuildingBoard.BuildedDeck.SaveDeck();
+            _sceneLoader.LoadTravel();
         }
 
-        protected virtual void OnClick(PointerType button, Vector3 contactpoint)
+        public void DiscardAndReturn()
         {
-            if (button != PointerType.Left)
-                return;
-            
             _sceneLoader.LoadTravel();
         }
     }

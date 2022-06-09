@@ -24,7 +24,7 @@ namespace Model.Combat.Shapeshifting
         {
             GameObject[] formPrefabs = _permanentSave.Data.FormsUnlcoked
                 .Select(form => Resources.Load<GameObject>($"Forms/{form}")).ToArray();
-            if (formPrefabs.Length == 0)
+            if (formPrefabs.Length <= 1)
                 return;
             
             float leftMostIndex = (1 - formPrefabs.Length) * 0.5f;

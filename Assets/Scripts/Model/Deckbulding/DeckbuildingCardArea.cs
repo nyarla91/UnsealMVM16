@@ -8,7 +8,7 @@ namespace Model.Deckbulding
     {
         [SerializeField] protected DeckbuildingBoard _deckbuildingBoard;
         
-        protected override void PassBoard(ref TCard cardInPlace)
+        protected override void PassBoard(TCard cardInPlace)
         {
             cardInPlace.DeckbuildingBoard = _deckbuildingBoard;
         }

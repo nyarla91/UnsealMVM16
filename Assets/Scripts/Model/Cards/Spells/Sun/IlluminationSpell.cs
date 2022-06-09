@@ -20,10 +20,10 @@ namespace Model.Cards.Spells.Sun
         public override void OnPlay(bool burst)
         {
             base.OnPlay(burst);
-            GameBoard.Turn.OnPlayerTurnEnd += TurnOnOnPlayerTurnEnd;
+            GameBoard.Turn.OnPlayerTurnEnd += OnPlayerTurnEnd;
         }
 
-        private void TurnOnOnPlayerTurnEnd()
+        private void OnPlayerTurnEnd()
         {
             if (GameBoard.Turn.CardsPlayedThisTurn > 3) 
                 return;
@@ -36,7 +36,7 @@ namespace Model.Cards.Spells.Sun
 
         public override void OnPurge()
         {
-            GameBoard.Turn.OnPlayerTurnEnd -= TurnOnOnPlayerTurnEnd;
+            GameBoard.Turn.OnPlayerTurnEnd -= OnPlayerTurnEnd;
             base.OnPurge();
         }
     }

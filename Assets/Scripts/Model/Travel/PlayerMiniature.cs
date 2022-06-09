@@ -9,6 +9,7 @@ namespace Model.Travel
 {
     public class PlayerMiniature : Transformer
     {
+        [SerializeField] private Collider _collider;
         [SerializeField] private Node _startingNode;
         
         private Node _currentNode;
@@ -40,6 +41,7 @@ namespace Model.Travel
 
         private void Start()
         {
+            _collider.enabled = true;
             if (TryLoadNodeFromPosition(out Node loadedNode, _globalTravelState.CurrentNodePosition))
                 MoveToNodeInstantly(loadedNode);
             else if (TryLoadNodeFromPosition(out loadedNode, _manualSave.Data.NodePosition))

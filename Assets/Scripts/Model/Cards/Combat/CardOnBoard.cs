@@ -7,6 +7,11 @@ namespace Model.Cards.Combat
     public sealed class CardOnBoard : CardInCombat
     {
         
+        public override bool ShowPlayableOutline => ActionAvailbale;
+
+        private bool ActionAvailbale => !GameBoard.TargetChooser.ChooseActive && !GameBoard.EffectQueue.EffectInProgress
+            && Spell.HasAction && Spell.ActionAvailbale;
+
         [DontCallFromSpells]
         public void Purge()
         {
@@ -28,7 +33,8 @@ namespace Model.Cards.Combat
 
         private void OnClick(PointerType button, Vector3 contactpoint)
         {
-            
+            if (ActionAvailbale)
+                Spell.OnUseAction();
         }
 
         private void OnDestroy()

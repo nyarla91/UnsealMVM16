@@ -16,9 +16,26 @@ PrefabInstance:
       value: 5291.5923
       objectReference: {fileID: 0}
     - target: {fileID: 4813741393182769104, guid: 6c7e0e79e7eb15d4e972c3b739b7232b, type: 3}
+      propertyPath: _label._eng
+      value: Reroll
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813741393182769104, guid: 6c7e0e79e7eb15d4e972c3b739b7232b, type: 3}
+      propertyPath: _label._rus
+      value: "\u041F\u0435\u0440\u0435\u0431\u0440\u043E\u0441"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813741393182769104, guid: 6c7e0e79e7eb15d4e972c3b739b7232b, type: 3}
       propertyPath: _activeMaterial
       value: 
       objectReference: {fileID: 2100000, guid: f52d8c8aecb5a784a839cde3fe159297, type: 2}
+    - target: {fileID: 4813741393182769104, guid: 6c7e0e79e7eb15d4e972c3b739b7232b, type: 3}
+      propertyPath: _description._eng
+      value: Immediately reroll all remaining dice.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813741393182769104, guid: 6c7e0e79e7eb15d4e972c3b739b7232b, type: 3}
+      propertyPath: _description._rus
+      value: "\u041C\u0433\u043D\u043E\u0432\u0435\u043D\u043D\u043E \u043F\u0435\u0440\u0435\u0431\u0440\u043E\u0441\u044C\u0442\u0435
+        \u043E\u0441\u0442\u0430\u0432\u0448\u0438\u0435\u0441\u044F \u043A\u0443\u0431\u0438\u043A\u0438."
+      objectReference: {fileID: 0}
     - target: {fileID: 4813741393182769104, guid: 6c7e0e79e7eb15d4e972c3b739b7232b, type: 3}
       propertyPath: _inactiveMaterial
       value: 

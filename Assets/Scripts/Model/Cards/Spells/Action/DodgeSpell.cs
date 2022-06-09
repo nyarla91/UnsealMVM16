@@ -19,7 +19,6 @@ namespace Model.Cards.Spells.Action
         public override void OnPlay(bool burst)
         {
             GameBoard.EffectQueue.AddEffect(new AddArmorEffect(0.1f, GameBoard.Player, 3, burst));
-            GameBoard.EffectQueue.AddEffect(new AddIntoxicationEffect(0.1f, GameBoard.Player, 1));
             base.OnPlay(burst);
         }
     }

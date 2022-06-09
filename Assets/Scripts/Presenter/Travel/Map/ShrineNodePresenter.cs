@@ -10,6 +10,9 @@ namespace Presenter.Travel.Map
     {
         [SerializeField] private ShrineNode _model;
         [SerializeField] private EditDeckButton _view;
+        [SerializeField] private MeshRenderer _icon;
+        [SerializeField] private Material _fastTravelEnabledMaterial;
+        [SerializeField] private Material _fastTravelDisablesMaterial;
 
         [Inject] private SceneLoader _sceneLoader;
 
@@ -17,7 +20,11 @@ namespace Presenter.Travel.Map
         {
             _model.OnPlayerEntered += () => _view.Show(this);
             _model.OnPlayerLeft += _view.Hide;
+            _model.OnFastTravelSwitched += UpdateIcon;
         }
+
+        private void UpdateIcon(bool fastTravelActive) => _icon.material =
+            fastTravelActive ? _fastTravelEnabledMaterial : _fastTravelDisablesMaterial;
 
         public void EditDeck()
         {

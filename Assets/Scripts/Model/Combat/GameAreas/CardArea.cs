@@ -52,13 +52,13 @@ namespace Model.Combat.GameAreas
             GameObject card = Instantiate(_cardPrefab, startingPosition, Quaternion.identity, transform);
             card.AddComponent(spellType);
             TCard cardInPlace = card.AddComponent<TCard>();
-            PassBoard(ref cardInPlace);
+            PassBoard(cardInPlace);
             cardInPlace.GetComponent<CardPresenter>().Tooltip = abilitiyTooltip;
             cardInPlace.Init();
             return cardInPlace;
         }
 
-        protected abstract void PassBoard(ref TCard cardInPlace);
+        protected abstract void PassBoard(TCard cardInPlace);
 
         protected abstract void RearrangeCards();
     }

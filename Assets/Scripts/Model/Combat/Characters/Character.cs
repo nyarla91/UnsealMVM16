@@ -146,6 +146,14 @@ namespace Model.Combat.Characters
         }
 
         [DontCallFromSpells]
+        public void LoseArmor(int armor)
+        {
+            if (_dead || armor <= 0)
+                return;
+            Armor -= armor;
+        }
+
+        [DontCallFromSpells]
         public void ClearArmor()
         {
             if (_dead)

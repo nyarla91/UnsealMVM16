@@ -3507,9 +3507,9 @@ MonoBehaviour:
   UnityOnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1694984476}
         m_TargetAssemblyTypeName: Presenter.Combat.CombatEndPresenter, Assembly-CSharp
-        m_MethodName: ClaimReward
+        m_MethodName: OnClaimPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3706,6 +3706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91200828e949644da9face7a5484337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _log: 0
   _detectionType: 1
   _masks:
   - serializedVersion: 2

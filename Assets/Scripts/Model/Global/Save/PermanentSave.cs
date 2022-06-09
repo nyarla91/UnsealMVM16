@@ -33,6 +33,8 @@ namespace Model.Global.Save
     {
         [SerializeField] private List<string> _cardsUnlocked;
         [SerializeField] private List<string> _formsUnlcoked;
+        [SerializeField] private List<string> _shrinesUnlocked;
+        [SerializeField] private List<string> _map;
         [SerializeField] private List<string> _dice;
         [SerializeField] private List<string> _combatsCleared;
         [SerializeField] private int _keys;
@@ -67,11 +69,25 @@ namespace Model.Global.Save
             private set => _keys = value;
         }
 
+        public List<string> ShrinesUnlocked
+        {
+            get => _shrinesUnlocked;
+            set => _shrinesUnlocked = value;
+        }
+
+        public List<string> Map
+        {
+            get => _map;
+            set => _map = value;
+        }
+
         public void AddKey() => Keys++;
 
         public PermanentSaveData()
         {
             _combatsCleared = new List<string>();
+            _shrinesUnlocked = new List<string>();
+            _map = new List<string>();
             
             _cardsUnlocked = new []
             {
@@ -81,11 +97,7 @@ namespace Model.Global.Save
 
             _formsUnlcoked = new[]
             {
-                "RegularForm",
-                "SunForm",
-                "MoonForm",
-                "BloodForm",
-                "NatureForm"
+                "RegularForm"
             }.ToList();
             
             _dice = new []

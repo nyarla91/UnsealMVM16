@@ -10,9 +10,10 @@ namespace Model.Combat.GameAreas
 
         protected GameBoard GameBoard => _gameBoard;
         
-        protected override void PassBoard(ref TCard cardInPlace)
+        protected override void PassBoard(TCard cardInPlace)
         {
             cardInPlace.GameBoard = _gameBoard;
+            cardInPlace.Spell.GameBoard = _gameBoard;
         }
     }
 }

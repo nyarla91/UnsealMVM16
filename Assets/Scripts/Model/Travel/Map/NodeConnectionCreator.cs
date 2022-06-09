@@ -1,5 +1,8 @@
 ﻿using Essentials;
+using Model.Global.Save;
+using Presenter.Travel.Camera;
 using UnityEngine;
+using Zenject;
 using Random = UnityEngine.Random;
 
 namespace Model.Travel.Map
@@ -18,7 +21,7 @@ namespace Model.Travel.Map
                     _allDirections = new Vector3[6];
                     for (var i = 0; i < _allDirections.Length; i++)
                     {
-                        _allDirections[i] = ((float) i * 60).DegreesToVector2().XYtoXZ() * NodeDistance;
+                        _allDirections[i] = ((float) i * 60 + 30).DegreesToVector2().XYtoXZ() * NodeDistance;
                     }
                 }
                 return _allDirections;
@@ -29,6 +32,9 @@ namespace Model.Travel.Map
         [SerializeField] private float _creationOrder;
         [SerializeField] private NodeConnection _connectionPrefab;
 
+        [Inject] private PermanentSave _permanentSave;
+        [Inject] private TravelCamera _travelCamera;
+
         [ContextMenu("Randomize Order")]
         private void RandomizeOrder()
         {
@@ -36,7 +42,7 @@ namespace Model.Travel.Map
         }
 
         [ContextMenu("Create Connections")]
-        private void Start()
+        private void Awake()
         {
             foreach (Vector3 direction in AllDirections)
             {
@@ -58,6 +64,7 @@ namespace Model.Travel.Map
 
             Vector3 position = Vector3.Lerp(_node.transform.position, other.transform.position, 0.5f);
             InstantiateForComponent(out NodeConnection connection, _connectionPrefab, position);
+            connection.PassDependencies(_permanentSave, _travelCamera);
             connection.Init(nodes);
         }
 

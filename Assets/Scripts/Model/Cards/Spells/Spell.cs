@@ -13,16 +13,25 @@ namespace Model.Cards.Spells
     {
         private int _charges;
         private Material _icon;
+        [Inject] private GameBoard _gameBoard;
+        
         public abstract LocalizedString Name { get; }
         public abstract LocalizedString Description { get; }
         public abstract SpellType Type { get; }
         public virtual Func<bool> PlayRequirements => () => true;
         public virtual bool InfiniteInDeck => false;
+        public virtual bool HasAction => false;
+        public bool ActionAvailbale { get; private set; } = true;
         public Material Icon => _icon ??= Resources.Load<Material>("SpellIcons/" + Name.Eng);
         protected static LocalizedString ChooseEnemyMessage => new LocalizedString
         (
             "Choose enemy",
             "Выберите противника"
+        );
+        protected static LocalizedString ChooseCharacterMessage => new LocalizedString
+        (
+            "Choose character",
+            "Выберите персонажа"
         );
         protected static LocalizedString ChooseCardToDiscard => new LocalizedString
         (
@@ -35,7 +44,17 @@ namespace Model.Cards.Spells
             "Выберите карту, которую очистите"
         );
 
-        [field: Inject] public GameBoard GameBoard { protected get; set; }
+        
+        public GameBoard GameBoard
+        {
+            protected get { return _gameBoard; }
+            set
+            {
+                _gameBoard = value;
+                if (HasAction)
+                    GameBoard.Turn.OnPlayerTurnStart += RestoreAction;
+            }
+        }
 
         protected bool Burst { get; private set; }
 
@@ -73,6 +92,11 @@ namespace Model.Cards.Spells
             Charges = 0;
         }
 
+        public virtual void OnUseAction()
+        {
+            ActionAvailbale = false;
+        }
+
         private void Awake()
         {
             GetComponent<ISpellAddedHandler>()?.OnSpellAdded(this);
@@ -89,9 +113,15 @@ namespace Model.Cards.Spells
             return targets.Count > 0 ? targets[0] : null;
         }
 
+        private void RestoreAction() => ActionAvailbale = true;
+
         private void OnDestroy()
         {
             GetComponent<ISpellRemovedHandler>()?.OnSpellRemoved();
+            if (HasAction)
+            {
+                GameBoard.Turn.OnPlayerTurnStart -= RestoreAction;
+            }
         }
 
         public void OnCardPlaceChanged(Card newPlace)

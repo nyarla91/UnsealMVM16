@@ -16,6 +16,7 @@ namespace Model.Deckbulding
         [Inject] private ManualSave _manualSave;
         
         protected override int MaxSize => 20;
+        public bool SaveAllowed => Size == MaxSize;
 
         public void CreateInfiniteCard(Type spellType, Vector3 startingPosition) => CreateCard(spellType, startingPosition);
 
@@ -23,6 +24,9 @@ namespace Model.Deckbulding
 
         public void SaveDeck()
         {
+            if (!SaveAllowed)
+                return;
+            
             _manualSave.Data.Deck = new List<string>();
             foreach (Type spellType in Cards.Select(card => card.Spell.GetType()))
             {

@@ -9,7 +9,7 @@ namespace Model.Combat.GameAreas
 {
     public sealed class PlayerBoard : CombatCardArea<CardOnBoard>
     {
-        protected override int MaxSize => 6;
+        protected override int MaxSize => FormDifferenceBuff ? 7 : 6;
 
         public int PassiveModifier { get; set; } = 1;
 
@@ -27,6 +27,7 @@ namespace Model.Combat.GameAreas
         public Action<Spell> OnCardPurged;
         public event Action<int> OnBurstChanged;
         private int _burst = 0;
+        public bool FormDifferenceBuff { private get; set; }
 
         [DontCallFromSpells]
         public void AddGrowth(int burst) => Burst += burst;

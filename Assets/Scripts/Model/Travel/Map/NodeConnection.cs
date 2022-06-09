@@ -1,12 +1,17 @@
 ﻿using System;
+using Model.Global.Save;
 using Model.Travel.Dice;
 using Model.Travel.Map.MoveRequirements;
+using Presenter.Travel;
+using Presenter.Travel.Camera;
 using UnityEngine;
+using Zenject;
 
 namespace Model.Travel.Map
 {
     public class NodeConnection : MonoBehaviour
     {
+        [SerializeField] private TravelObject _travelObject;
         [SerializeField] private bool _moveToEnds;
         [SerializeField] private bool _validateEndsHaveThis;
         [SerializeField] private Node[] _ends;
@@ -27,6 +32,13 @@ namespace Model.Travel.Map
             }
             OnEndsUpdated?.Invoke(_ends);
         }
+
+        private PermanentSave _permanentSave;
+        private TravelCamera _travelCamera;
+
+
+        public void PassDependencies(PermanentSave permanentSave, TravelCamera travelCamera) =>
+            _travelObject.Construct(permanentSave, travelCamera);
 
         public Node GetOtherEnd(Node otherThanThis) => _ends[0].Equals(otherThanThis) ? _ends[1] : _ends[0];
 

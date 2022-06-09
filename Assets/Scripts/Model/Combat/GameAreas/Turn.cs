@@ -28,11 +28,18 @@ namespace Model.Combat.GameAreas
             "Choose 3 cards to purge",
             "Выберите и очистите 3 карты"
         );
+        private readonly LocalizedString _chooseCardsToPurgeBuffed = new LocalizedString
+        (
+            "Choose 4 cards to purge",
+            "Выберите и очистите 4 карты"
+        );
         private readonly LocalizedString _discardAnyCardsMessage = new LocalizedString
         (
             "Discard any cards",
             "Сбросьте любые карты"
         );
+
+        public bool FormDifferenceBuff { get; set; }
         
         public bool IsPlayerTurn { get; private set; } = true;
         public int CardsPlayedThisTurn { get; private set; }
@@ -57,7 +64,7 @@ namespace Model.Combat.GameAreas
             
             IsPlayerTurn = false;
             List<CardOnBoard> cardsToPurge = await _gameBoard.TargetChooser.StartTargetsChoose<CardOnBoard>
-                (_gameBoard.PlayerDiscardPile.transform, _chooseCardsToPurge, 3, true);
+                (_gameBoard.PlayerDiscardPile.transform, FormDifferenceBuff ? _chooseCardsToPurgeBuffed : _chooseCardsToPurge, FormDifferenceBuff ? 4 : 3, true);
             foreach (var card in cardsToPurge)
             {
                 _gameBoard.EffectQueue.AddEffect(new PurgeCardEffect(0.1f, card));
@@ -106,7 +113,8 @@ namespace Model.Combat.GameAreas
             await Task.Delay(1);
             Form newForm = await _gameBoard.TargetChooser.StartTargetChoose<Form>
                 (_gameBoard.Player.transform, _chooseFormMessage, true);
-
+            
+            FormDifferenceBuff =  _gameBoard.PlayerBoard.FormDifferenceBuff = _currentForm != null && !_currentForm.Equals(newForm);
             _currentForm?.Exit();
             newForm?.Enter();
             _currentForm = newForm;

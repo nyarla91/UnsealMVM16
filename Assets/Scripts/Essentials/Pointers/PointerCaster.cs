@@ -26,6 +26,7 @@ namespace Essentials.Pointers
         private static PointerCaster _instance;
         public static PointerCaster Instance => _instance;
 
+        [SerializeField] private bool _log;
         [SerializeField] private DetectionType _detectionType;
         [SerializeField] private LayerMask[] _masks;
 
@@ -62,7 +63,7 @@ namespace Essentials.Pointers
             if (_masks.Length <= index)
                 throw new Exception($"PointerCaster has no {index} mask");
 
-            _currentMask = _masks[0];
+            _currentMask = _masks[index];
         }
 
         private void Awake()
@@ -167,6 +168,8 @@ namespace Essentials.Pointers
         private void FixedUpdate()
         {
             CurrentTarget = FindTarget(true, out Vector3 contactPoint, _currentMask);
+            if (_log)
+                print(CurrentTarget);
         }
 
         private void DragEnd(PointerType pointer)
@@ -199,7 +202,7 @@ namespace Essentials.Pointers
             else
             {
                 Ray ray = CameraProperties.Instance.Main.ScreenPointToRay(positionAt);
-                if (Physics.Raycast(ray, out RaycastHit hit, 10000, _currentMask))
+                if (Physics.Raycast(ray, out RaycastHit hit, 10000, mask))
                 {
                     contactPoint = hit.point;
                     return hit.collider.GetComponent<PointerTarget>();
