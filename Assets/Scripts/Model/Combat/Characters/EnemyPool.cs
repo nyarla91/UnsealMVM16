@@ -1,17 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using Essentials;
+using Model.Combat.Characters.Enemies;
 using Model.Combat.GameAreas;
 using Model.Combat.Targeting;
 using Model.Global;
 using Model.Travel.Map;
+using Presenter.Combat.Characters;
 using UnityEngine;
+using View.Cards;
 using Zenject;
 
 namespace Model.Combat.Characters
 {
     public class EnemyPool : ComponentInstantiator
     {
+        [SerializeField] private Canvas _canvas;
+        [SerializeField] private AbilitiyTooltip _tooltip;
         [SerializeField] private GameBoard _gameBoard;
         
         private readonly List<Enemy> _activeEnemies = new List<Enemy>();
@@ -41,8 +46,10 @@ namespace Model.Combat.Characters
 
             Enemy prefab = _reservedEnemies[0];
             InstantiateForComponent(out Enemy enemy, prefab, transform);
-            enemy.GameBoard = _gameBoard; 
+            enemy.GameBoard = _gameBoard;
+            enemy.Tooltip = _tooltip;
             enemy.GetComponent<TargetToChoose>().GameBoard = _gameBoard; 
+            enemy.GetComponent<VitalsPresenter>().Canvas = _canvas; 
             enemy.Init();
             _activeEnemies.Add(enemy);
             enemy.OnDeath += () => OnEnemyDeath(enemy);

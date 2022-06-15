@@ -14,17 +14,19 @@ namespace Model.Travel.Dice
         [SerializeField] private TravelDieSide[] _sides = new TravelDieSide[6];
 
         private TravelDicePool _dicePool;
+        private Pause _pause;
 
         public event Action<int, TravelDieSide> OnRoll;
         
         public TravelDieSide[] Sides => _sides;
-
+        public Pause Pause => _pause;
         public TravelDieSide CurrentSide { get; private set; }
         public bool Exhausted { get; private set; }
         public Vector3 TargetLocalPosition { get; set; }
 
-        public void Init(TravelDicePool dicePool)
+        public void Init(TravelDicePool dicePool, Pause pause)
         {
+            _pause = pause;
             _dicePool = dicePool;
             _pointerTarget.OnDown += Select;
             _pointerTarget.OnDragEnd += Deselect;
@@ -32,7 +34,7 @@ namespace Model.Travel.Dice
         
         public void Exhaust()
         {
-            if (Exhausted)
+            if (Exhausted || _pause.IsPaused)
                 return;
             Exhausted = true;
             _dicePool?.RearrangeDice();
@@ -40,7 +42,7 @@ namespace Model.Travel.Dice
 
         public void Ready()
         {
-            if (!Exhausted)
+            if (!Exhausted|| _pause.IsPaused)
                 return;
             Exhausted = false;
             _dicePool?.RearrangeDice();
@@ -48,6 +50,8 @@ namespace Model.Travel.Dice
 
         public void Roll()
         {
+            if (_pause.IsPaused)
+                return;
             int sideIndex = Random.Range(0, 6);
             CurrentSide = _sides[sideIndex];
             OnRoll?.Invoke(sideIndex, CurrentSide);

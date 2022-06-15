@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Essentials;
 using Model.Combat.Effects;
 using Model.Combat.GameAreas;
 using Unity.VisualScripting;
@@ -9,7 +10,7 @@ using Zenject;
 
 namespace Model.Combat.Characters
 {
-    public class Character : MonoBehaviour
+    public class Character : Transformer
     {
         [SerializeField] private int _maxHealth;
         private int _health;
@@ -17,7 +18,7 @@ namespace Model.Combat.Characters
         private bool _dead;
         protected List<int> _pereodicDamage = new List<int>();
         
-        [field: Inject] public GameBoard GameBoard { protected get; set; }
+        [field: Inject] public GameBoard GameBoard { get; set; }
 
         public int MaxHealth
         {
@@ -30,7 +31,7 @@ namespace Model.Combat.Characters
             get => _health;
             protected set
             {
-                value = Mathf.Max(value, 0);
+                value = Mathf.Clamp(value, 0, MaxHealth);
                 if (_health == value)
                     return;
                 
@@ -45,6 +46,8 @@ namespace Model.Combat.Characters
                 }
             }
         }
+
+        public bool Dead => _dead;
 
         public int Armor
         {
@@ -110,7 +113,8 @@ namespace Model.Combat.Characters
         {
             if (_dead || health <= 0)
                 return;
-            
+
+            health = Mathf.Min(health, MaxHealth - Health);
             OnRestoreHealth?.Invoke(health);
             Health += health;
         }
@@ -123,7 +127,7 @@ namespace Model.Combat.Characters
             
             for (int i = _pereodicDamage.Count - 1; i >= 0; i--)
             {
-                DealDamage(1);
+                LoseHealth(1);
                 _pereodicDamage[i]--;
                 if (_pereodicDamage[i] > 0)
                     OnBleedValueChanged?.Invoke(i, _pereodicDamage[i]);
@@ -162,7 +166,7 @@ namespace Model.Combat.Characters
             Armor = 0;
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             Health = MaxHealth;
             Armor = 0;

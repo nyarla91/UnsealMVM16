@@ -16,7 +16,7 @@ namespace Presenter.Travel.Map
 
         [Inject] private SceneLoader _sceneLoader;
 
-        private void Awake()
+        private void Start()
         {
             _model.OnPlayerEntered += () => _view.Show(this);
             _model.OnPlayerLeft += _view.Hide;

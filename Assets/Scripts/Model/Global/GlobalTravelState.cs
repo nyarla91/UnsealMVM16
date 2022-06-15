@@ -13,7 +13,7 @@ namespace Model.Global
         {
             CurrentNodePosition = Vector3.down;
             NextCombatData = null;
-            PlayerHealth = 199;
+            PlayerHealth = 25;
         }
         
         private void Awake()

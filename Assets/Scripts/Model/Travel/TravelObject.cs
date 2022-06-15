@@ -1,6 +1,7 @@
 ﻿using System;
 using Essentials;
 using Model.Global.Save;
+using Model.Travel.Map;
 using Presenter.Travel.Camera;
 using UnityEngine;
 using Zenject;

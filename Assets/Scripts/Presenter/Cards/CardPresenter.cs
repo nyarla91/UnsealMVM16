@@ -64,13 +64,16 @@ namespace Presenter.Cards
         private void MinimizeView()
         {
             _view.Minimize();
-            _tooltipCoroutine?.Stop(this);
+            if (this != null)
+                _tooltipCoroutine?.Stop(this);
             _tooltipCoroutine = null;
             Tooltip.Hide();
         }
 
         private void MaximizeView()
         {
+            if (!_model.InteractableOnPause && _model.Pause.IsPaused)
+                return;
             _view.Maximize();
             _tooltipCoroutine = StartCoroutine(TooltipDelay());
         }
@@ -87,6 +90,11 @@ namespace Presenter.Cards
             {
                 _playabelOutline.SetActive(_model.ShowPlayableOutline);
             }
+        }
+
+        private void OnDestroy()
+        {
+            StopAllCoroutines();
         }
     }
 }

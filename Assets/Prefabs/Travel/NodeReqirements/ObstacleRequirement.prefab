@@ -8,9 +8,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2810615036031756784, guid: 520250632df00c446884b19c3a895b78, type: 3}
+      propertyPath: _rotate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810615036031756784, guid: 520250632df00c446884b19c3a895b78, type: 3}
       propertyPath: _requiredSide
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3564122324826446483, guid: 520250632df00c446884b19c3a895b78, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 887db4f037f060a45972f98d83dbb61f, type: 2}
     - target: {fileID: 4965315016428248739, guid: 520250632df00c446884b19c3a895b78, type: 3}
       propertyPath: m_RootOrder
       value: 0

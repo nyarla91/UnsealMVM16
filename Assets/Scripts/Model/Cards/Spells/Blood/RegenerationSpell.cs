@@ -11,10 +11,11 @@ namespace Model.Cards.Spells.Blood
             "Заживление"
         );
         public override LocalizedString Description => new LocalizedString(
-            "[Passive:] When you lose 5<hp> or more at once restore 8<hp> then purge this<cr>.",
-            "[Пассивно:] Когда вы теряете 5<hp> или больше за один раз восстановите 8<hp> и очистите эту <cr>."
+            "[Passive:] When you lose 5<hp> or more at once restore 5<hp> then purge this<cr>.",
+            "[Пассивно:] Когда вы теряете 5<hp> или больше за один раз восстановите 5<hp> и очистите эту <cr>."
         );
         public override SpellType Type => SpellType.Blood;
+        public override bool HasPassive => true;
 
         public override async void OnPlay(bool burst)
         {
@@ -26,8 +27,12 @@ namespace Model.Cards.Spells.Blood
         {
             if (health < 5)
                 return;
-            GameBoard.EffectQueue.AddEffect(new RestoreHealthEffect(0.1f, GameBoard.Player, 8, Burst), 0);
-            GameBoard.EffectQueue.AddEffect(new PurgeCardEffect(0.1f, (CardOnBoard) CardPlace), 1);
+            
+            for (int i = 0; i < GameBoard.PlayerBoard.PassiveModifier; i++)
+            {
+                GameBoard.EffectQueue.AddEffect(new RestoreHealthEffect(0.1f, GameBoard.Player, 5, Burst), 0);
+                GameBoard.EffectQueue.AddEffect(new PurgeCardEffect(0.1f, (CardOnBoard) CardPlace), 1);
+            }
         }
 
         public override void OnPurge()

@@ -10,7 +10,7 @@ namespace Model.Travel.Map.Rewards
         
         protected GameObject ExamplePrefab => _examplePrefab;
         
-        public abstract void ClaimReward(PermanentSave save);
+        public abstract void ClaimReward(PermanentSave permanentSave, ManualSave manualSave);
 
         public abstract void ShowExample(RectTransform parent, CombatEndPresenter presenter);
 

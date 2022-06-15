@@ -31,18 +31,13 @@ PrefabInstance:
       propertyPath: _description._eng
       value: 'Save point.
 
-        You may edit deck here.
-
-        Rasie your concentration
-        up to 3.'
+        You may edit deck here.'
       objectReference: {fileID: 0}
     - target: {fileID: 4813741393182769104, guid: 6c7e0e79e7eb15d4e972c3b739b7232b, type: 3}
       propertyPath: _description._rus
       value: "\u0422\u043E\u0447\u043A\u0430 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u044F.\n\u0417\u0434\u0435\u0441\u044C
         \u043C\u043E\u0436\u043D\u043E \u0440\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C
-        \u043A\u043E\u043B\u043E\u0434\u0443.\n\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-        \u043A\u043E\u043D\u0446\u0435\u043D\u0442\u0440\u0430\u0446\u0438\u044E
-        \u0434\u043E 3."
+        \u043A\u043E\u043B\u043E\u0434\u0443."
       objectReference: {fileID: 0}
     - target: {fileID: 4813741393182769104, guid: 6c7e0e79e7eb15d4e972c3b739b7232b, type: 3}
       propertyPath: _inactiveMaterial
@@ -136,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4bad5d71c644e6d9c53c151ba0a077a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spendDie: 1
   _pointerTarget: {fileID: 9189011129450445616}
   _node: {fileID: 2219376670942682217}
 --- !u!114 &2219376670942682217 stripped

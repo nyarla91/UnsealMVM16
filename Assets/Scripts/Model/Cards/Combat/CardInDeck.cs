@@ -4,6 +4,7 @@ namespace Model.Cards.Combat
 {
     public sealed class CardInDeck : CardInCombat
     {
+        private static readonly string[] DrawSounds = {"Card/Draw1", "Card/Draw2", "Card/Draw3", "Card/Draw4"};
         
         [DontCallFromSpells]
         public void Draw()
@@ -11,6 +12,7 @@ namespace Model.Cards.Combat
             if (GameBoard.PlayerHand.IsFull)
                 return;
             
+            AudioSource.PlayOneShot(SoundRandomizer.LoadAudio(DrawSounds), 1);
             TransformIntoCardInAnotherArea<CardInHand>();
             Spell.OnDraw();
         }

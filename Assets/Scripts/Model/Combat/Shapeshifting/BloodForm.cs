@@ -1,6 +1,7 @@
 ﻿using Essentials;
 using Model.Cards.Spells;
 using Model.Combat.Characters;
+using Model.Combat.Characters.Enemies;
 using Model.Combat.Effects;
 
 namespace Model.Combat.Shapeshifting

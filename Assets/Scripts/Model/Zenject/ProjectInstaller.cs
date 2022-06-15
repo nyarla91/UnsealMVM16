@@ -11,6 +11,7 @@ namespace Model.Zenject
         [SerializeField] private GlobalTravelState _globalTravelStatePrefab;
         [SerializeField] private PermanentSave _permanentSavePrefab;
         [SerializeField] private ManualSave _manualSavePrefab;
+        [SerializeField] private Pause _pausePrefab;
 
         public override void InstallBindings()
         {
@@ -18,6 +19,7 @@ namespace Model.Zenject
             BindFromPrefab(_sceneLoaderPrefab);
             BindFromPrefab(_permanentSavePrefab);
             BindFromPrefab(_manualSavePrefab);
+            BindFromPrefab(_pausePrefab);
         }
 
         private void BindFromPrefab<T>(T prefab) where T : MonoBehaviour

@@ -19,6 +19,7 @@ namespace Presenter.Combat
         [SerializeField] private UIDialog _deathScreen;
         
         [Inject] private GlobalTravelState _travelState;
+        [Inject] private Pause _pause;
         [Inject] private GameBoard _gameBoard;
 
         public AbilitiyTooltip AbilitiyTooltip => _abilitiyTooltip;
@@ -34,12 +35,14 @@ namespace Presenter.Combat
 
         private void CallRewardScreen()
         {
+            _pause.Begin(_model);
             _rewardScreen.FadeIn();
             _travelState.NextCombatData.Reward.ShowExample(_rewardPosition, this);
         }
 
         private void CallDeathScreen()
         {
+            _pause.Begin(_model);
             _deathScreen.FadeIn();
         }
     }

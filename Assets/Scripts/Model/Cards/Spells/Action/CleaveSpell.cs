@@ -14,6 +14,7 @@ namespace Model.Cards.Spells.Action
             "[Пассивно:] В конце вашего хода наносит 1<dm> всем противникам."
         );
         public override SpellType Type => SpellType.Action;
+        public override bool HasPassive => true;
 
 
         public override void OnPlay(bool burst)

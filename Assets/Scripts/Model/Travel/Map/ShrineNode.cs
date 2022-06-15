@@ -68,7 +68,8 @@ namespace Model.Travel.Map
             }
             _manualSave.Data.NodePosition = transform.position;
             _manualSave.Save();
-            OnPlayerEntered?.Invoke();
+            if (_permanentSave.Data.CardsUnlocked.Count >= 12)
+                OnPlayerEntered?.Invoke();
         }
 
         public override void OnPLayerStartHere() => OnPlayerEntered?.Invoke();

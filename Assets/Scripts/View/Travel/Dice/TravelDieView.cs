@@ -9,6 +9,9 @@ namespace View.Travel.Dice
     public class TravelDieView : Transformer
     {
         [SerializeField] private MeshRenderer[] _sideMeshes;
+        [SerializeField] private MeshRenderer _outerMesh;
+        [SerializeField] private Material _chosenMaterial;
+        [SerializeField] private Material _unchosenMaterial;
         [SerializeField] private Transform[] _standarts = new Transform[6];
 
         public float TargetScale { get; set; } = 1;
@@ -24,6 +27,9 @@ namespace View.Travel.Dice
             transform.DOLocalRotateQuaternion(_standarts[index].localRotation, 0.4f);
             transform.DOLocalJump(transform.localPosition, 2.5f, 1, 0.4f);
         }
+
+        public void HighlightChosen() => _outerMesh.material = _chosenMaterial;
+        public void HighlightUnchosen() => _outerMesh.material = _unchosenMaterial;
 
         private void FixedUpdate()
         {

@@ -37,6 +37,7 @@ namespace Model.Global.Save
         [SerializeField] private List<string> _map;
         [SerializeField] private List<string> _dice;
         [SerializeField] private List<string> _combatsCleared;
+        [SerializeField] private List<string> _tutorialsWatched;
         [SerializeField] private int _keys;
 
         public List<string> CardsUnlocked
@@ -81,12 +82,19 @@ namespace Model.Global.Save
             set => _map = value;
         }
 
+        public List<string> TutorialsWatched
+        {
+            get => _tutorialsWatched;
+            set => _tutorialsWatched = value;
+        }
+
         public void AddKey() => Keys++;
 
         public PermanentSaveData()
         {
             _combatsCleared = new List<string>();
             _shrinesUnlocked = new List<string>();
+            _tutorialsWatched = new List<string>();
             _map = new List<string>();
             
             _cardsUnlocked = new []

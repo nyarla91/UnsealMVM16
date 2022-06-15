@@ -11,8 +11,11 @@ namespace Essentials.Pointers
         
         [Tooltip("Period of invoking OnDrag event\n0 or less - every frame")]
         [SerializeField] private float _dragPeriod;
+
+        private bool _isMouseOver;
+        public bool IsMouseOver => _isMouseOver;
         
-        public delegate void MousePointActionHandler(PointerType button, Vector3 contactPoint);
+        public delegate void MousePointActionHandler(PointerType button, Vector3 contact);
         public MousePointActionHandler OnDown, OnUp, OnClick, OnDoubleClick;
 
         public UnityEvent<PointerType> UnityOnDown, UnityOnUp, UnityOnClick, UnityOnDoubleClick;
@@ -36,6 +39,8 @@ namespace Essentials.Pointers
             OnDoubleClick += (button, point) => UnityOnDoubleClick?.Invoke(button);
             OnDrag += (button) => UnityOnDrag?.Invoke(button);
             OnDragEnd += (button) => UnityOnDragEnd?.Invoke(button);
+            OnEnter += () => _isMouseOver = true;
+            OnExit += () => _isMouseOver = false;
         }
 
         private IEnumerator Drag(PointerType button)

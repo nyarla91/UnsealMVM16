@@ -24,7 +24,8 @@ namespace Model.Combat.GameAreas
             }
         }
 
-        public Action<Spell> OnCardPurged;
+        public Action<Spell> OnSpellPurged;
+        public Action<Spell> OnActionUsed;
         public event Action<int> OnBurstChanged;
         private int _burst = 0;
         public bool FormDifferenceBuff { private get; set; }
@@ -32,7 +33,7 @@ namespace Model.Combat.GameAreas
         [DontCallFromSpells]
         public void AddGrowth(int burst) => Burst += burst;
 
-        public bool TrySpendGrowth()
+        public bool TrySpendBurst()
         {
             if (Burst <= 0)
                 return false;

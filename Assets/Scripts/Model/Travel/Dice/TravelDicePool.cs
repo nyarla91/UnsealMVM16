@@ -16,6 +16,7 @@ namespace Model.Travel.Dice
         private TravelDie _selectedDie;
 
         [Inject] private PermanentSave _permanentSave;
+        [Inject] private Pause _pause;
 
         private List<TravelDie> ReadyDice => _dice.Where(die => !die.Exhausted).ToList();
         private List<TravelDie> ExhaustedDice => _dice.Where(die => die.Exhausted).ToList();
@@ -43,7 +44,7 @@ namespace Model.Travel.Dice
                 TravelDie prefab = Resources.Load<GameObject>($"Dice/{dieName}").GetComponent<TravelDie>();
                 InstantiateForComponent(out TravelDie die, prefab, transform);
                 _dice.Add(die);
-                die.Init(this);
+                die.Init(this, _pause);
                 die.transform.localPosition = Vector3.zero;
                 die.transform.localRotation = Quaternion.identity;
             }
@@ -67,6 +68,13 @@ namespace Model.Travel.Dice
                 Vector3 localPosition = new Vector3((leftMostIndex + i) * unitsPerIndex, 0, 0);
                 ReadyDice[i].TargetLocalPosition = localPosition;
             }
+        }
+
+        public void ReadyRandomDie()
+        {
+            if (ExhaustedDice.Count == 0)
+                return;
+            ExhaustedDice.PickRandomElement().Ready();
         }
 
         public void ReadyAll()

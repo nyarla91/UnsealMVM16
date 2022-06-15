@@ -34,7 +34,7 @@ namespace Presenter.Combat.Characters
         {
             for (int i = 0; i < tokens; i++)
             {
-                InstantiateForComponent(out Token token, _tokenPrefab, transform.position);
+                InstantiateForComponent(out Token token, _tokenPrefab, _origin);
                 _tokens.Add(token);
                 token.Descend();
             }
@@ -49,8 +49,8 @@ namespace Presenter.Combat.Characters
             {
                 _tokens[i].Descend();
                 float z = -i * Spacing;
-                Vector3 position = _origin.position.WithY(0) + new Vector3(0, 0, z);
-                _tokens[i].TargetPosition = position;
+                Vector3 position = new Vector3(0, 0, z);
+                _tokens[i].TargetLocalPosition = position;
             }
         }
     }

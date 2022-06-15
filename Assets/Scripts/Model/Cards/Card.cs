@@ -11,15 +11,21 @@ namespace Model.Cards
         private const float MovementSpeed = 15;
 
         private bool _isMouseOver;
+        private AudioSource _audioSource;
 
         protected PointerTarget PointerTarget { get; private set; }
         public Spell Spell { get; private set; }
+        public Pause Pause { get; set; }
+
+        protected AudioSource AudioSource => _audioSource ??= GetComponent<AudioSource>();
 
         public Vector3 TargetPosition { get; set; }
         public Quaternion TargetRotation { get; set; }
 
         public virtual bool ShowPlayableOutline => false;
         protected virtual bool LocalPosition => false;
+        public virtual bool InteractableOnPause => false;
+
 
 
         protected void TransformIntoCardInAnotherArea<T>() where T : Card
@@ -27,12 +33,14 @@ namespace Model.Cards
             DetachFromPlayArea();
             T card = gameObject.AddComponent<T>();
             PassBoard(card);
+            card.Pause = Pause;
             card.Init();
             DestroyImmediate(this);
         }
+        
 
         [DontCallFromSpells]
-        public void Exile()
+        public virtual void Exile()
         {
             DetachFromPlayArea();
             Destroy(gameObject);

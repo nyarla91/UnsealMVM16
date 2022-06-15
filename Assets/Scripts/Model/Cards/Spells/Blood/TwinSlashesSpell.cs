@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Model.Combat.Characters;
+using Model.Combat.Characters.Enemies;
 using Model.Combat.Effects;
 using Model.Localization;
 

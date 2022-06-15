@@ -11,6 +11,7 @@ namespace Model.Combat.Shapeshifting
     public abstract class Form : Transformer
     {
         [SerializeField] private TargetToChoose _targetToChoose;
+        [SerializeField] private Material _icon;
         [SerializeField] private LocalizedString _name;
         [SerializeField] private LocalizedString _description;
         private GameBoard _gameBoard;
@@ -25,7 +26,7 @@ namespace Model.Combat.Shapeshifting
                 _gameBoard = value;
             }
         }
-
+        public Material Icon => _icon;
         public LocalizedString Name => _name;
         public LocalizedString Description => _description;
 

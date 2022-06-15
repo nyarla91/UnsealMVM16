@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da75ab67af724e72b019693796adf026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meshRenderer: {fileID: 6477976713653680073}
-  _pressedMaterial: {fileID: 2100000, guid: b7b68fd02b40dfa4880a8fc1cbac52e6, type: 2}
-  _releasedMaterial: {fileID: 2100000, guid: 441e585489877834cb573be8a5b31ede, type: 2}
+  _meshRenderer: {fileID: 0}
+  _pressedMaterial: {fileID: 0}
+  _releasedMaterial: {fileID: 0}
 --- !u!1 &5631734695960652305
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +97,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dragPeriod: 0
+  UnityOnDown:
+    m_PersistentCalls:
+      m_Calls: []
+  UnityOnUp:
+    m_PersistentCalls:
+      m_Calls: []
+  UnityOnClick:
+    m_PersistentCalls:
+      m_Calls: []
+  UnityOnDoubleClick:
+    m_PersistentCalls:
+      m_Calls: []
+  UnityOnDrag:
+    m_PersistentCalls:
+      m_Calls: []
+  UnityOnDragEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &5631734695960652304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -298,10 +316,5 @@ PrefabInstance:
 --- !u!4 &5308980502257700006 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9891c6c3b1fd1cc4db39d7a11b317ec6, type: 3}
-  m_PrefabInstance: {fileID: 5631734695360654157}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &6477976713653680073 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 9891c6c3b1fd1cc4db39d7a11b317ec6, type: 3}
   m_PrefabInstance: {fileID: 5631734695360654157}
   m_PrefabAsset: {fileID: 0}

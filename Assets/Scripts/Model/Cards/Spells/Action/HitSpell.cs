@@ -1,4 +1,5 @@
 ﻿using Model.Combat.Characters;
+using Model.Combat.Characters.Enemies;
 using Model.Combat.Effects;
 using Model.Localization;
 
@@ -19,10 +20,10 @@ namespace Model.Cards.Spells.Action
 
         public override async void OnPlay(bool burst)
         {
-            Character target = await GetTarget<Enemy>(ChooseEnemyMessage,true);
+            base.OnPlay(burst);
+            Enemy target = await GetTarget<Enemy>(ChooseEnemyMessage,true);
             if (target != null)
                 GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.1f, target, 3, burst));
-            base.OnPlay(burst);
         }
     }
 }

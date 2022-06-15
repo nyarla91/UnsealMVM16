@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Essentials;
-using Model.Cards;
 using Model.Cards.Combat;
 using Model.Combat.Effects;
 using Model.Combat.Effects.Inner;
@@ -16,6 +15,8 @@ namespace Model.Combat.GameAreas
     public class Turn : Transformer
     {
         [SerializeField] private GameBoard _gameBoard;
+
+        private bool _firstTurn = true;
 
         private Form _currentForm;
         private readonly LocalizedString _chooseFormMessage = new LocalizedString
@@ -46,8 +47,12 @@ namespace Model.Combat.GameAreas
         public bool EndTurnButtonPressed { get; set; }
 
         public event Action OnPlayerTurnStart;
+        public event Action OnNotFirstTurnStart;
         public event Action OnPlayerTurnEnd;
         public event Action OnEnemyTurnStart;
+        public event Action<Form> OnFormChosen;
+        public event Action<Form> OnFormChanged;
+        public event Action OnFormNotChanged;
 
         public void AddCardPlayed()
         {
@@ -60,7 +65,7 @@ namespace Model.Combat.GameAreas
                 return;
             
             OnPlayerTurnEnd?.Invoke();
-            await _gameBoard.EffectQueue.WaitForEffects();
+            await WaitForEffectsAndChoose();
             
             IsPlayerTurn = false;
             List<CardOnBoard> cardsToPurge = await _gameBoard.TargetChooser.StartTargetsChoose<CardOnBoard>
@@ -69,7 +74,7 @@ namespace Model.Combat.GameAreas
             {
                 _gameBoard.EffectQueue.AddEffect(new PurgeCardEffect(0.1f, card));
             }
-            await _gameBoard.EffectQueue.WaitForEffects();
+            await WaitForEffectsAndChoose();
             
             List<CardInHand> cardsToDiscard = await _gameBoard.TargetChooser.StartTargetsChoose<CardInHand>
                 (_gameBoard.PlayerDiscardPile.transform, _discardAnyCardsMessage, 15, false);
@@ -78,13 +83,8 @@ namespace Model.Combat.GameAreas
                 _gameBoard.EffectQueue.AddEffect(new DiscardACardEffect(0.1f, card));
             }
             
-            await _gameBoard.EffectQueue.WaitForEffects();
-            
-            DrawCardsUpToMax();
+            await WaitForEffectsAndChoose();
 
-            await _gameBoard.EffectQueue.WaitForEffects();
-
-            CardsPlayedThisTurn = 0;
             OnEnemyTurnStart?.Invoke();
 
             _gameBoard.EffectQueue.AddEffect(new StartTurnEffect(this, 0.5f));
@@ -101,10 +101,20 @@ namespace Model.Combat.GameAreas
         {
             if (IsPlayerTurn)
                 return;
-
+            
+            CardsPlayedThisTurn = 0;
+            DrawCardsUpToMax();
+            await WaitForEffectsAndChoose();
+            
             await ChooseForm();
+            
             IsPlayerTurn = true;
             OnPlayerTurnStart?.Invoke();
+            if (_firstTurn)
+            {
+                OnNotFirstTurnStart?.Invoke();
+                _firstTurn = false;
+            }
         }
 
         private async Task ChooseForm()
@@ -114,10 +124,27 @@ namespace Model.Combat.GameAreas
             Form newForm = await _gameBoard.TargetChooser.StartTargetChoose<Form>
                 (_gameBoard.Player.transform, _chooseFormMessage, true);
             
+            OnFormChosen?.Invoke(newForm);
             FormDifferenceBuff =  _gameBoard.PlayerBoard.FormDifferenceBuff = _currentForm != null && !_currentForm.Equals(newForm);
+            if (FormDifferenceBuff)
+            {
+                OnFormChanged?.Invoke(newForm);
+            }
+            else if (_currentForm != null)
+            {
+                OnFormNotChanged?.Invoke();
+            }
             _currentForm?.Exit();
             newForm?.Enter();
             _currentForm = newForm;
+        }
+
+        public async Task WaitForEffectsAndChoose()
+        {
+            while (_gameBoard.EffectQueue.EffectInProgress || _gameBoard.TargetChooser.ChooseActive)
+            {
+                await Task.Delay(50);
+            }
         }
 
         private void Update()

@@ -18,7 +18,7 @@ namespace Model.Combat.Effects
 
         public override void Execute()
         {
-            _target?.RestoreHealth(_burst ? 1 : 0 + _health);
+            _target?.RestoreHealth((_burst ? 1 : 0) + _health);
         }
     }
 }

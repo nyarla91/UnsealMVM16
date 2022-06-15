@@ -12,7 +12,7 @@ namespace Model.Combat.Shapeshifting
 {
     public class NatureForm : Form
     {
-        private List<Type> _growths = new[] { typeof(GrowthSpikesSpell), typeof(GrowthBlossomSpell), typeof(GrowthRootsSpell)}.ToList();
+        private List<Type> _growths = new[] { typeof(GrowthThornsSpell), typeof(GrowthBlossomSpell), typeof(GrowthRootsSpell)}.ToList();
         
         public override void Enter()
         {

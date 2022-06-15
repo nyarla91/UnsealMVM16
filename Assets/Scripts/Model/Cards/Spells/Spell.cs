@@ -20,6 +20,7 @@ namespace Model.Cards.Spells
         public abstract SpellType Type { get; }
         public virtual Func<bool> PlayRequirements => () => true;
         public virtual bool InfiniteInDeck => false;
+        public virtual bool HasPassive => false;
         public virtual bool HasAction => false;
         public bool ActionAvailbale { get; private set; } = true;
         public Material Icon => _icon ??= Resources.Load<Material>("SpellIcons/" + Name.Eng);
@@ -28,17 +29,26 @@ namespace Model.Cards.Spells
             "Choose enemy",
             "Выберите противника"
         );
+
+        protected static LocalizedString ChooseCardMessage => new LocalizedString
+        (
+            "Choose card",
+            "Выберите карту"
+        );
+
         protected static LocalizedString ChooseCharacterMessage => new LocalizedString
         (
             "Choose character",
             "Выберите персонажа"
         );
-        protected static LocalizedString ChooseCardToDiscard => new LocalizedString
+
+        protected static LocalizedString ChooseCardToDiscardMessage => new LocalizedString
         (
             "Choose card to discard",
             "Выберите карту, которую сбросите"
         );
-        protected static LocalizedString ChooseCardToPurge => new LocalizedString
+
+        protected static LocalizedString ChooseCardToPurgeMessage => new LocalizedString
         (
             "Choose card to purge",
             "Выберите карту, которую очистите"
@@ -95,7 +105,10 @@ namespace Model.Cards.Spells
         public virtual void OnUseAction()
         {
             ActionAvailbale = false;
+            GameBoard.PlayerBoard.OnActionUsed?.Invoke(this);
         }
+
+        public void ReadyAction() => ActionAvailbale = true;
 
         private void Awake()
         {
@@ -111,6 +124,11 @@ namespace Model.Cards.Spells
         {
             List<T> targets = await GetTargets<T>(message, 1, compulsory);
             return targets.Count > 0 ? targets[0] : null;
+        }
+
+        protected void AddCardToDiscardPile(Type type)
+        {
+            
         }
 
         private void RestoreAction() => ActionAvailbale = true;

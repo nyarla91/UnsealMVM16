@@ -2,12 +2,15 @@
 using System.Threading.Tasks;
 using Model.Combat.GameAreas;
 using UnityEngine;
+using Zenject;
 
 namespace Model.Combat.Effects
 {
     public class EffectQueue : MonoBehaviour
     {
         [SerializeField] private GameBoard _gameBoard;
+
+        [Inject] private Pause _pause;
         
         private List<Effect> _effects = new List<Effect>();
         private float _delayLeft;
@@ -42,7 +45,7 @@ namespace Model.Combat.Effects
 
         private void FixedUpdate()
         {
-            if (_delayLeft >= 0)
+            if (_delayLeft >= 0  && !_pause.IsPaused)
                 _delayLeft -= Time.fixedDeltaTime;
             else if (_effects.Count > 0 && !_gameBoard.TargetChooser.ChooseActive)
             {

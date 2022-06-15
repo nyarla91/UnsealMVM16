@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetToChoose: {fileID: 5378405144750797794}
+  _icon: {fileID: 2100000, guid: 04815a8df929d70478b6456202b7de64, type: 2}
   _name:
     _eng: Bear form
     _rus: "\u041E\u0431\u043B\u0438\u043A \u043C\u0435\u0434\u0432\u0435\u0434\u044F"

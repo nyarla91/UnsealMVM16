@@ -20,7 +20,7 @@ namespace Model.Combat.Effects
             if (_target == null)
                 return;
 
-            _target?.DealPereodicDamage(_burst ? 1 : 0 + _damage);
+            _target?.DealPereodicDamage((_burst ? 1 : 0) + _damage);
         }
     }
 }

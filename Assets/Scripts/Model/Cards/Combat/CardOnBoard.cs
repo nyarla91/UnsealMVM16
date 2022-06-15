@@ -6,17 +6,18 @@ namespace Model.Cards.Combat
 {
     public sealed class CardOnBoard : CardInCombat
     {
-        
+        private static readonly string[] PurgeSound = {"Card/Discard1", "Card/Discard2", "Card/Discard3", "Card/Discard4"};
         public override bool ShowPlayableOutline => ActionAvailbale;
 
-        private bool ActionAvailbale => !GameBoard.TargetChooser.ChooseActive && !GameBoard.EffectQueue.EffectInProgress
+        private bool ActionAvailbale => !Pause.IsPaused && !GameBoard.TargetChooser.ChooseActive && !GameBoard.EffectQueue.EffectInProgress
             && Spell.HasAction && Spell.ActionAvailbale;
 
         [DontCallFromSpells]
         public void Purge()
         {
             Spell.OnPurge();
-            GameBoard.PlayerBoard.OnCardPurged?.Invoke(Spell);
+            AudioSource.PlayOneShot(SoundRandomizer.LoadAudio(PurgeSound), 1);
+            GameBoard.PlayerBoard.OnSpellPurged?.Invoke(Spell);
             TransformIntoCardInAnotherArea<CardInDiscardPile>();
         }
         

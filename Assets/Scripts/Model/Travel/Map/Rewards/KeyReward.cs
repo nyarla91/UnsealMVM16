@@ -7,10 +7,10 @@ namespace Model.Travel.Map.Rewards
     [CreateAssetMenu(fileName = "Key", menuName = "Combat Rewards/Key", order = 0)]
     public class KeyReward : CombatReward
     {
-        public override void ClaimReward(PermanentSave save)
+        public override void ClaimReward(PermanentSave permanentSave, ManualSave manualSave)
         {
-            save.Data.AddKey();
-            save.Save();
+            permanentSave.Data.AddKey();
+            permanentSave.Save();
         }
 
         public override void ShowExample(RectTransform parent, CombatEndPresenter presenter)

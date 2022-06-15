@@ -13,6 +13,7 @@ namespace Model.Travel.Map
     public class Node : Transformer
     {
         [SerializeField] private PointerTarget _pointerTarget;
+        [SerializeField] private NodeConnectionCreator _connectionCreator;
         [SerializeField] private NodeKind _kind;
         [SerializeField] private List<NodeConnection> _connections;
 
@@ -21,6 +22,8 @@ namespace Model.Travel.Map
         private bool _interactionActive = true;
 
         public List<NodeConnection> Connections => _connections;
+
+        public NodeConnectionCreator ConnectionCreator => _connectionCreator;
 
         public bool InteractionActive
         {
@@ -36,6 +39,7 @@ namespace Model.Travel.Map
         }
 
         public event Action<bool> OnSwitchInteractionActive;
+        public event Action OnPlayerEnterHere;
 
         [Inject]
         private void Construct(PlayerMiniature player, TravelDicePool dicePool)
@@ -79,8 +83,10 @@ namespace Model.Travel.Map
             
             playerNode._kind?.OnPLayerLeave();
             _player.MoveToNode(this);
-            selectedDie.Exhaust();
+            if (_kind == null || _kind.SpendDie)
+                selectedDie.Exhaust();
             yield return new WaitForSeconds(0.5f);
+            OnPlayerEnterHere?.Invoke();
             if (InteractionActive)
                 _kind?.OnPLayerEnter();
         }

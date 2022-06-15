@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetToChoose: {fileID: 6174520856096462984}
+  _icon: {fileID: 2100000, guid: 595e72a3c35ed3b48b0aa44ca50858a8, type: 2}
   _name:
     _eng: Human form
     _rus: "\u0427\u0435\u043B\u043E\u0432\u0435\u0447\u0435\u0441\u043A\u0438\u0439

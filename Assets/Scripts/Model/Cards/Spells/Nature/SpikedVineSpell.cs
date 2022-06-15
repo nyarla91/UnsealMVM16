@@ -1,4 +1,6 @@
-﻿using Model.Combat.Characters;
+﻿using Model.Cards.Combat;
+using Model.Combat.Characters;
+using Model.Combat.Characters.Enemies;
 using Model.Combat.Effects;
 using Model.Localization;
 using UnityEngine;
@@ -12,18 +14,18 @@ namespace Model.Cards.Spells.Nature
             "Колючая лоза"
         );
         public override LocalizedString Description => new LocalizedString(
-            "Deal 1<dm> three times",
-            "Трижды наносит 1<dm>"
+            "Add 2 Thorns Growth to your discard pile",
+            "добавьте 2 Роста Шипов в ваш сброс."
         );
         public override SpellType Type => SpellType.Nature;
 
         public override async void OnPlay(bool burst)
         {
             base.OnPlay(burst);
-            Enemy target = await GetTarget<Enemy>(ChooseEnemyMessage, true);
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 2; i++)
             {
-                GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.05f, target, 1, burst));
+                GameBoard.EffectQueue.AddEffect(new AddSpellToAreaEffect<CardInDiscardPile>(0.1f,
+                    GameBoard.PlayerDiscardPile, typeof(GrowthThornsSpell)));
             }
         }
     }

@@ -18,8 +18,8 @@ namespace Model.Cards.Spells.Action
 
         public override void OnPlay(bool burst)
         {
-            GameBoard.EffectQueue.AddEffect(new AddArmorEffect(0.1f, GameBoard.Player, 3, burst));
             base.OnPlay(burst);
+            GameBoard.EffectQueue.AddEffect(new AddArmorEffect(0.1f, GameBoard.Player, 3, burst));
         }
     }
 }

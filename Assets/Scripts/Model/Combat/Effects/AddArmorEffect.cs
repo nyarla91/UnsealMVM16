@@ -20,7 +20,7 @@ namespace Model.Combat.Effects
             if (_target == null)
                 return;
             
-            _target.AddArmor(_burst ? 1 : 0 + _armor);
+            _target.AddArmor((_burst ? 1 : 0) + _armor);
         }
     }
 }

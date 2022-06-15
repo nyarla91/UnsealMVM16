@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetToChoose: {fileID: 7886114302150969351}
+  _icon: {fileID: 2100000, guid: d3d5c76be928c844981c94cbde27dfff, type: 2}
   _name:
     _eng: Deer form
     _rus: "\u041E\u0431\u043B\u0438\u043A \u043E\u043B\u0435\u043D\u044F"

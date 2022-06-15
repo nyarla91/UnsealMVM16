@@ -1,4 +1,5 @@
-﻿using Model.Combat.Effects;
+﻿using Model.Cards.Combat;
+using Model.Combat.Effects;
 using Model.Localization;
 
 namespace Model.Cards.Spells.Nature
@@ -10,16 +11,17 @@ namespace Model.Cards.Spells.Nature
             "Саженец"
         );
         public override LocalizedString Description => new LocalizedString(
-            "Restore 1<hp> to yourself.\nGain 1<br>",
-            "Восстанавливает вам 1<hp>\nПолучите 1<br>"
+            "Restore 2<hp>.\nAdd Blossom Growth to your discard pile.",
+            "Восстанавливает вам 2<hp>\nДобавьте Рост Цветков в ваш сброс"
         );
         public override SpellType Type => SpellType.Nature;
 
         public override void OnPlay(bool burst)
         {
             base.OnPlay(burst);
-            GameBoard.EffectQueue.AddEffect(new RestoreHealthEffect(0.1f, GameBoard.Player, 1, burst));
-            GameBoard.EffectQueue.AddEffect(new AddBurstEffect(0.1f, GameBoard.PlayerBoard, 1));
+            GameBoard.EffectQueue.AddEffect(new RestoreHealthEffect(0.1f, GameBoard.Player, 2, burst));
+            GameBoard.EffectQueue.AddEffect(new AddSpellToAreaEffect<CardInDiscardPile>(0.1f,
+                GameBoard.PlayerDiscardPile, typeof(GrowthBlossomSpell)));
         }
     }
 }

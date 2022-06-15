@@ -9,10 +9,10 @@ namespace Model.Travel.Map.Rewards
     [CreateAssetMenu(fileName = "Die", menuName = "Combat Rewards/Die", order = 0)]
     public class DieReward : CombatReward
     {
-        public override void ClaimReward(PermanentSave save)
+        public override void ClaimReward(PermanentSave permanentSave, ManualSave manualSave)
         {
-            save.Data.Dice.Add(ExamplePrefab.name);
-            save.Save();
+            permanentSave.Data.Dice.Add(ExamplePrefab.name);
+            permanentSave.Save();
         }
 
         public override void ShowExample(RectTransform parent, CombatEndPresenter presenter)

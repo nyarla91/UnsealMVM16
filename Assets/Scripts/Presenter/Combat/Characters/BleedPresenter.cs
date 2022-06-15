@@ -23,7 +23,7 @@ namespace Presenter.Combat.Characters
 
         private void CreateBleedToken(int value)
         {
-            InstantiateForComponent(out Token token, _tokenPrefab, transform.position);
+            InstantiateForComponent(out Token token, _tokenPrefab, _origin);
             _bleedTokens.Add(token);
             token.Value = value;
             token.Descend();
@@ -47,14 +47,14 @@ namespace Presenter.Combat.Characters
         {
             const float Spacing = 0.6f;
             const int TokensInRow = 6;
-            const float RowsSpacing = 1;
+            const float RowsSpacing = 0.6f;
             
             for (int i = _bleedTokens.Count - 1; i >= 0; i--)
             {
-                float x = (i + 1) % TokensInRow * Spacing - Spacing;
-                float z = ((int) ((i + 1) / TokensInRow)) * -RowsSpacing;
-                Vector3 position = _origin.position + new Vector3(x, 0, z);
-                _bleedTokens[i].TargetPosition = position;
+                int position = i + 1;
+                float x = position % TokensInRow * Spacing;
+                float z = (position / TokensInRow) * -RowsSpacing;
+                _bleedTokens[i].TargetLocalPosition = new Vector3(x, 0, z);
             }
         }
     }

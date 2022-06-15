@@ -4,7 +4,9 @@ using Essentials;
 using Model.Cards;
 using Presenter.Cards;
 using UnityEngine;
+using UnityEngine.Serialization;
 using View.Cards;
+using Zenject;
 
 namespace Model.Combat.GameAreas
 {
@@ -12,10 +14,12 @@ namespace Model.Combat.GameAreas
     {
         [SerializeField] private GameObject _cardPrefab;
         [SerializeField] private Transform _cardStandart;
-        [SerializeField] private AbilitiyTooltip abilitiyTooltip;
-        
-        public Transform CardStandart => _cardStandart;
-        protected List<TCard> Cards { get; set; } = new List<TCard>();
+        [FormerlySerializedAs("abilitiyTooltip")] [SerializeField] private AbilitiyTooltip _abilitiyTooltip;
+
+        [Inject] private Pause _pause;
+
+        protected Transform CardStandart => _cardStandart;
+        public List<TCard> Cards { get; protected set; } = new List<TCard>();
         public int Size => Cards.Count;
         public bool IsFull => Size == MaxSize;
         protected virtual bool RearrangeAutomatically => true;
@@ -53,7 +57,8 @@ namespace Model.Combat.GameAreas
             card.AddComponent(spellType);
             TCard cardInPlace = card.AddComponent<TCard>();
             PassBoard(cardInPlace);
-            cardInPlace.GetComponent<CardPresenter>().Tooltip = abilitiyTooltip;
+            cardInPlace.Pause = _pause;
+            cardInPlace.GetComponent<CardPresenter>().Tooltip = _abilitiyTooltip;
             cardInPlace.Init();
             return cardInPlace;
         }

@@ -30,9 +30,9 @@ namespace Essentials.Sound
             print(clip);
             if (_instance._soundDictionary.ContainsKey(clip))
             {
-                SoundInstance newInstance =
+                AudioSource newInstance =
                     Instantiate(_instance._soundPrefab, CameraProperties.Instance.transform.position, Quaternion.identity)
-                        .GetComponent<SoundInstance>();
+                        .GetComponent<AudioSource>();
                 newInstance.Play(_instance._soundDictionary[clip], volume * MASTER_VOLUME);
                 print(newInstance);
             }

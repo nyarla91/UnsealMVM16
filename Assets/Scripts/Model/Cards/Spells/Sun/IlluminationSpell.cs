@@ -11,11 +11,12 @@ namespace Model.Cards.Spells.Sun
         );
 
         public override LocalizedString Description => new LocalizedString(
-            "[Passive:] At the end of your turn restore 1<hp> if you played 3<cr> this turn or less",
-            "[Пассивно:] В конце хода восстановите 1<ap>, если разыграли вэтот ход 3<cr> или меньше."
+            "[Passive:] At the end of your turn restore 2<hp> if you played 3<cr> this turn or less",
+            "[Пассивно:] В конце хода восстановите 2<ap>, если разыграли вэтот ход 3<cr> или меньше."
         );
 
         public override SpellType Type => SpellType.Sun;
+        public override bool HasPassive => true;
 
         public override void OnPlay(bool burst)
         {
@@ -30,7 +31,7 @@ namespace Model.Cards.Spells.Sun
             
             for (int i = 0; i < GameBoard.PlayerBoard.PassiveModifier; i++)
             {
-                GameBoard.EffectQueue.AddEffect(new RestoreHealthEffect(0.1f, GameBoard.Player, 1, Burst), 0);
+                GameBoard.EffectQueue.AddEffect(new RestoreHealthEffect(0.1f, GameBoard.Player, 2, Burst), 0);
             }
         }
 

@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetToChoose: {fileID: 42066679458905913}
+  _icon: {fileID: 2100000, guid: 2c5ce0fc40c10904f9037fbeb1b404a6, type: 2}
   _name:
     _eng: Lark form
     _rus: "\u041E\u0431\u043B\u0438\u043A \u0436\u0430\u0432\u043E\u0440\u043E\u043D\u043A\u0430"

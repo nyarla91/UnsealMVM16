@@ -74,7 +74,9 @@ namespace Model.Deckbulding
 
         private void Start()
         {
-            foreach (var cardUnlocked in _permanentSave.Data.CardsUnlocked)
+            List<string> cardsUnlocked = _permanentSave.Data.CardsUnlocked;
+            cardsUnlocked.Reverse();
+            foreach (var cardUnlocked in cardsUnlocked)
             {
                 CardInLibary createdCard = CreateCard(cardUnlocked, transform.position);
                 if (!createdCard.Spell.InfiniteInDeck && _manualSave.Data.Deck.Contains(cardUnlocked))

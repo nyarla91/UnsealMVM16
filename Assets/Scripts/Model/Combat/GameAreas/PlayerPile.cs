@@ -9,7 +9,7 @@ namespace Model.Combat.GameAreas
     {
         protected override void RearrangeCards()
         {
-            const float UnitsPerIndex = 0.01f;
+            const float UnitsPerIndex = 0.03f;
             
             for (int i = 0; i < Size; i++)
             {

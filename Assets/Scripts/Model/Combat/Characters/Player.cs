@@ -14,6 +14,8 @@ namespace Model.Combat.Characters
         
         private int _intoxication;
 
+        public int Intoxication => _intoxication;
+
         public event Action<int> OnIntoxicationAdded;
         public event Action<int> OnIntoxicationCured;
 

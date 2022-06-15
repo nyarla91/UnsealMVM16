@@ -68,6 +68,8 @@ namespace View.Cards
         {
             description = description.Replace("[", "<b><color=#ffa500ff>");
             description = description.Replace("]", "</color></b>");
+            description = description.Replace("(", "<i><color=#c0c0c0ff>(");
+            description = description.Replace(")", ")</color></i>");
             description = description.Replace("<hp>", "<sprite index=0>");
             description = description.Replace("<dm>", "<sprite index=1>");
             description = description.Replace("<ap>", "<sprite index=2>");

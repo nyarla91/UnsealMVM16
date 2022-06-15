@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetToChoose: {fileID: 7973328139936493172}
+  _icon: {fileID: 2100000, guid: 99624aa517d7f0f4190262cb4fc40bfe, type: 2}
   _name:
     _eng: Panther form
     _rus: "\u041E\u0431\u043B\u0438\u043A \u043F\u0430\u043D\u0442\u0435\u0440\u044B"

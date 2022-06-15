@@ -10,7 +10,7 @@ namespace Model.Combat.Shapeshifting
         public override void Enter()
         {
             base.Enter();
-            GameBoard.PlayerBoard.OnCardPurged += OnCardPurged;
+            GameBoard.PlayerBoard.OnSpellPurged += OnCardPurged;
             GameBoard.PlayerHand.ForbiddenType = SpellType.Sun;
         }
 
@@ -25,7 +25,7 @@ namespace Model.Combat.Shapeshifting
         public override void Exit()
         {
             base.Exit();
-            GameBoard.PlayerBoard.OnCardPurged -= OnCardPurged;
+            GameBoard.PlayerBoard.OnSpellPurged -= OnCardPurged;
             GameBoard.PlayerHand.ForbiddenType = SpellType.None;
         }
     }

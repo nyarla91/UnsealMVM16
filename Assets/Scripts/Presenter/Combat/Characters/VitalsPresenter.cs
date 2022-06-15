@@ -1,4 +1,5 @@
-﻿using Essentials;
+﻿using DG.Tweening;
+using Essentials;
 using Model.Combat.Characters;
 using UnityEngine;
 using View.Combat.Characters;
@@ -15,14 +16,15 @@ namespace Presenter.Combat.Characters
         [SerializeField] private PopUpNumber _damagePopUpPrefab;
         [SerializeField] private PopUpNumber _healPopUpPrefab;
         [SerializeField] private PopUpNumber _armorPopUpPrefab;
+        [SerializeField] private Transform _miniature;
 
         private RectTransform _canvasTransform;
 
         
         private Canvas _canvas;
-        [Inject] private Canvas Canvas
+        [Inject] public Canvas Canvas
         {
-            get => _canvas;
+            private get => _canvas;
             set
             {
                 _canvas = value;
@@ -51,6 +53,9 @@ namespace Presenter.Combat.Characters
 
         private void CreateDamagePopUp(int value)
         {
+            _miniature.DOComplete();
+            _miniature.DOLocalJump(_miniature.localPosition, 2, 1, 0.4f);
+            _miniature.DOShakeRotation(0.4f, new Vector3(20, 0, 20));
             InstantiatePopUp(_damagePopUpPrefab, value);
         }
 

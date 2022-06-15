@@ -10,6 +10,7 @@ namespace View.Deckbuilding
         [SerializeField] private CanvasGroup _saveButton;
 
         [Inject] private DeckbuildingBoard _deckbuildingBoard;
+        [Inject] private Pause _pause;
         
         public override void FadeIn()
         {
@@ -24,6 +25,7 @@ namespace View.Deckbuilding
         {
             base.FadeOut();
             PointerCaster.Instance.ActivateMask(0);
+            _pause.End(this);
         }
     }
 }

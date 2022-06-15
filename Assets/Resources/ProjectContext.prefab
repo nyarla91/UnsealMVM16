@@ -76,6 +76,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneLoaderPrefab: {fileID: 4902395635630113203, guid: 222b2283eb07f084f8c43655f1798c9b, type: 3}
   _globalTravelStatePrefab: {fileID: 484784662865371842, guid: dccee6d8afd9dc9489fd6081f421dfe4, type: 3}
-  _globalDeck: {fileID: -4993387764947625711, guid: f3955aced7df0da46a9ea4f057fdebf6, type: 3}
   _permanentSavePrefab: {fileID: -3667531092702791286, guid: 74c9f1f6317c44a4c85aaa56439150f9, type: 3}
   _manualSavePrefab: {fileID: -2214874869354829112, guid: 0cabaa2568bc86e4a941ff7391cc2788, type: 3}
+  _pausePrefab: {fileID: -6740230108276881854, guid: d79fee9bd4468704890dc67fcc322886, type: 3}

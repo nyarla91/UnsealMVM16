@@ -11,6 +11,8 @@ namespace Model.Combat.GameAreas
         protected override int MaxSize => 10;
 
         public Action<Spell> OnSpellPlayed;
+        public Action<Spell> OnSpellDiscarded;
+        public Action<Spell> OnSpellExiled;
         public SpellType ForbiddenType { get; set; } = SpellType.None;
         
         protected override void RearrangeCards()

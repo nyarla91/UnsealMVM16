@@ -14,6 +14,7 @@ namespace Model.Cards.Spells.Blood
             "[Пассивно:] Когда вы теряете <hp>, восстановите 1 <hp>"
         );
         public override SpellType Type => SpellType.Blood;
+        public override bool HasPassive => true;
 
         private int _healthLost;
 
@@ -26,7 +27,10 @@ namespace Model.Cards.Spells.Blood
 
         private void OnLoseHealth(int health)
         {
-            GameBoard.EffectQueue.AddEffect(new RestoreHealthEffect(0.1f, GameBoard.Player, 1, Burst), 0);
+            for (int i = 0; i < GameBoard.PlayerBoard.PassiveModifier; i++)
+            {
+                GameBoard.EffectQueue.AddEffect(new RestoreHealthEffect(0.1f, GameBoard.Player, 1, Burst), 0);
+            }
         }
 
         public override void OnPurge()

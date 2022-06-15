@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Model.Combat.Characters;
+using Model.Combat.Characters.Enemies;
 using Model.Global;
 using Model.Global.Save;
 using Model.Travel.Map.Rewards;
@@ -12,6 +13,7 @@ namespace Model.Travel.Map
     public class CombatNode : NodeKind
     {
         [SerializeField] private Node _node;
+        [SerializeField] private bool _dontSave;
         [SerializeField] private CombatData _data;
         
         [Inject] private SceneLoader _sceneLoader;
@@ -20,7 +22,7 @@ namespace Model.Travel.Map
 
         private void Start()
         {
-            if (_permanentSave.Data.CombatsCleared.Contains(gameObject.name))
+            if (!_dontSave && _permanentSave.Data.CombatsCleared.Contains(gameObject.name))
                 _node.InteractionActive = false;
             _data.SetNameFromNode(this);
         }
@@ -29,6 +31,19 @@ namespace Model.Travel.Map
         {
             _globalTravelState.NextCombatData = _data;
             _sceneLoader.LoadCombat();
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = _data.Reward switch
+            {
+                CardReward => Color.white,
+                KeyReward => Color.blue,
+                DieReward => Color.yellow,
+                FormReward => Color.red,
+                _ => Gizmos.color
+            };
+            Gizmos.DrawSphere(gameObject.transform.position + Vector3.up, 0.5f);
         }
     }
 

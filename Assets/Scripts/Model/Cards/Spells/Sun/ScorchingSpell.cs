@@ -1,4 +1,5 @@
 ﻿using Model.Combat.Characters;
+using Model.Combat.Characters.Enemies;
 using Model.Combat.Effects;
 using Model.Localization;
 
@@ -14,7 +15,8 @@ namespace Model.Cards.Spells.Sun
             "Deal 2<dm>. Gain 1<br>",
             "Наносит 2<dm>. Получите 1<br>"
         );
-        public override SpellType Type => SpellType.None;
+        public override SpellType Type => SpellType.Sun;
+        
         public override async void OnPlay(bool burst)
         {
             base.OnPlay(burst);

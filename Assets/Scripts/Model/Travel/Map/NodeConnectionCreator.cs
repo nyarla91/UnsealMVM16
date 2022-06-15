@@ -1,4 +1,5 @@
-﻿using Essentials;
+﻿using System;
+using Essentials;
 using Model.Global.Save;
 using Presenter.Travel.Camera;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace Model.Travel.Map
     public class NodeConnectionCreator : ComponentInstantiator
     {
         private const float NodeDistance = 5;
+        [SerializeField] private LayerMask _connectionMask;
             
         private static Vector3[] _allDirections;
         private static Vector3[] AllDirections
@@ -41,7 +43,6 @@ namespace Model.Travel.Map
             _creationOrder = Random.Range(0, (float) 10000);
         }
 
-        [ContextMenu("Create Connections")]
         private void Awake()
         {
             foreach (Vector3 direction in AllDirections)
@@ -52,12 +53,12 @@ namespace Model.Travel.Map
 
         private void TryCreateConnection(Vector3 direction)
         {
-            Collider[] overlap = Physics.OverlapSphere(transform.position + direction, 0.1f);
+            Collider[] overlap = Physics.OverlapSphere(transform.position + direction, 0.1f ,_connectionMask, QueryTriggerInteraction.Ignore);
             if (overlap.Length == 0)
                 return;
 
             Node other = overlap[0].GetComponent<Node>();
-            if (other.GetComponent<NodeConnectionCreator>()._creationOrder > _creationOrder)
+            if (other.ConnectionCreator._creationOrder > _creationOrder)
                 return;
 
             Node[] nodes = { _node, other };
@@ -65,6 +66,7 @@ namespace Model.Travel.Map
             Vector3 position = Vector3.Lerp(_node.transform.position, other.transform.position, 0.5f);
             InstantiateForComponent(out NodeConnection connection, _connectionPrefab, position);
             connection.PassDependencies(_permanentSave, _travelCamera);
+            connection.gameObject.name = $"NodeConnection ({_creationOrder})";
             connection.Init(nodes);
         }
 

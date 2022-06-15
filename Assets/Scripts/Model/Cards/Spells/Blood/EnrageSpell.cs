@@ -1,5 +1,6 @@
 ﻿using Essentials;
 using Model.Combat.Characters;
+using Model.Combat.Characters.Enemies;
 using Model.Combat.Effects;
 using Model.Localization;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace Model.Cards.Spells.Blood
         );
 
         public override SpellType Type => SpellType.Blood;
+        public override bool HasPassive => true;
 
         public override void OnPlay(bool burst)
         {

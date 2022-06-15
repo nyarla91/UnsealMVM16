@@ -1,4 +1,5 @@
 ﻿using Model.Combat.Characters;
+using Model.Combat.Characters.Enemies;
 using Model.Combat.Effects;
 using Model.Localization;
 
@@ -17,6 +18,7 @@ namespace Model.Cards.Spells.Blood
         );
 
         public override SpellType Type => SpellType.Blood;
+        public override bool HasPassive => true;
 
         private Enemy _target;
 
@@ -29,10 +31,10 @@ namespace Model.Cards.Spells.Blood
 
         private void OnPlayerTurnEnd(int healthLost)
         {
+            if (_target == null)
+                return;
             for (int i = 0; i < GameBoard.PlayerBoard.PassiveModifier; i++)
             {
-                if (_target == null)
-                    return;
                 GameBoard.EffectQueue.AddEffect(new DealPereodicDamageEffect(0.1f, _target, healthLost, Burst), 0);
             }
         }

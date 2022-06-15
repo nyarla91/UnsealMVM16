@@ -18,7 +18,7 @@ namespace View.Combat.Characters
 
         protected override Transform MovedObject => _mesh;
 
-        public Vector3 TargetPosition { get; set; }
+        public Vector3 TargetLocalPosition { get; set; }
 
         protected virtual bool Move => true;
 
@@ -45,20 +45,16 @@ namespace View.Combat.Characters
 
         private void Awake()
         {
-            TargetPosition = transform.position;
+            TargetLocalPosition = transform.localPosition;
             if (!_startOnGround)
                 AscendImmediately();
-        }
-
-        private void Start()
-        {
         }
 
         private void FixedUpdate()
         {
             const float MovementSpeed = 10;
             if (Move)
-                transform.position = Vector3.Lerp(transform.position, TargetPosition, Time.fixedDeltaTime * MovementSpeed);
+                transform.localPosition = Vector3.Lerp(transform.localPosition, TargetLocalPosition, Time.fixedDeltaTime * MovementSpeed);
         }
     }
 }

@@ -17,10 +17,15 @@ namespace Model.Travel.Map.Rewards
 
         private Type _spellType;
         
-        public override void ClaimReward(PermanentSave save)
+        public override void ClaimReward(PermanentSave permanentSave, ManualSave manualSave)
         {
-            save.Data.CardsUnlocked.Add(_spellName);
-            save.Save();
+            permanentSave.Data.CardsUnlocked.Add(_spellName);
+            permanentSave.Save();
+            if (permanentSave.Data.CardsUnlocked.Count < 12)
+            {
+                manualSave.Data.Deck.Add(_spellName);
+                manualSave.Save();
+            }
         }
 
         public override void ShowExample(RectTransform parent, CombatEndPresenter presenter)
