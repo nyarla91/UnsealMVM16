@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2669782980223819680
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6854949043067255729, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_Name
+      value: MoonExplosiveEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255736, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _character
+      value: 
+      objectReference: {fileID: 20261333}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255742, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _character
+      value: 
+      objectReference: {fileID: 20261333}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _model
+      value: 
+      objectReference: {fileID: 20261333}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _name._eng
+      value: Imp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _name._rus
+      value: "\u0411\u0435\u0441"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _description._eng
+      value: Deals 5<dm> on death
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _description._rus
+      value: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 5<dm> \u043F\u0440\u0438
+        \u0441\u043C\u0435\u0440\u0442\u0438"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805346198536593239, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae2b5a6b5d6d0af45bee305c806ac402, type: 2}
+    m_RemovedComponents:
+    - {fileID: 829932016, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+--- !u!1 &8803783746792891409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6854949043067255729, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+  m_PrefabInstance: {fileID: 2669782980223819680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &20261333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8803783746792891409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50cba681bbf34bf1a6fbc29397599719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 8
+  _attackPerTurn: 2
+  _armorPerTurn: 2
+  _clearArmorOnTurn: 1
+  _explosionDamage: 5

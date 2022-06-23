@@ -827,9 +827,10 @@ MonoBehaviour:
   _view: {fileID: 5167199542924484053}
   _audioSource: {fileID: 2157063901418831392}
   _rollClips:
-  - {fileID: 8300000, guid: f2d4174339c2b434ca266f5894fa9c61, type: 3}
-  - {fileID: 8300000, guid: c7caa6dcafc7d7348b7f58012e2b570b, type: 3}
-  - {fileID: 8300000, guid: 987a808e78f6b344a99278e02a091809, type: 3}
+  - {fileID: 8300000, guid: 4449866971fcf6948aff990c1c4db42b, type: 3}
+  - {fileID: 8300000, guid: 363ae7f6a0f4dc542aa34a354c9c17da, type: 3}
+  - {fileID: 8300000, guid: 0279b3b831c58d64dbc48be6dd9fd1d7, type: 3}
+  - {fileID: 8300000, guid: 1825ecd8ff9404f4a9716ad962b22814, type: 3}
 --- !u!65 &5439284245761040857
 BoxCollider:
   m_ObjectHideFlags: 0

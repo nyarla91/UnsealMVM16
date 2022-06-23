@@ -27,7 +27,7 @@ namespace Model.Cards.Spells.Sun
             Enemy enemy = await GetTarget<Enemy>(ChooseEnemyMessage, true);
             CardInHand cardToDiscard = await GetTarget<CardInHand>(ChooseCardToDiscardMessage, false);
 
-            int damage = cardToDiscard == null ? 5 : 2;
+            int damage = cardToDiscard == null ? 2 : 5;
             GameBoard.EffectQueue.AddEffect(new DiscardACardEffect(0.1f, cardToDiscard), 0);
             GameBoard.EffectQueue.AddEffect(new DealDamageEffect(0.1f, enemy, damage, Burst), 1);
         }

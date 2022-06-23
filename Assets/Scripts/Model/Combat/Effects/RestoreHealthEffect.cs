@@ -8,6 +8,7 @@ namespace Model.Combat.Effects
         private readonly Character _target;
         private readonly int _health;
         private readonly bool _burst;
+        public override string[] Sounds => new []{"Effects/Heal1", "Effects/Heal2","Effects/Heal3", "Effects/Heal4"};
 
         public RestoreHealthEffect(float dealyAfter, Character target, int health, bool burst) : base(dealyAfter)
         {

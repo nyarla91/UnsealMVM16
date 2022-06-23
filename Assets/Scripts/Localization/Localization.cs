@@ -4,6 +4,6 @@ namespace Localization
 {
     public class Language : MonoBehaviour
     {
-        public static int language = 0;
+        public readonly static int language = 1;
     }
 }

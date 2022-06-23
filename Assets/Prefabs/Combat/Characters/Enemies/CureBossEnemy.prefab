@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1880482044954761311
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2607094568944594962, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd2a0413d5fd2f14ea1c19e4a27afb56, type: 2}
+    - target: {fileID: 6854949043067255729, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_Name
+      value: CureBossEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255736, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _character
+      value: 
+      objectReference: {fileID: 1042919097}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 341.79388
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 53.860134
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255742, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _character
+      value: 
+      objectReference: {fileID: 1042919097}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _model
+      value: 
+      objectReference: {fileID: 1042919097}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _name._eng
+      value: Overseer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _name._rus
+      value: "\u041D\u0430\u0434\u0437\u0438\u0440\u0430\u0442\u0435\u043B\u044C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _description._eng
+      value: Whenever you don't change form discard your hand.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _description._rus
+      value: "\u041A\u043E\u0433\u0434\u0430 \u0432\u044B \u043D\u0435 \u043C\u0435\u043D\u044F\u0435\u0442\u0435
+        \u043E\u0431\u043B\u0438\u043A \u0432\u044B \u0441\u0431\u0440\u0430\u0441\u044B\u0432\u0430\u0435\u0442\u0435
+        \u0440\u0443\u043A\u0443."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805346198536593239, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 48c120b4ed9740245a4b3708040080b6, type: 2}
+    m_RemovedComponents:
+    - {fileID: 829932016, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+--- !u!1 &4988153993733219310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6854949043067255729, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+  m_PrefabInstance: {fileID: 1880482044954761311}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1042919097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4988153993733219310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80cd817c64e544a0bf8c147f0b5f5319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 70
+  _attackPerTurn: 9
+  _armorPerTurn: 6
+  _clearArmorOnTurn: 1

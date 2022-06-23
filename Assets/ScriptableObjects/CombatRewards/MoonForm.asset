@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f51518a70e4e878e272b26d6a14325, type: 3}
+  m_Name: MoonForm
+  m_EditorClassIdentifier: 
+  _examplePrefab: {fileID: 8623396693881703832, guid: cbf3c517c8ddcd24ebf62d4dd3a28275, type: 3}

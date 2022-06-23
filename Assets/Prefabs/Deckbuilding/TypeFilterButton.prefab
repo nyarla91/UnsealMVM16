@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: _model
       value: 
       objectReference: {fileID: 1769552989}
+    - target: {fileID: 5631734695645929870, guid: a0969c706f04c5448bd6700d021a952a, type: 3}
+      propertyPath: _meshRenderer
+      value: 
+      objectReference: {fileID: 4295530982410525063}
+    - target: {fileID: 5631734695645929870, guid: a0969c706f04c5448bd6700d021a952a, type: 3}
+      propertyPath: _pressedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: b7b68fd02b40dfa4880a8fc1cbac52e6, type: 2}
+    - target: {fileID: 5631734695645929870, guid: a0969c706f04c5448bd6700d021a952a, type: 3}
+      propertyPath: _releasedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 441e585489877834cb573be8a5b31ede, type: 2}
     - target: {fileID: 5631734695960652305, guid: a0969c706f04c5448bd6700d021a952a, type: 3}
       propertyPath: m_Name
       value: TypeFilterButton
@@ -96,3 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointerTarget: {fileID: 3196815809425818717}
   _type: 3
+--- !u!23 &4295530982410525063 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6477976713653680073, guid: a0969c706f04c5448bd6700d021a952a, type: 3}
+  m_PrefabInstance: {fileID: 7096177490776288846}
+  m_PrefabAsset: {fileID: 0}

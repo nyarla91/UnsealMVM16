@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1460304971616147844
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2607094568944594962, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd2a0413d5fd2f14ea1c19e4a27afb56, type: 2}
+    - target: {fileID: 6854949043067255729, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_Name
+      value: NaturePoisonousEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255736, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _character
+      value: 
+      objectReference: {fileID: 145493887}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255742, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _character
+      value: 
+      objectReference: {fileID: 145493887}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _model
+      value: 
+      objectReference: {fileID: 145493887}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _name._eng
+      value: Viper
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _name._rus
+      value: "\u0413\u0430\u0434\u044E\u043A\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _description._eng
+      value: Adds 3 Venom to your discard pile on attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _description._rus
+      value: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 3 \u042F\u0434\u0430
+        \u0432 \u0441\u0431\u0440\u043E\u0441 \u043F\u0440\u0438 \u0430\u0442\u0430\u043A\u0435."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805346198536593239, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e220babc0e95dc24f935ea280b244a1c, type: 2}
+    m_RemovedComponents:
+    - {fileID: 829932016, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+--- !u!1 &5432924960895509045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6854949043067255729, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+  m_PrefabInstance: {fileID: 1460304971616147844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &145493887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5432924960895509045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfe71fd1a6849d1aba2ab51ef92cf9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 18
+  _attackPerTurn: 3
+  _armorPerTurn: 4
+  _clearArmorOnTurn: 1
+  _venomsAdded: 2

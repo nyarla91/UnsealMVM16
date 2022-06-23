@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using Essentials;
 using Model.Global;
@@ -12,6 +13,8 @@ namespace Model.Travel
     public class PlayerMiniature : Transformer
     {
         [SerializeField] private Collider _collider;
+        [SerializeField] private List<AudioClip> _stepSounds;
+        [SerializeField] private AudioSource _audioSource;
         [SerializeField] private Node _startingNode;
         
         private Node _currentNode;
@@ -35,6 +38,8 @@ namespace Model.Travel
             _globalTravelState.CurrentNodePosition = destination.transform.position;
             transform.DOComplete();
             transform.DOLocalJump(destination.transform.position, 4, 1, 0.5f);
+            _audioSource.clip = _stepSounds.PickRandomElement();
+            _audioSource.PlayDelayed(0.3f);
         }
 
         public void MoveToNodeInstantly(Node destination)

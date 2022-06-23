@@ -1,5 +1,6 @@
 ﻿using System;
 using Essentials.Pointers;
+using Model.Global;
 using Model.Global.Save;
 using Presenter.Travel.Camera;
 using UnityEngine;
@@ -12,7 +13,9 @@ namespace Model.Travel.Map
     {
         [SerializeField] private PointerTarget _pointerTarget;
         [SerializeField] private Node _node;
+        
         [Inject] private ManualSave _manualSave;
+        [Inject] private GlobalTravelState _travelState;
         [Inject] private PermanentSave _permanentSave;
         [Inject] private PlayerMiniature _playerMiniature;
         [Inject] private TravelCamera _travelCamera;
@@ -48,6 +51,7 @@ namespace Model.Travel.Map
             if (button != PointerType.Right || !FastTravelActive)
                 return;
             
+            _travelState.Reset();
             _playerMiniature.MoveToNodeInstantly(_node);
             _travelCamera.EnableTravelMode();
         }
@@ -55,11 +59,14 @@ namespace Model.Travel.Map
         private void Start()
         {
             if (Locked)
+            {
                 FastTravelActive = false;
+            }
         }
 
         public override void OnPLayerEnter()
         {
+            _travelState.Reset();
             if (Locked)
             {
                 _permanentSave.Data.ShrinesUnlocked.Add(gameObject.name);

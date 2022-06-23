@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using Essentials;
 using TMPro;
@@ -13,6 +14,8 @@ namespace View.Combat.Characters
         [SerializeField] private Transform _mesh;
         [SerializeField] private Transform _nextStandart;
         [SerializeField] private Transform _previousStandart;
+        [SerializeField] private List<AudioClip> _fallSounds;
+        [SerializeField] private AudioSource _audioSource;
         
         private int _value;
 
@@ -41,6 +44,15 @@ namespace View.Combat.Characters
             _mesh.DORotateQuaternion(_nextStandart.rotation, 0.4f);
             _mesh.DOJump(transform.position, 5, 1, 0.4f);
             MiscEssentials.Swap(ref _previousStandart, ref _nextStandart);
+            _audioSource.clip = _fallSounds.PickRandomElement();
+            _audioSource.PlayDelayed(0.4f);
+        }
+
+        public override void Descend()
+        {
+            base.Descend();
+            _audioSource.clip = _fallSounds.PickRandomElement();
+            _audioSource.PlayDelayed(0.4f);
         }
 
         private void Awake()

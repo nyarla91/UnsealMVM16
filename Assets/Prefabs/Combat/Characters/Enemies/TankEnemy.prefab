@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3758686394101130916
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 829932016, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _kind
+      value: 
+      objectReference: {fileID: 1620904292}
+    - target: {fileID: 6854949043067255729, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_Name
+      value: TankEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255736, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _character
+      value: 
+      objectReference: {fileID: 1620904292}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255739, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6854949043067255742, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _character
+      value: 
+      objectReference: {fileID: 1620904292}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _kind
+      value: 
+      objectReference: {fileID: 1620904292}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _model
+      value: 
+      objectReference: {fileID: 1620904292}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _name._eng
+      value: Armored orc
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _name._rus
+      value: "\u0411\u0440\u043E\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u044B\u0439
+        \u043E\u0440\u043A"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _description._eng
+      value: Gives 2<ap> to all enemies every turn
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604559160130262400, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: _description._rus
+      value: "\u041A\u0430\u0436\u0434\u044B\u0439 \u0445\u043E\u0434 \u0434\u0430\u0451\u0442
+        2<ap> \u0432\u0441\u0435\u043C \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0430\u043C."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8490174106116288212, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805346198536593239, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c0ff861dd6f6604bbc27fce58361e7a, type: 2}
+    m_RemovedComponents:
+    - {fileID: 928069051106740448, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+    - {fileID: 829932016, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+--- !u!1 &7712452335943851285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6854949043067255729, guid: 23b2dafd8d15ac0448a241c0f6b078c8, type: 3}
+  m_PrefabInstance: {fileID: 3758686394101130916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1620904292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7712452335943851285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ebd2764df944fcb185d7ffd3b37dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 10
+  _attackPerTurn: 2
+  _armorPerTurn: 1
+  _clearArmorOnTurn: 1
+  _armorToAll: 2

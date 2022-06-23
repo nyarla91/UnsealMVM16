@@ -9,6 +9,7 @@ namespace Model.Combat.Effects
     public class EffectQueue : MonoBehaviour
     {
         [SerializeField] private GameBoard _gameBoard;
+        [SerializeField] private AudioSource _audioSource;
 
         [Inject] private Pause _pause;
         
@@ -52,6 +53,11 @@ namespace Model.Combat.Effects
                 Effect currentEffect = _effects[0];
                 _effects.RemoveAt(0);
                 currentEffect.Execute();
+                if (currentEffect.Sounds != null && currentEffect.Sounds.Length > 0)
+                {
+                    _audioSource.clip = SoundRandomizer.LoadAudio(currentEffect.Sounds);
+                    _audioSource.Play();
+                }
                 _delayLeft = currentEffect.DelayAfter;
             }
         }

@@ -9,6 +9,8 @@ namespace Model.Combat.Effects
         private readonly int _damage;
         private readonly bool _burst;
 
+        public override string[] Sounds => new []{"Effects/Damage1", "Effects/Damage2","Effects/Damage3", "Effects/Damage4"};
+
         public DealDamageEffect(float dealyAfter, Character target, int damage, bool burst) : base(dealyAfter)
         {
             _target = target;

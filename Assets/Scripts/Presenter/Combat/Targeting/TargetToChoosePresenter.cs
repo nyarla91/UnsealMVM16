@@ -16,7 +16,8 @@ namespace Presenter.Combat.Targeting
         private void DisableHighliht()
         {
             _chosen = false;
-            _highlighter.material = _invisibleMaterial;
+            if (_highlighter != null)
+                _highlighter.material = _invisibleMaterial;
         }
 
         private void HighlightAvaillable()

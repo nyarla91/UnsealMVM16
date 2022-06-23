@@ -5,8 +5,9 @@ namespace Model.Combat.Characters.Enemies
 {
     public class CureBossEnemy : Enemy
     {
-        private void Awake()
+        protected override void Start()
         {
+            base.Start();
             GameBoard.Turn.OnFormNotChanged += SpikeEffect;
         }
 

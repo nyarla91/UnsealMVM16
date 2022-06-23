@@ -7,6 +7,7 @@ namespace Model.Combat.Effects
         private readonly Character _target;
         private readonly int _armor;
         private readonly bool _burst;
+        public override string[] Sounds => new []{"Effects/Armor1", "Effects/Armor2","Effects/Armor3", "Effects/Armor4"};
 
         public AddArmorEffect(float dealyAfter, Character target, int armor, bool burst) : base(dealyAfter)
         {

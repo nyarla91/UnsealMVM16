@@ -14,7 +14,7 @@ namespace View.Combat.Characters
         protected Vector3 TopLocalPosition => MovedObject.localPosition.WithY(20);
         protected Vector3 GoundLocalPosition => MovedObject.localPosition.WithY(0);
 
-        public void Descend() => Descend(DoNothing);
+        public virtual void Descend() => Descend(DoNothing);
 
         public void Descend(Action OnComplete)
         {
@@ -27,7 +27,7 @@ namespace View.Combat.Characters
             MovedObject.DOLocalMove(GoundLocalPosition, 0.5f).onComplete += OnComplete.Invoke;
         }
 
-        public void Ascend(bool destroy) => Ascend(destroy, DoNothing);
+        public virtual void Ascend(bool destroy) => Ascend(destroy, DoNothing);
 
         public void Ascend(bool destroy, Action OnComplete)
         {

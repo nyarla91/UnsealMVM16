@@ -4,8 +4,9 @@ namespace Model.Combat.Characters.Enemies
 {
     public class MoonTickerEnemy : Enemy
     {
-        private void Awake()
+        protected override void Start()
         {
+            base.Start();
             GameBoard.PlayerHand.OnSpellPlayed += OnSpellPlayed;            
         }
 

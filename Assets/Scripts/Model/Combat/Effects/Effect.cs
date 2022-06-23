@@ -3,8 +3,9 @@
     public abstract class Effect
     {
         public float DelayAfter { get; protected set; }
-        
-        public Effect(float dealyAfter)
+        public virtual string[] Sounds { get; }
+
+        protected Effect(float dealyAfter)
         {
             DelayAfter = dealyAfter;
         }

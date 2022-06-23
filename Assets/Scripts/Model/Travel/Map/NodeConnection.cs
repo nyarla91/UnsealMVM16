@@ -51,7 +51,8 @@ namespace Model.Travel.Map
                 return;
 
             _requirement = requirement;
-            requirement.transform.rotation = Quaternion.LookRotation(_ends[0].transform.position - _ends[1].transform.position, Vector3.up);
+            if (requirement.Rotate)
+                requirement.transform.rotation = Quaternion.LookRotation(_ends[0].transform.position - _ends[1].transform.position, Vector3.up);
         }
 
         [ContextMenu("Destroy Connection")]

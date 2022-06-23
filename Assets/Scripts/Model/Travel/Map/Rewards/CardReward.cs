@@ -1,31 +1,32 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Model.Cards;
-using Model.Cards.Spells;
 using Model.Global.Save;
 using Presenter.Cards;
 using Presenter.Combat;
-using UnityEditor;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using File = System.IO.File;
 
 namespace Model.Travel.Map.Rewards
 {
     [CreateAssetMenu(fileName = "Card", menuName = "Combat Rewards/Card", order = 0)]
     public class CardReward : CombatReward
     {
-        [SerializeField] private MonoScript _spell;
         [SerializeField] private string _spellName;
 
         private Type _spellType;
         
         public override void ClaimReward(PermanentSave permanentSave, ManualSave manualSave)
         {
-            permanentSave.Data.CardsUnlocked.Add(_spellName);
-            permanentSave.Save();
             if (permanentSave.Data.CardsUnlocked.Count < 12)
             {
                 manualSave.Data.Deck.Add(_spellName);
                 manualSave.Save();
             }
+            permanentSave.Data.CardsUnlocked.Add(_spellName);
+            permanentSave.Save();
         }
 
         public override void ShowExample(RectTransform parent, CombatEndPresenter presenter)
@@ -35,11 +36,12 @@ namespace Model.Travel.Map.Rewards
             example.localScale = 125 * Vector3.one;
             example.localRotation = Quaternion.Euler(270, 0, 0);
             example.gameObject.GetComponent<CardPresenter>().Tooltip = presenter.AbilitiyTooltip;
+            _spellType = Type.GetType(_spellName);
             example.gameObject.AddComponent(_spellType);
             example.gameObject.AddComponent<CardInUI>();
         }
 
-        private void OnValidate()
+        /*private void OnValidate()
         {
             _spellType = _spell.GetClass();
             if (_spellType.IsSubclassOf(typeof(Spell)))
@@ -52,6 +54,6 @@ namespace Model.Travel.Map.Rewards
                 _spellName = String.Empty;
                 _spellType = null;
             }
-        }
+        }*/
     }
 }
